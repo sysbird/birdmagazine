@@ -1,0 +1,283 @@
+# Translation of the WordPress theme BirdMAGAZINE 1.02 by Sysbird
+# Copyright (C) Sysbird
+# This file is distributed under the same license as the BirdMAGAZINE package.
+# FIRST AUTHOR <sysbird@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: BirdMAGAZINE 1.01\n"
+"Report-Msgid-Bugs-To: http://www.sysbird.jp/wptips/\n"
+"POT-Creation-Date: 2013-07-26 00:00+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: sysbird <sysbird@gmail.com>\n"
+"Language-Team: sysbird <sysbird@gmail.com>\n"
+"MIME-Version: 1.02\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 404.php:13
+msgid "Error 404 - Not Found"
+msgstr ""
+
+#: 404.php:16
+#: sidebar.php:10
+msgid "Recent Articles"
+msgstr ""
+
+#: archive.php:22
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: comments.php:8
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: comments.php:17
+msgid "One Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] ""
+
+#: comments.php:24
+#: comments.php:35
+msgid "Older Comments &raquo;"
+msgstr ""
+
+#: comments.php:25
+#: comments.php:36
+msgid "&laquo; Newer Comments"
+msgstr ""
+
+#: comments.php:43
+msgid "Name"
+msgstr ""
+
+#: comments.php:43
+#: comments.php:44
+#: comments.php:50
+msgid "(*required)"
+msgstr ""
+
+#: comments.php:44
+msgid "Email (will not be published)"
+msgstr ""
+
+#: comments.php:45
+msgid "Website"
+msgstr ""
+
+#: comments.php:50
+msgid "Comment"
+msgstr ""
+
+#: content.php:15
+#: content.php:16
+msgid "Permalink to %s"
+msgstr ""
+
+#: content.php:20
+#: content.php:43
+#: image.php:55
+msgid "Pages:"
+msgstr ""
+
+#: content.php:27
+msgid "No Comments"
+msgstr ""
+
+#: content.php:27
+msgid "1 Comment"
+msgstr ""
+
+#: content.php:27
+msgid "% Comments"
+msgstr ""
+
+#: content.php:27
+msgid "Comments Closed"
+msgstr ""
+
+#: content.php:29
+#: content.php:48
+msgid "Posted in"
+msgstr ""
+
+#: content.php:49
+msgid "Tagged"
+msgstr ""
+
+#: footer.php:11
+msgid "Proudly powered by WordPress"
+msgstr ""
+
+#: functions.php:17
+#: functions.php:19
+msgid "Widget Area for sidebar"
+msgstr ""
+
+#: functions.php:42
+msgid "Pingback"
+msgstr ""
+
+#: function.php:42
+msgid "(Edit)"
+msgstr ""
+
+#: functions.php:53
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:108
+msgid "Search"
+msgstr ""
+
+#: function.php:119
+msgid "Category Archives: %s"
+msgstr ""
+
+#: function.php:122
+msgid "Tag Archives: %s"
+msgstr ""
+
+#: function.php:125
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: function.php:128
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: function.php:128
+msgid "F, Y"
+msgstr ""
+
+#: function.php:131
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: function.php:131
+msgid "Y"
+msgstr ""
+
+#: function.php:134
+msgid "Author Archives: %s"
+msgstr ""
+
+#: functions.php:137
+msgid "Blog Archives"
+msgstr ""
+
+#: functions.php:177
+msgid "M. j, Y"
+msgstr ""
+
+#: functions.php:269
+msgid "Primary Navigation"
+msgstr ""
+
+#: functions.php:331
+msgid "Page %s"
+msgstr ""
+
+#: functions.php:354
+msgid "&raquo;more"
+msgstr ""
+
+#: image.php:59
+msgid "Next Image &raquo;"
+msgstr ""
+
+#: image.php:60
+msgid "&laquo; Previous Image"
+msgstr ""
+
+#: search.php:12
+msgid "Search Results: %s"
+msgstr ""
+
+#: search.php:23
+msgid "Sorry, no posts matched &#8216;%s&#8217;"
+msgstr ""
+
+#: inc/theme-options.php:80
+#: inc/theme-options.php:81
+msgid "Theme Options"
+msgstr ""
+
+#: inc/theme-options.php:95
+msgid "Some themes provide customization options that are grouped together on a Theme Options screen. If you change themes, options may change or disappear, as they are theme-specific. Your current theme, BirdMAGAZINE, provides the following Theme Options:"
+msgstr ""
+
+#: inc/theme-options.php:97
+msgid "<strong>Text Color</strong>: You can choose the color used for text on your site. You can enter the HTML color or hex code, or you can choose visually by clicking the \"Select a Color\" button to pick from a color wheel."
+msgstr ""
+
+#: inc/theme-options.php:98
+msgid "<strong>Link Color</strong>: You can choose the color used for text links on your site. You can enter the HTML color or hex code, or you can choose visually by clicking the \"Select a Color\" button to pick from a color wheel."
+msgstr ""
+
+#: inc/theme-options.php:99
+msgid "<strong>Navigation Menu Color</strong>: You can choose the color used for navigation menu on your site. You can enter the HTML color or hex code, or you can choose visually by clicking the \"Select a Color\" button to pick from a color wheel."
+msgstr ""
+
+#: inc/theme-options.php:100
+msgid "<strong>Border Color</strong>: You can choose the color used for haeder border and widget border and footer background on your site. You can enter the HTML color or hex code, or you can choose visually by clicking the \"Select a Color\" button to pick from a color wheel."
+msgstr ""
+
+#: inc/theme-options.php:102
+msgid "Remember to click \"Save Changes\" to save any changes you have made to the theme options."
+msgstr ""
+
+#: inc/theme-options.php:104
+msgid "For more information:"
+msgstr ""
+
+#: inc/theme-options.php:105
+msgid "Documentation on Theme Options"
+msgstr ""
+
+#: inc/theme-options.php:106
+msgid "Support Forums"
+msgstr ""
+
+#: inc/theme-options.php:110
+msgid "Overview"
+msgstr ""
+
+#: inc/theme-options.php:248
+msgid "%s Theme Options"
+msgstr ""
+
+#: inc/theme-options.php:258
+#: inc/theme-options.php:260
+msgid "Text Color"
+msgstr ""
+
+#: inc/theme-options.php:262
+#: inc/theme-options.php:272
+#: inc/theme-options.php:282
+#: inc/theme-options.php:292
+msgid "Select a Color"
+msgstr ""
+
+#: inc/theme-options.php:263
+#: inc/theme-options.php:273
+#: inc/theme-options.php:283
+#: inc/theme-options.php:293
+msgid "Default color:"
+msgstr ""
+
+#: inc/theme-options.php:268
+#: inc/theme-options.php:270
+msgid "Link Color"
+msgstr ""
+
+#: inc/theme-options.php:278
+#: inc/theme-options.php:280
+msgid "Navigation Menu Color"
+msgstr ""
+
+#: inc/theme-options.php:278
+#: inc/theme-options.php:280
+msgid "Border Color"
+msgstr ""
+
