@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+/*
+Theme Name: BirdSITE
+Japanese font
+*/
+
+body {
+	font-family: "Hiragino Maru Gothic W4 JIS2004", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

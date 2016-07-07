@@ -18,36 +18,37 @@ This theme, like WordPress, is licensed under the GPL.
 @import "compass/reset";
 
 // variable
-$background-color: #F5F5F5;
-$header-background-color: #CCC;
+$background-color: #f4f4f4;
+$header-background-color: #E5E5E5;
 $text-color: #222327;
 $link-color: #1c4bbe;
-$hover-background-color: #F5F5F5;
-$border-color: #E6E6E6;
+$hover-background-color: #f4f4f4;
+$border-color: #DDD;
 $meta-color: #999;
 $accent-color: #2b3876;
 
 /*------------------------------
 Font Awesome
 -----------------------------*/
-@font-face {
-font-family: 'FontAwesome';
-src: url("font-awesome/fontawesome-webfont.eot?v=4.1.0");
-src: url("font-awesome/fontawesome-webfont.eot?#iefix&v=4.1.0") format("embedded-opentype"), url("font-awesome/fontawesome-webfont.woff?v=4.1.0") format("woff"), url("font-awesome/fontawesome-webfont.ttf?v=4.1.0") format("truetype"), url("font-awesome/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular") format("svg");
-font-weight: normal;
-font-style: normal; }
-
-@mixin font-awesome( $param, $padding-left:0, $padding-right:0 ) {
+@mixin font-genericons( $param, $padding-left:0, $padding-right:0, $rotate:0 ) {
 	content: $param;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
 	display: inline-block;
-	font-family: FontAwesome;
+	font-family: "Genericons";
 	font-style: normal;
+	font-variant: normal;
 	font-weight: normal;
 	line-height: 1;
+	speak: none;
+	text-align: center;
+	text-decoration: inherit;
+	text-transform: none;
+	vertical-align: top;
 	padding-left: $padding-left;
 	padding-right: $padding-right;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	vertical-align: middle;
+	 @include rotate($rotate+deg);
 }
 
 /* Link
@@ -73,7 +74,7 @@ a {
 /* Body
 -------------------------------------------------------------- */
 body {
-	font-family: 'Open Sans', Verdana,Arial, Meiryo , "Hiragino Kaku Gothic Pro" ,sans-serif;
+	font-family: "Hiragino Maru Gothic W4 JIS2004", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: $text-color;
 	background: $background-color;
 	-ms-text-size-adjust: 100%;
@@ -142,15 +143,15 @@ body {
 			cursor: pointer;
 			display: block;
 			padding: 5px;
-		    font-size: 1rem;
-		    background: $accent-color;
-		    color: #FFF;
-		    border-radius: 4px;
-   		    font-size: 1.4rem;
+			font-size: 1rem;
+			background: $accent-color;
+			color: #FFF;
+			border-radius: 4px;
+			font-size: 1.4rem;
 
 			&:before {
-			    @include font-awesome("\f0c9");
-			    padding: 0 0.5em 0 0;
+				@include font-genericons("\f419");
+				padding: 0 0.5em 0 0;
 			}
 		}
 
@@ -243,32 +244,37 @@ ul.articles {
 		color: $text-color;
 	}
 
+	span:before{
+		font-size: 1.2rem;
+	}
+
 	.postdate:before {
-		@include font-awesome("\f133", 0, 0.2em );
+		font-size: 1rem;
+		@include font-genericons("\f307", 0, 0.2em );
 	}
 
 	.author:before {
-		@include font-awesome("\f007", 0, 0.2em );
+		@include font-genericons("\f304", 0, 0.2em );
 	}
 
 	.comment:before {
-		@include font-awesome("\f075", 0, 0.2em );
+		@include font-genericons("\f300", 0, 0.2em );
 	}
 
 	.parent-post-link {
 		a {
 			&:before {
-				@include font-awesome("\f03e", 0, 0.2em );
+				@include font-genericons("\f308", 0, 0.2em );
 			}
 		}
 	}
 
 	.category:before {
-		@include font-awesome( "\f07b", 0, 0.2em );
+		@include font-genericons( "\f301", 0, 0.2em );
 	}
 
 	.tag:before {
-		@include font-awesome( "\f02b", 0, 0.2em );
+		@include font-genericons( "\f302", 0, 0.2em );
 	}
 }
 
@@ -312,7 +318,8 @@ ul.articles {
 .more-link {
 
 	&:after {
-		@include font-awesome("\f105", 0.4em, 0);
+		@include font-genericons("\f431", 0.4em, 0, -90);
+		text-decoration: none;
 	}
 }
 
@@ -405,22 +412,22 @@ code {
 }
 
 code, kbd, pre, samp {
-    font-family: monospace,serif;
+	font-family: monospace,serif;
 }
 
 hr {
-    background-color: $text-color;
-    border: 0 none;
-    height: 1px;
-    margin-bottom: 1.6m;
+	background-color: $text-color;
+	border: 0 none;
+	height: 1px;
+	margin-bottom: 1.6m;
 }
 
 sup, sub {
-    font-size: 80%;
-    height: 0;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
+	font-size: 80%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
 }
 
 sub {
@@ -576,6 +583,26 @@ ins {
 	}
 }
 
+/* Attachment
+-------------------------------------------------------------------- */
+.attachment {
+
+	#content {
+		.hentry {
+
+			.entry-attachment {
+				text-align: center;
+				margin-bottom: 1.6em;
+
+				.wp-caption {
+					text-align: left;
+					margin-top: 1.6em;
+				}
+			}
+		}
+	}
+}
+
 /* bread crumb for wp-manager
 -------------------------------------------------------------- */
 .bread_crumb {
@@ -589,7 +616,7 @@ ins {
 		display: inline-block;
 		line-height: 1;
 		a:after {
-			@include font-awesome("\f105", 0.4em, 0.2em);
+			@include font-genericons("\f431", 0.4em, 0.2em, -90);
 		}
 	}
 }
@@ -634,23 +661,24 @@ a:hover img {
 }
 
 
-/*  Galley
+/* Galley
 -------------------------------------------------------------- */
 .wp-caption,
 .gallery-caption {
 	display: block;
 	font-size: 0.9em;
-	line-height: 1;
+	line-height: 1.2;
 	color: $meta-color;
 	max-width: 100%;
 	text-align: center;
 }
 
 .wp-caption {
-	padding: 5px;
-	background: $border-color;
 	margin-bottom: 0.75em;
-	max-width: 100%;
+}
+
+.wp-caption-text {
+	padding-top: 5px
 }
 
 .gallery-caption {
@@ -709,7 +737,7 @@ a:hover img {
 	}
 }
 
-/*  Make sure videos and embeds fit their containers
+/* Make sure videos and embeds fit their containers
 -------------------------------------------------------------- */
 embed,
 iframe,
@@ -768,7 +796,7 @@ video {
 			padding-left: 1em;
 
 			&:after {
-				@include font-awesome( "\f054", 0.4em );
+				@include font-genericons( "\f054", 0.4em );
 			}
 		}
 
@@ -779,7 +807,7 @@ video {
 			padding-right: 1em;
 
 			&:before {
-				@include font-awesome( "\f053", 0, 0.4em );
+				@include font-genericons( "\f053", 0, 0.4em );
 			}
 		}
 	}
@@ -969,7 +997,7 @@ form {
 				text-indent: -0.3em;
 
 				&:before {
-					@include font-awesome("\f105", 0, 0.4em);
+					@include font-genericons("\f431", 0.4em, 0, -90);
 				}
 
 				ul {
@@ -1057,7 +1085,7 @@ form {
 
 		.generator {
 			&:after {
-				@include font-awesome("\f19a", 0.4em, 0);
+				@include font-genericons("\f205", 0.4em, 0);
 			}
 		}
 
@@ -1091,7 +1119,7 @@ form {
 			}
 
 			&:before {
-				@include font-awesome( "\f0aa" );
+				@include font-genericons( "\f435" );
 				font-size: 60px;
 				display: block;
 			}
@@ -1117,10 +1145,10 @@ form {
 	position: relative;
 
 	label {
-	    display: block;
-	    font-size: 0;
-	    overflow: hidden;
-	    text-indent: -9999px;
+		display: block;
+		font-size: 0;
+		overflow: hidden;
+		text-indent: -9999px;
 	}
 
 	#s {
@@ -1145,9 +1173,14 @@ form {
 		background: #CCC;
 		color: #FFF;
 		-webkit-appearance: button;
-		@include font-awesome("\f005");
-		font-size: 1.2em;
+
+		&:before {
+			padding-top: 0.1em;
+			font-size: 1.4rem;
+			@include font-genericons("\f400");
+		}
 	}
+
 }
 
 /* Pagination at archive
@@ -1193,33 +1226,17 @@ form {
 	}
 
 	a.page-numbers.prev:before {
-		@include font-awesome("\f104", 0, 0.4em);
+		@include font-genericons("\f432", 0.4em, 0, -90);
 	}
 
 	a.page-numbers.next:after {
-		@include font-awesome("\f105", 0.4em, 0);
+		@include font-genericons("\f431", 0.4em, 0, -90);
 	}
 
 	.current {
 		color: $link-color;
 		border-color: $link-color;
 		font-weight: bold;
-	}
-
-	a.next {
-		padding-right: 0;
-
-		&:after {
-			@include font-awesome( "\f054", 0.4em );
-		}
-	}
-
-	a.prev {
-		padding-left: 0;
-
-		&:before {
-			@include font-awesome( "\f053", 0, 0.4em );
-		}
 	}
 }
 
@@ -1267,7 +1284,7 @@ form {
 	.nav-next {
 		a {
 			&:before {
-				@include font-awesome( "\f053", 0, 0.4em );
+				@include font-genericons("\f432", 0.4em, 0, -90);
 			}
 		}
 	}
@@ -1277,7 +1294,7 @@ form {
 
 		a {
 			&:after {
-				@include font-awesome( "\f054", 0.4em );
+				@include font-genericons("\f431", 0.4em, 0, -90);
 			}
 		}
 	}
@@ -1418,7 +1435,7 @@ form {
 
 					&.menu-item-has-children {
 						>a:after {
-							@include font-awesome("\f107", 0.2em, 0);
+							@include font-genericons("\f431", 0.4em, 0);
 						}
 					}
 
@@ -1441,7 +1458,7 @@ form {
 
 							&.menu-item-has-children {
 								>a:after {
-									@include font-awesome("\f105", 0.2em, 0);
+									@include font-genericons("\f431", 0.4em, 0, -90);
 								}
 							}
 
