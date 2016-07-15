@@ -14,17 +14,16 @@ get_header(); ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
 			<?php get_template_part( 'content', 'singular' ); ?>
-
-			<div class="entry-inner">
-				<?php comments_template( '', true ); ?>
-				<?php if( is_single() ): // Only Display Excerpts for Single ?>
-					<?php the_post_navigation(); ?>
-				<?php endif; ?>
-			</div><!-- .entry-inner -->
-
+			<?php if ( comments_open() || get_comments_number() ) {
+				comments_template();
+			} ?>
 		</article>
 
 	<?php endwhile; ?>
+
+	<?php if( is_single() ): // Only Display Excerpts for Single ?>
+		<?php the_post_navigation(); ?>
+	<?php endif; ?>
 
 </div><!-- .content-area -->
 

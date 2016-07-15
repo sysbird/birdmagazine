@@ -17,7 +17,16 @@
 <?php endif; ?>
 <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+
+<?php
+	// The header text
+	$birdmagazine_header_text = '';
+	if ( 'blank' == get_header_textcolor() ) {
+		$birdmagazine_header_text .= 'no-header-text';
+	}
+?>
+
+<body <?php body_class( $birdmagazine_header_text ); ?>>
 
 <div class="wrapper">
 
@@ -41,7 +50,7 @@
 								'container_class'	=> 'menu',
 								'menu_class'		=> '',
 								'menu_id'			=> 'menu-primary-items',
-								'items_wrap'		=> '<div id="small-menu"></div><ul id="%1$s" class="%2$s">%3$s</ul>',
+								'items_wrap'		=> '<div id="small-menu">' .__( 'Menu', 'birdmagazine' ) .'</div><ul id="%1$s" class="%2$s">%3$s</ul>',
 								'fallback_cb'		=> '' ) ); ?>
 			</nav>
 		</div>

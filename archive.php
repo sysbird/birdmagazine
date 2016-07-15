@@ -25,14 +25,15 @@ get_header(); ?>
 					<?php endwhile; ?>
 				</ul>
 
-				<?php the_posts_pagination( array( 'mid_size' => 3 ) ); ?>
-
 			<?php else: ?>
 				<p><?php _e( 'Sorry, no posts matched your criteria.', 'birdmagazine' ); ?></p>
 			<?php endif; ?>
 
 		</div>
 	</div>
+
+	<?php the_posts_pagination( array( 'mid_size' => 3 ) ); ?>
+
 </div><!-- .content-area -->
 
 <?php get_sidebar(); ?>

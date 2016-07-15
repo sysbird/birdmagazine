@@ -25,14 +25,15 @@
 </div><!-- .entry-inner -->
 
 <?php if( is_single() ): // Only Display Excerpts for Single ?>
-	<footer class="entry-meta">
+	<footer class="entry-meta entry-inner">
 
-		<div class="icon postdate"><time datetime="<?php echo get_the_time('Y-m-d') ?>" pubdate><?php echo get_post_time(get_option('date_format')); ?></time></div>
+		<span class="icon postdate"><time datetime="<?php echo get_the_time('Y-m-d') ?>" pubdate><?php echo get_post_time(get_option('date_format')); ?></time></span><br>
 
-		<div class="icon author"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></div>
+		<span class="icon author"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></span><br>
 
-		<div class="icon category"><?php the_category(', ') ?></div>
-		<?php the_tags('<div class="icon tag">', ', ', '</div>') ?>
+		<span class="icon category"><?php the_category(', ') ?></span><br>
+
+		<?php the_tags('<span class="icon tag">', ', ', '</span><br>') ?>
 
 	</footer>
 <?php endif; ?>

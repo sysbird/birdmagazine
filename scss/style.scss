@@ -1,6 +1,6 @@
 @charset "utf-8";
 /*
-Theme Name: birdSTAR
+Theme Name: birdMagazine
 Theme URI: http://www.sysbird.jp/toriko/
 Description: okc is a responsive web design theme. Feature fullscreen and parallax custom image, and fixed header. The homepage displays with tagged news and the grid posts. You can choose the text color, link color, header background color by theme options.
 Author: Sysbird
@@ -8,8 +8,8 @@ Author URI: http://www.sysbird.jp/wptips/
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: green, one-column, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
-Text Domain: birdstar
+Tags: two-column, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
+Text Domain: birdmagazine
 
 This theme, like WordPress, is licensed under the GPL.
 */
@@ -26,31 +26,31 @@ $hover-background-color: #f4f4f4;
 $border-color: #DDD;
 $meta-color: #999;
 $accent-color: #2b3876;
+$line-height: 1.7;
 
 /*------------------------------
 Font Awesome
 -----------------------------*/
-@mixin font-genericons( $param, $padding-left:0, $padding-right:0, $rotate:0 ) {
-	content: $param;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-	display: inline-block;
-	font-family: "Genericons";
-	font-style: normal;
-	font-variant: normal;
+@font-face {
+	font-family: 'FontAwesome';
+	src: url("font-awesome/fontawesome-webfont.eot?v=4.1.0");
+	src: url("font-awesome/fontawesome-webfont.eot?#iefix&v=4.1.0") format("embedded-opentype"), url("font-awesome/fontawesome-webfont.woff?v=4.1.0") format("woff"), url("font-awesome/fontawesome-webfont.ttf?v=4.1.0") format("truetype"), url("font-awesome/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular") format("svg");
 	font-weight: normal;
-	line-height: 1;
-	speak: none;
-	text-align: center;
-	text-decoration: inherit;
-	text-transform: none;
-	vertical-align: top;
-	padding-left: $padding-left;
-	padding-right: $padding-right;
-	vertical-align: middle;
-	 @include rotate($rotate+deg);
+	font-style: normal;
 }
 
+@mixin font-awesome( $param, $padding-left:0, $padding-right:0 ) {
+	content: $param;
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	padding-left: $padding-left;
+	padding-right: $padding-right;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
 /* Link
 --------------------------------------------- */
 a {
@@ -58,7 +58,7 @@ a {
 	text-decoration: none;
 
 	&:hover {
-		@include opacity(0.8);
+		@include opacity( 0.8 );
 	}
 }
 
@@ -75,6 +75,7 @@ a {
 -------------------------------------------------------------- */
 body {
 	font-family: "Hiragino Maru Gothic W4 JIS2004", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: $line-height;
 	color: $text-color;
 	background: $background-color;
 	-ms-text-size-adjust: 100%;
@@ -97,7 +98,7 @@ body {
 	}
 
 	#branding {
-		padding: 3.2em 0 1.6em;
+		padding: #{$line-height}em 0;
 
 		#site-title {
 			margin: 0;
@@ -118,25 +119,20 @@ body {
 		#site-description {
 			display: none;
 			margin: 0;
-			padding: 0.8em 0 0 0;
+			padding: #{$line-height /2}em 0 0 0;
 		}
 	}
 }
 
-.no-title #header #branding {
-	padding-top: 0;
-
-	#site-title,
-	#site-description {
-		position: absolute !important;
-		clip: rect(1px, 1px, 1px, 1px);
-	}
+.no-header-text #header #branding {
+	position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
 }
 
 /* Menu
 -------------------------------------------------------------- */
 #menu-wrapper {
-	padding-bottom: 0.8em;
+	padding-bottom: #{$line-height /2}em;
 
 	.menu {
 		#small-menu {
@@ -150,8 +146,7 @@ body {
 			font-size: 1.4rem;
 
 			&:before {
-				@include font-genericons("\f419");
-				padding: 0 0.5em 0 0;
+				@include font-awesome( "\f0c9", 0.4em, 0.4em );
 			}
 		}
 
@@ -173,7 +168,7 @@ body {
 				}
 
 				ul {
-					padding-left: 0.8em;
+					padding-left: #{$line-height /2}em;
 				}
 			}
 
@@ -192,7 +187,7 @@ body {
 	padding: 2% 0;
 
 	.content-area {
-		margin-bottom: 1.6em;
+		margin-bottom: #{$line-height}em;
 	}
 }
 
@@ -207,6 +202,7 @@ ul.articles {
 	border-radius: 4px;
 	border-bottom: solid 2px $border-color;
 	word-wrap: break-word;
+	margin-bottom: #{$line-height /2}em;
 	@include clearfix;
 
 	.entry-inner {
@@ -215,10 +211,9 @@ ul.articles {
 	}
 }
 
-
 .entry-header,
 .page-header {
-	margin-bottom: 0.8em;
+	margin-bottom: #{$line-height /2}em;
 
 	.entry-title,
 	.page-title {
@@ -237,44 +232,38 @@ ul.articles {
 
 .entry-meta {
 	border-top: dotted 1px $border-color;
-	padding: 0.4em 2%;
 	font-size: 0.9rem;
 
 	a {
 		color: $text-color;
 	}
 
-	span:before{
-		font-size: 1.2rem;
-	}
-
 	.postdate:before {
-		font-size: 1rem;
-		@include font-genericons("\f307", 0, 0.2em );
+		@include font-awesome( "\f133", 0, 0.2em );
 	}
 
 	.author:before {
-		@include font-genericons("\f304", 0, 0.2em );
+		@include font-awesome( "\f007", 0, 0.2em );
 	}
 
 	.comment:before {
-		@include font-genericons("\f300", 0, 0.2em );
+		@include font-awesome( "\f075", 0, 0.2em );
 	}
 
 	.parent-post-link {
 		a {
 			&:before {
-				@include font-genericons("\f308", 0, 0.2em );
+				@include font-awesome( "\f1c5", 0, 0.2em );
 			}
 		}
 	}
 
 	.category:before {
-		@include font-genericons( "\f301", 0, 0.2em );
+		@include font-awesome( "\f07b", 0, 0.2em );
 	}
 
 	.tag:before {
-		@include font-genericons( "\f302", 0, 0.2em );
+		@include font-awesome( "\f02b", 0, 0.2em );
 	}
 }
 
@@ -289,12 +278,12 @@ ul.articles {
 
 .page-links {
 	clear: both;
-	margin: 1.6em 0;
+	margin: #{$line-height}em 0;
 	font-weight: bold;
 
 	span {
 		color: $link-color;
-		 padding: 0.4em 0.8em;
+		 padding: #{$line-height /4}em #{$line-height /2}em;
 		text-decoration:none;
 		text-align: center;
 		border-bottom: solid 2px $link-color;
@@ -318,14 +307,14 @@ ul.articles {
 .more-link {
 
 	&:after {
-		@include font-genericons("\f431", 0.4em, 0, -90);
+		@include font-awesome( "\f054", 0.4em );
 		text-decoration: none;
 	}
 }
 
 h1, h2, h3, h4, h5, h6 {
 	margin: 0.7em 0;
-	line-height:1.2;
+	line-height: 1.2;
 	font-weight: normal;
 
 	a {
@@ -341,8 +330,7 @@ h5 {font-size:1.4rem;}
 h6 {font-size:1.2rem;}
 
 p {
-	line-height: 1.6;
-	margin: 0 0 1.6em;
+	margin: 0 0 #{$line-height}em;
 }
 
 blockquote {
@@ -378,27 +366,26 @@ table {
 	width: 100%;
 	border-collapse: collapse;
 	border-spacing: 0;
-	margin-bottom: 1.6em;
+	margin-bottom: #{$line-height}em;
 
 	th,
 	td {
-		border-bottom: 1px solid $border-color;
+		border: 1px solid $border-color;
 		line-height: 1.4;
-		padding: 0.8em;
+		padding: #{$line-height /2}em;
 		text-align: left;
 		vertical-align: top;
 	}
 
 	th {
-		border-bottom: 2px solid $border-color;
 		font-weight: bold;
 	}
 }
 
 pre {
-	padding: 0.8em;
+	padding: #{$line-height /2}em;
 	background: #EEE;
-	margin-bottom: 1.6em;
+	margin-bottom: #{$line-height}em;
 	line-height: 1.4;
 	max-width: 100%;
 	overflow: auto;
@@ -419,7 +406,7 @@ hr {
 	background-color: $text-color;
 	border: 0 none;
 	height: 1px;
-	margin-bottom: 1.6m;
+	margin-bottom: #{$line-height}m;
 }
 
 sup, sub {
@@ -453,7 +440,7 @@ abbr, acronym {
 
 ul,
 ol {
-	margin: 0 0 1.6em 1em;
+	margin: 0 0 #{$line-height}em 1em;
 	padding: 0 0 0 1em;
 	line-height: 1.4;
 
@@ -492,14 +479,13 @@ ol {
 
 dl {
 	margin:0 0 1em 0;
-	line-height: 1.6;
 
 	dt {
 		font-weight: bold;
 	}
 
 	dd {
-		margin: 0 1.5em 1.6em;
+		margin: 0 #{$line-height}em #{$line-height}em;
 		padding: 0;
 	}
 }
@@ -513,46 +499,13 @@ ins {
 	text-decoration: none;
 }
 
-/* Home
--------------------------------------------------------------------- */
-.home {
-	.entry {
-		margin-bottom: 0.8em;
-	}
-}
-
-/* Single
--------------------------------------------------------------------- */
-.single {
-	.entry-meta {
-		border-bottom: dotted 1px $border-color;
-
-		.entry-title {
-			font-size: 1.2em;
-			margin-bottom: 0;
-		}
-
-		dt {
-			width: 7em;
-			float: left;
-			padding: 0.4em 0;
-		}
-
-		dd {
-			margin: 0 0 0 8em;
-			padding: 0.4em 0;
-			@include clearfix;
-		}
-	}
-}
-
 /* Archive
 -------------------------------------------------------------------- */
 .archive,
 .search,
 .error404 {
 	ul.articles {
-		margin-bottom: 0.8em;
+		margin-bottom: #{$line-height /2}em;
 
 		li {
 			margin-bottom: 0;
@@ -578,6 +531,7 @@ ins {
 			em {
 				flex: 1;
 				text-align: right;
+				font-style: normal;
 			}
 		}
 	}
@@ -592,31 +546,13 @@ ins {
 
 			.entry-attachment {
 				text-align: center;
-				margin-bottom: 1.6em;
+				margin-bottom: #{$line-height}em;
 
 				.wp-caption {
 					text-align: left;
-					margin-top: 1.6em;
+					margin-top: #{$line-height}em;
 				}
 			}
-		}
-	}
-}
-
-/* bread crumb for wp-manager
--------------------------------------------------------------- */
-.bread_crumb {
-	list-style-type: none;
-	color: $meta-color;
-	font-size: 0.9rem;
-	margin: 0 0 2% 0;
-	padding: 0;
-
-	li {
-		display: inline-block;
-		line-height: 1;
-		a:after {
-			@include font-genericons("\f431", 0.4em, 0.2em, -90);
 		}
 	}
 }
@@ -657,7 +593,7 @@ img.aligncenter {
 }
 
 a:hover img {
-	@include opacity(0.9);
+	@include opacity( 0.9 );
 }
 
 
@@ -783,6 +719,8 @@ video {
 /* Comments
 -------------------------------------------------------------- */
 #comments {
+	border-top: dotted 1px $border-color;
+
 	.navigation {
 		position: relative;
 		height: 1em;
@@ -796,7 +734,7 @@ video {
 			padding-left: 1em;
 
 			&:after {
-				@include font-genericons( "\f054", 0.4em );
+				@include font-awesome( "\f054", 0.4em );
 			}
 		}
 
@@ -807,7 +745,7 @@ video {
 			padding-right: 1em;
 
 			&:before {
-				@include font-genericons( "\f053", 0, 0.4em );
+				@include font-awesome( "\f053", 0, 0.4em );
 			}
 		}
 	}
@@ -823,7 +761,7 @@ video {
 		li.pingback,
 		li.comment {
 			border-top: 1px solid $border-color;
-			padding-top: 1.6em;
+			padding-top: #{$line-height}em;
 			position: relative;
 			list-style: none;
 
@@ -855,8 +793,7 @@ video {
 
 			.comment-meta {
 				font-size: 0.96em;
-				line-height: 1.6;
-				margin-bottom: 1.6em;
+				margin-bottom: #{$line-height}em;
 
 				a {
 					border-bottom: none;
@@ -870,7 +807,7 @@ video {
 			}
 
 			.reply {
-				margin-bottom: 1.6em;
+				margin-bottom: #{$line-height}em;
 
 				a.comment-reply-link {
 					font-style: 0.9em;
@@ -898,10 +835,10 @@ form {
 #commentform {
 	border: 1px dotted $border-color;
 	padding: 10px 15px 0;
-	margin-bottom: 1.6em;
+	max-width: 640px;
 
 	p {
-		margin-bottom: 0.8em;
+		margin-bottom: #{$line-height /2}em;
 	}
 
 	label {
@@ -958,7 +895,7 @@ form {
 
 	.widget {
 		overflow: hidden;
-		margin-bottom: 1.6em;
+		margin-bottom: #{$line-height}em;
 
 		a {
 			text-decoration: none;
@@ -997,7 +934,7 @@ form {
 				text-indent: -0.3em;
 
 				&:before {
-					@include font-genericons("\f431", 0.4em, 0, -90);
+					@include font-awesome( "\f0da", 0, 0.2em );
 				}
 
 				ul {
@@ -1030,12 +967,17 @@ form {
 				font-weight: bold;
 			}
 
+			th,
+			td {
+				border-left: none;
+				border-right: none;
+			}
+
 			tbody {
 				th,
 				td {
 					text-align: center;
-					border-top: 1px solid $border-color;
-					padding: 8px;
+					padding: 5px;
 
 					a {
 						font-weight: bold;
@@ -1051,15 +993,13 @@ form {
 
 			thead {
 				th {
-					padding: 8px;
+					padding: 5px;
 					text-align: center;
 				}
 			}
 
 
 			tfoot {
-				border-top: 1px solid $border-color;
-
 				a {
 					font-size: 1.2em;
 				}
@@ -1069,7 +1009,7 @@ form {
 				}
 
 				td {
-					padding: 8px 0;
+					padding: 5px 0;
 				}
 			}
 		}
@@ -1078,20 +1018,19 @@ form {
 
 /* Footer
 --------------------------------------------- */
-.site-footer {
+#footer {
 	.site-title {
-		padding: 0.8em 0;
-		line-height: 1.4;
+		padding: #{$line-height /2}em 0;
 
 		.generator {
 			&:after {
-				@include font-genericons("\f205", 0.4em, 0);
+				@include font-awesome( "\f19a", 0.4em, 0 );
 			}
 		}
+	}
 
-		strong {
-			font-size: 1.2em;
-		}
+	.copyright {
+		font-family: sans-serif;
 	}
 
 	#back-top {
@@ -1119,7 +1058,7 @@ form {
 			}
 
 			&:before {
-				@include font-genericons( "\f435" );
+				@include font-awesome( "\f0aa" );
 				font-size: 60px;
 				display: block;
 			}
@@ -1129,7 +1068,7 @@ form {
 	.widget-wrapper {
 		background: $accent-color;
 		color: #E5E5E5;
-		padding-top: 0.8em;
+		padding-top: #{$line-height /2}em;
 
 		a {
 			color: #FFF;
@@ -1175,9 +1114,8 @@ form {
 		-webkit-appearance: button;
 
 		&:before {
-			padding-top: 0.1em;
 			font-size: 1.4rem;
-			@include font-genericons("\f400");
+			@include font-awesome( "\f002" );
 		}
 	}
 
@@ -1197,7 +1135,7 @@ form {
 		border-bottom: solid 2px $border-color;
 		text-decoration:none;
 		text-align: center;
-		padding: 0.4em 0.8em;
+		padding: #{$line-height /4}em #{$line-height /2}em;
 		margin-bottom: 5px;
 
 		&.prev,
@@ -1226,11 +1164,11 @@ form {
 	}
 
 	a.page-numbers.prev:before {
-		@include font-genericons("\f432", 0.4em, 0, -90);
+		@include font-awesome( "\f053", 0, 0.4em );
 	}
 
 	a.page-numbers.next:after {
-		@include font-genericons("\f431", 0.4em, 0, -90);
+		@include font-awesome( "\f054", 0.4em, 0 );
 	}
 
 	.current {
@@ -1244,7 +1182,7 @@ form {
 -------------------------------------------------------------------- */
 .page-link {
 	clear: both;
-	margin: 1.6em 0;
+	margin: #{$line-height}em 0;
 	color: $text-color;
 
 	span {
@@ -1253,7 +1191,7 @@ form {
 		border-bottom: solid 2px $link-color;
 		text-decoration:none;
 		text-align: center;
-		padding: 0.4em 0.8em;
+		padding: #{$line-height /4}em #{$line-height /2}em;
 		margin-bottom: 5px;
 	}
 
@@ -1284,7 +1222,7 @@ form {
 	.nav-next {
 		a {
 			&:before {
-				@include font-genericons("\f432", 0.4em, 0, -90);
+				@include font-awesome( "\f053", 0, 0.4em );
 			}
 		}
 	}
@@ -1294,31 +1232,9 @@ form {
 
 		a {
 			&:after {
-				@include font-genericons("\f431", 0.4em, 0, -90);
+				@include font-awesome( "\f054", 0.4em, 0 );
 			}
 		}
-	}
-}
-
-.entry {
-	&.category-snack {
-		border-top: solid 2px #DDB505;
-	}
-
-	&.category-chocolate {
-		border-top: solid 2px #C44816;
-	}
-
-	&.category-cookie {
-		border-top: solid 2px #C392B6;
-	}
-
-	&.category-candy {
-		border-top: solid 2px #88B9CC;
-	}
-
-	&.category-senbei {
-		border-top: solid 2px #C2CB10;
 	}
 }
 
@@ -1341,7 +1257,7 @@ form {
 	}
 
 	.site-content {
-		padding: 1.6em 0;
+		padding: #{$line-height}em 0;
 
 		.container {
 			display: -webkit-flex;
@@ -1360,35 +1276,29 @@ form {
 	}
 
 	.entry {
+		margin-bottom: #{$line-height}em;
+
 		.entry-inner {
-			padding: 1.6em;
+			padding: #{$line-height}em;
 		}
 	}
 
 	.entry-header,
 	.page-header {
-		margin-bottom: 1.6em;
+		margin-bottom: #{$line-height}em;
 	}
 
 	.entry-meta {
-		padding: 0.8em 1.6em;
-	}
-
-	.home {
-		.entry {
-			margin-bottom: 1.6em;
+		&.entry-inner {
+			padding: #{$line-height /2}em #{$line-height}em;
 		}
 	}
 
 	.archive,
 	.search {
 		ul.articles {
-			margin-bottom: 1.6em;
+			margin-bottom: #{$line-height}em;
 		}
-	}
-
-	.bread_crumb {
-			margin-bottom: 1.6em;
 	}
 
 	.nav-links {
@@ -1430,12 +1340,12 @@ form {
 
 					a {
 						border-bottom: none;
-						padding: 0.8em 1.6em 0.8em 0;
+						padding: #{$line-height /2}em #{$line-height}em #{$line-height /2}em 0;
 					}
 
 					&.menu-item-has-children {
 						>a:after {
-							@include font-genericons("\f431", 0.4em, 0);
+							@include font-awesome( "\f107", 0.4em );
 						}
 					}
 
@@ -1447,7 +1357,7 @@ form {
 						position: absolute;
 						top: 2.8em;
 						left: 0;
-						border: solid 1px $accent-color;
+						border: solid 1px $border-color;
 						border-top: none;
 						z-index: 9999;
 
@@ -1458,17 +1368,17 @@ form {
 
 							&.menu-item-has-children {
 								>a:after {
-									@include font-genericons("\f431", 0.4em, 0, -90);
+									@include font-awesome( "\f105", 0.4em, 0 );
 								}
 							}
 
 							a {
-								background-color: $header-background-color;
-								border-top: solid 1px $accent-color;
+								background-color: #FFF;
+								border-top: solid 1px $border-color;
 								height: auto;
 								padding-left: 0.4em;
 								white-space: normal;
-								@include opacity(1);
+								@include opacity( 1 );
 							}
 
 							ul {
@@ -1494,21 +1404,21 @@ form {
 
 	.widget-wrapper {
 		.widget {
-			margin-bottom: 1.6em;
+			margin-bottom: #{$line-height}em;
 		}
 	}
 
-	.site-footer {
+	#footer {
 		.site-title {
-			padding: 1.6em 0;
+			padding: #{$line-height}em 0;
 		}
 
 		.widget-wrapper {
-			padding-top: 1.6em;
+			padding-top: #{$line-height}em;
 
 			.widget {
 				width: 30%;
-				margin: 0 1% 1.6em;
+				margin: 0 1% #{$line-height}em;
 				float: left;
 			}
 		}
