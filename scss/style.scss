@@ -2,13 +2,13 @@
 /*
 Theme Name: birdMagazine
 Theme URI: http://www.sysbird.jp/toriko/
-Description: okc is a responsive web design theme. Feature fullscreen and parallax custom image, and fixed header. The homepage displays with tagged news and the grid posts. You can choose the text color, link color, header background color by theme options.
+Description: BirdMAGAZINE is a flexible two-column blog theme. Features the grid layout by  a jQuery Masonry. and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the text color, link color, header line and footer background color and navigation color.
 Author: Sysbird
-Author URI: http://www.sysbird.jp/wptips/
-Version: 1.0
+Author URI: http://www.sysbird.jp
+Version: 1.03
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: two-column, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: two-columns, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Text Domain: birdmagazine
 
 This theme, like WordPress, is licensed under the GPL.
@@ -62,7 +62,6 @@ a {
 	}
 }
 
-
 * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -109,10 +108,6 @@ body {
 
 			a {
 				display: block;
-
-				&:hover {
-					text-decoration: none;
-				}
 			}
 		}
 
@@ -247,7 +242,7 @@ ul.articles {
 	}
 
 	.comment:before {
-		@include font-awesome( "\f075", 0, 0.2em );
+		@include font-awesome( "\f0e5", 0, 0.2em );
 	}
 
 	.parent-post-link {
@@ -270,10 +265,6 @@ ul.articles {
 .entry-eyecatch {
 	text-align: center;
 	margin-bottom: 2%;
-}
-
-.entry-content a {
-	text-decoration: underline;
 }
 
 .page-links {
@@ -307,8 +298,8 @@ ul.articles {
 .more-link {
 
 	&:after {
-		@include font-awesome( "\f054", 0.4em );
 		text-decoration: none;
+		@include font-awesome( "\f054", 0.4em );
 	}
 }
 
@@ -398,8 +389,13 @@ code {
 	background: #EEE;
 }
 
-code, kbd, pre, samp {
-	font-family: monospace,serif;
+code,
+kbd,
+tt,
+var,
+samp,
+pre {
+	font-family: Inconsolata, monospace;
 }
 
 hr {
@@ -499,6 +495,14 @@ ins {
 	text-decoration: none;
 }
 
+/* Home
+-------------------------------------------------------------------- */
+.home {
+	ul.articles {
+		line-height:  $line-height;
+	}
+}
+
 /* Archive
 -------------------------------------------------------------------- */
 .archive,
@@ -578,24 +582,23 @@ img[class*="wp-image-"] {
 
 .alignleft {
 	float: left;
-	margin-right: 0.75em;
+	margin-right: #{$line-height /2}em;
 }
 
 .alignright {
 	float: right;
-	margin-left: 0.75em;
+	margin-left: #{$line-height /2}em;;
 }
 
 img.alignleft,
 img.alignright,
 img.aligncenter {
-	margin-bottom: 0.75em;
+	margin-bottom: #{$line-height /2}em;
 }
 
 a:hover img {
 	@include opacity( 0.9 );
 }
-
 
 /* Galley
 -------------------------------------------------------------- */
@@ -610,7 +613,13 @@ a:hover img {
 }
 
 .wp-caption {
-	margin-bottom: 0.75em;
+
+	margin-bottom: #{$line-height}em;
+
+	&.alignleft,
+	&.alignright {
+		margin-bottom: #{$line-height /2}em;
+	}
 }
 
 .wp-caption-text {
@@ -722,32 +731,7 @@ video {
 	border-top: dotted 1px $border-color;
 
 	.navigation {
-		position: relative;
-		height: 1em;
-		padding-bottom: 10px;
-		margin-bottom: 1em;
-
-		.nav-previous a {
-			position: absolute;
-			top: 0;
-			right: 0;
-			padding-left: 1em;
-
-			&:after {
-				@include font-awesome( "\f054", 0.4em );
-			}
-		}
-
-		.nav-next a {
-			position: absolute;
-			top: 0;
-			left: 0;
-			padding-right: 1em;
-
-			&:before {
-				@include font-awesome( "\f053", 0, 0.4em );
-			}
-		}
+		margin: #{$line-height}em 0;
 	}
 
 	ol.commentlist {
@@ -769,19 +753,14 @@ video {
 				@include clearfix;
 			}
 
-			a {
-				text-decoration: underline;
+			.comment-meta {
+				font-size: 0.96em;
+				margin-bottom: #{$line-height}em;
 			}
 
 			.comment-author {
 				.fn {
-					display: inline;
 					font-weight: bold;
-					color: #000;
-
-					&:before {
-						content: none;
-					}
 				}
 
 				img {
@@ -791,12 +770,8 @@ video {
 				}
 			}
 
-			.comment-meta {
-				font-size: 0.96em;
-				margin-bottom: #{$line-height}em;
-
+			.comment-metadata{
 				a {
-					border-bottom: none;
 					color: $meta-color;
 				}
 			}
@@ -811,12 +786,17 @@ video {
 
 				a.comment-reply-link {
 					font-style: 0.9em;
-					border: solid 1px $border-color;
-					text-decoration: none;
-					padding: 0.2em 0.4em;
 
-					&:hover {
-						border: solid 1px $link-color;
+					&:before {
+						@include font-awesome( "\f0da",  0, 0.2em );
+					}
+				}
+			}
+
+			&.bypostauthor {
+				.comment-author {
+					.fn {
+						color : $accent-color;
 					}
 				}
 			}
@@ -890,20 +870,11 @@ form {
 /* Widget
 --------------------------------------------- */
 .widget-wrapper {
-
 	@include clearfix;
 
 	.widget {
 		overflow: hidden;
 		margin-bottom: #{$line-height}em;
-
-		a {
-			text-decoration: none;
-
-			&:hover {
-				text-decoration: underline;
-			}
-		}
 
 		.widget_image img {
 			height: auto;
@@ -949,16 +920,11 @@ form {
 			padding-bottom: 0;
 		}
 
-		.textwidget {
-			line-height: 1.4;
-
-			a {
-				text-decoration: underline;
-			}
+		.tagcloud {
+			line-height: 1.2;
 		}
 
 		#wp-calendar {
-			/* Calendar Widget */
 			border-collapse: collapse;
 			border-spacing: 0;
 
@@ -1027,10 +993,6 @@ form {
 				@include font-awesome( "\f19a", 0.4em, 0 );
 			}
 		}
-	}
-
-	.copyright {
-		font-family: sans-serif;
 	}
 
 	#back-top {
@@ -1216,7 +1178,6 @@ form {
 
 	a {
 		display: block;
-		text-decoration: none;
 	}
 
 	.nav-next {
@@ -1267,6 +1228,7 @@ form {
 		.content-area {
 			flex: 40%;
 			margin-bottom: 0;
+			overflow: hidden;
 		}
 
 		.sidebar {
@@ -1400,12 +1362,6 @@ form {
 
 	.container {
 		padding: 0;
-	}
-
-	.widget-wrapper {
-		.widget {
-			margin-bottom: #{$line-height}em;
-		}
 	}
 
 	#footer {

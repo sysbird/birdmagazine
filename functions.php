@@ -9,7 +9,7 @@
 //////////////////////////////////////////
 // Set the content width based on the theme's design and stylesheet.
 if ( ! isset( $content_width ) )
-	$content_width = 629;
+	$content_width = 620;
 
 //////////////////////////////////////////
 // Set Widgets
@@ -240,7 +240,7 @@ add_action( 'wp_enqueue_scripts', 'birdmagazine_scripts' );
 //////////////////////////////////////////////////////
 // Excerpt More
 function birdmagazine_excerpt_more( $more ) {
-	return ' <a href="'. esc_url( get_permalink() ) . '" class="more-link">' . __( '&raquo;more', 'birdmagazine') . '</a>';
+	return ' <a href="'. esc_url( get_permalink() ) . '" class="more-link">' . __( 'more', 'birdmagazine') . '</a>';
 }
 add_filter('excerpt_more', 'birdmagazine_excerpt_more');
 

@@ -20,28 +20,18 @@ if ( post_password_required() ) {
 		?>
 	</h2>
 
-	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-		<div class="navigation top">
-			<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'birdsite' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'birdsite' ) ); ?></div>
-		</div>
-	<?php endif;  ?>
+	<?php the_comments_navigation(); ?>
 
-		<ol class="commentlist">
-		<?php
-			wp_list_comments( array(
-				'style'		=> 'ol',
-				'avatar_size'	=> 40,
-			) );
-		?>
-		</ol>
+	<ol class="commentlist">
+	<?php
+		wp_list_comments( array(
+			'style'		=> 'ol',
+			'avatar_size'	=> 40,
+		) );
+	?>
+	</ol>
 
-	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-		<div class="navigation bottom">
-			<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'birdsite' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'birdsite' ) ); ?></div>
-		</div>
-	<?php endif; ?>
+	<?php the_comments_navigation(); ?>
 
 <?php endif; ?>
 

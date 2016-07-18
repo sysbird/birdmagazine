@@ -17,9 +17,7 @@ The template for displaying the footer.
 			<div class="site-title"><span class="home"><a href="<?php echo esc_url( home_url( '/' ) ) ; ?>"><?php bloginfo( 'name' ); ?></a></span>
 
 				<?php if( get_theme_mod( 'birdmagazine', true ) ): ?>
-					<span class="copyright">
-						<?php printf(__( 'Copyright &copy; %s All Rights Reserved.', 'birdmagazine' ), birdmagazine_get_copyright_year() ); ?>
-					</span>
+					<?php printf(__( 'Copyright &copy; %s All Rights Reserved.', 'birdmagazine' ), birdmagazine_get_copyright_year() ); ?>
 				<?php endif; ?>
 
 				<?php if( get_theme_mod( 'birdmagazine', true ) ): ?>
@@ -29,6 +27,7 @@ The template for displaying the footer.
 				<?php endif; ?>
 			</div>
 		</div>
+		<p id="back-top"><a href="#top"><span><?php _e( 'Go Top', 'birdsite'); ?></span></a></p>
 	</footer>
 
 </div><!-- .wrapper -->
