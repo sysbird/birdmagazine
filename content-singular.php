@@ -16,7 +16,7 @@
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php wp_link_pages( array(
-			'before'		=> '<div class="page-links">' . __( 'Pages:', 'birdfield' ),
+			'before'		=> '<div class="page-link">' . __( 'Pages:', 'birdmagazine' ),
 			'after'			=> '</div>',
 			'link_before'	=> '<span>',
 			'link_after'	=> '</span>'
@@ -24,7 +24,7 @@
 	</div>
 </div><!-- .entry-inner -->
 
-<?php if( is_single() ): // Only Display Excerpts for Single ?>
+<?php if( is_single() ): // Only Display Meta for Single ?>
 	<footer class="entry-meta entry-inner">
 
 		<span class="icon postdate"><time datetime="<?php echo get_the_time('Y-m-d') ?>" pubdate><?php echo get_post_time(get_option('date_format')); ?></time></span><br>

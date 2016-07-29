@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@charset "utf-8";
 /*
 Theme Name: birdMagazine
 Theme URI: http://www.sysbird.jp/toriko/
@@ -57,7 +57,7 @@ q, blockquote {
 a img {
   border: none; }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block; }
 
 /*------------------------------
@@ -69,6 +69,7 @@ Font Awesome
   src: url("font-awesome/fontawesome-webfont.eot?#iefix&v=4.1.0") format("embedded-opentype"), url("font-awesome/fontawesome-webfont.woff?v=4.1.0") format("woff"), url("font-awesome/fontawesome-webfont.ttf?v=4.1.0") format("truetype"), url("font-awesome/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 /* Link
 --------------------------------------------- */
 a {
@@ -103,7 +104,7 @@ body {
 .site-header {
   position: relative;
   color: #2b3876;
-  background: #E5E5E5; }
+  background: #e5e5e5; }
   .site-header a {
     color: #2b3876; }
   .site-header #branding {
@@ -139,7 +140,7 @@ body {
     border-radius: 4px;
     font-size: 1.4rem; }
     #menu-wrapper .menu #small-menu:before {
-      content: "";
+      content: "\f0c9";
       display: inline-block;
       font-family: FontAwesome;
       font-style: normal;
@@ -184,7 +185,7 @@ ul.articles {
 .entry {
   background: #FFF;
   border-radius: 4px;
-  border-bottom: solid 2px #DDD;
+  border-bottom: solid 2px #dddddd;
   word-wrap: break-word;
   margin-bottom: 0.85em;
   overflow: hidden;
@@ -214,12 +215,12 @@ ul.articles {
       color: #222327; }
 
 .entry-meta {
-  border-top: dotted 1px #DDD;
+  border-top: dotted 1px #dddddd;
   font-size: 0.9rem; }
   .entry-meta a {
     color: #222327; }
   .entry-meta .postdate:before {
-    content: "";
+    content: "\f133";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -230,7 +231,7 @@ ul.articles {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   .entry-meta .author:before {
-    content: "";
+    content: "\f007";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -241,7 +242,7 @@ ul.articles {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   .entry-meta .comment:before {
-    content: "";
+    content: "\f0e5";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -252,7 +253,7 @@ ul.articles {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   .entry-meta .parent-post-link a:before {
-    content: "";
+    content: "\f1c5";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -263,7 +264,7 @@ ul.articles {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   .entry-meta .category:before {
-    content: "";
+    content: "\f07b";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -274,7 +275,7 @@ ul.articles {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   .entry-meta .tag:before {
-    content: "";
+    content: "\f02b";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -289,28 +290,9 @@ ul.articles {
   text-align: center;
   margin-bottom: 2%; }
 
-.page-links {
-  clear: both;
-  margin: 1.7em 0;
-  font-weight: bold; }
-  .page-links span {
-    color: #1c4bbe;
-    padding: 0.425em 0.85em;
-    text-decoration: none;
-    text-align: center;
-    border-bottom: solid 2px #1c4bbe;
-    display: inline-block;
-    line-height: 1; }
-  .page-links a span {
-    font-weight: normal;
-    color: #222327;
-    border-bottom: solid 2px #DDD; }
-    .page-links a span:hover {
-      border-color: #1c4bbe; }
-
 .more-link:after {
   text-decoration: none;
-  content: "";
+  content: "\f054";
   display: inline-block;
   font-family: FontAwesome;
   font-style: normal;
@@ -350,20 +332,20 @@ p {
   margin: 0 0 1.7em; }
 
 blockquote {
-  border-left: 4px solid #DDD;
+  border-left: 4px solid #dddddd;
   font-style: italic;
   line-height: 1.4736842105;
   margin: 0 0 1.4736842105em;
   padding: 0 0 0 1.263157895em; }
   blockquote small {
     display: block;
-    color: #999; }
+    color: #999999; }
   blockquote small:before {
     content: '\2014 \00A0'; }
   blockquote cite:before {
     content: "-"; }
   blockquote cite {
-    color: #999;
+    color: #999999;
     display: block; }
 
 table {
@@ -374,7 +356,7 @@ table {
   margin-bottom: 1.7em; }
   table th,
   table td {
-    border: 1px solid #DDD;
+    border: 1px solid #dddddd;
     line-height: 1.4;
     padding: 0.85em;
     text-align: left;
@@ -494,7 +476,7 @@ ins {
   .error404 ul.articles li {
     margin-bottom: 0;
     padding: 0;
-    border-bottom: solid 1px #DDD; }
+    border-bottom: solid 1px #dddddd; }
     .archive ul.articles li a,
     .search ul.articles li a,
     .error404 ul.articles li a {
@@ -567,7 +549,7 @@ a:hover img {
   display: block;
   font-size: 0.9em;
   line-height: 1.2;
-  color: #999;
+  color: #999999;
   max-width: 100%;
   text-align: center; }
 
@@ -657,7 +639,7 @@ video {
 /* Comments
 -------------------------------------------------------------- */
 #comments {
-  border-top: dotted 1px #DDD; }
+  border-top: dotted 1px #dddddd; }
   #comments .navigation {
     margin: 1.7em 0; }
   #comments ol.commentlist {
@@ -667,7 +649,7 @@ video {
       margin-left: 4%; }
     #comments ol.commentlist li.pingback,
     #comments ol.commentlist li.comment {
-      border-top: 1px solid #DDD;
+      border-top: 1px solid #dddddd;
       padding-top: 1.7em;
       position: relative;
       list-style: none; }
@@ -689,11 +671,11 @@ video {
         float: left; }
       #comments ol.commentlist li.pingback .comment-metadata a,
       #comments ol.commentlist li.comment .comment-metadata a {
-        color: #999; }
+        color: #999999; }
       #comments ol.commentlist li.pingback .comment-awaiting-moderation,
       #comments ol.commentlist li.comment .comment-awaiting-moderation {
         font-size: 0.9em;
-        color: #999; }
+        color: #999999; }
       #comments ol.commentlist li.pingback .reply,
       #comments ol.commentlist li.comment .reply {
         margin-bottom: 1.7em; }
@@ -702,7 +684,7 @@ video {
           font-style: 0.9em; }
           #comments ol.commentlist li.pingback .reply a.comment-reply-link:before,
           #comments ol.commentlist li.comment .reply a.comment-reply-link:before {
-            content: "";
+            content: "\f0da";
             display: inline-block;
             font-family: FontAwesome;
             font-style: normal;
@@ -722,7 +704,7 @@ form input {
   font-size: 100%; }
 
 #commentform {
-  border: 1px dotted #DDD;
+  border: 1px dotted #dddddd;
   padding: 10px 15px 0;
   max-width: 640px; }
   #commentform p {
@@ -735,13 +717,13 @@ form input {
     max-width: 300px;
     padding: 5px;
     background: #FFF;
-    border: solid 1px #DDD; }
+    border: solid 1px #dddddd; }
   #commentform textarea {
     width: 100%;
     height: 100px;
     padding: 5px;
     background: #FFF;
-    border: solid 1px #DDD; }
+    border: solid 1px #dddddd; }
   #commentform input#submit {
     padding: 5px 10px; }
   #commentform #email-notes {
@@ -754,7 +736,7 @@ form input {
 .post-password-form input:not([type="submit"]) {
   padding: 5px;
   background: #FFF;
-  border: solid 1px #DDD; }
+  border: solid 1px #dddddd; }
 
 /* Widget
 --------------------------------------------- */
@@ -772,7 +754,7 @@ form input {
       font-weight: normal;
       margin: 0 0 0.4em 0;
       padding: 0 0 0.4em 0;
-      border-bottom: solid 2px #DDD;
+      border-bottom: solid 2px #dddddd;
       border-left: none;
       font-size: 1.4rem; }
     .widget-wrapper .widget ul {
@@ -782,11 +764,11 @@ form input {
       overflow: hidden; }
       .widget-wrapper .widget ul li {
         margin-top: -1px;
-        border-top: dotted 1px #DDD;
+        border-top: dotted 1px #dddddd;
         padding: 0.3em 0 0.3em 0.6em;
         text-indent: -0.3em; }
         .widget-wrapper .widget ul li:before {
-          content: "";
+          content: "\f0da";
           display: inline-block;
           font-family: FontAwesome;
           font-style: normal;
@@ -842,7 +824,7 @@ form input {
 #footer .site-title {
   padding: 0.85em 0; }
   #footer .site-title .generator:after {
-    content: "";
+    content: "\f19a";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -858,7 +840,7 @@ form input {
   right: 10px;
   z-index: 3; }
   #footer #back-top a {
-    color: #DDD;
+    color: #dddddd;
     display: block;
     height: 60px;
     width: 60px;
@@ -869,14 +851,13 @@ form input {
       text-indent: -119988px;
       overflow: hidden;
       text-align: left;
-      text-transform: capitalize;
       display: block; }
     #footer #back-top a:hover {
       text-decoration: none;
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
       opacity: 0.8; }
     #footer #back-top a:before {
-      content: "";
+      content: "\f0aa";
       display: inline-block;
       font-family: FontAwesome;
       font-style: normal;
@@ -912,7 +893,7 @@ form input {
     height: 30px;
     line-height: 1;
     border-radius: 4px 0 0 4px;
-    border: solid 1px #DDD; }
+    border: solid 1px #dddddd; }
   #searchform #searchsubmit {
     position: absolute;
     top: 0;
@@ -928,7 +909,7 @@ form input {
     -webkit-appearance: button; }
     #searchform #searchsubmit:before {
       font-size: 1.4rem;
-      content: "";
+      content: "\f002";
       display: inline-block;
       font-family: FontAwesome;
       font-style: normal;
@@ -950,7 +931,7 @@ form input {
   .pagination .current {
     display: inline-block;
     color: #222327;
-    border-bottom: solid 2px #DDD;
+    border-bottom: solid 2px #dddddd;
     text-decoration: none;
     text-align: center;
     padding: 0.425em 0.85em;
@@ -974,7 +955,7 @@ form input {
     color: #1c4bbe;
     border-bottom: solid 2px #1c4bbe; }
   .pagination a.page-numbers.prev:before {
-    content: "";
+    content: "\f053";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -985,7 +966,7 @@ form input {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   .pagination a.page-numbers.next:after {
-    content: "";
+    content: "\f054";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -1017,7 +998,7 @@ form input {
   .page-link a span {
     color: #222327;
     background: #FFF;
-    border-color: #DDD; }
+    border-color: #dddddd; }
     .page-link a span:hover {
       border-color: #1c4bbe; }
 
@@ -1030,7 +1011,7 @@ form input {
   .nav-links a {
     display: block; }
   .nav-links .nav-next a:before {
-    content: "";
+    content: "\f053";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -1043,7 +1024,7 @@ form input {
   .nav-links .nav-previous {
     text-align: right; }
     .nav-links .nav-previous a:after {
-      content: "";
+      content: "\f054";
       display: inline-block;
       font-family: FontAwesome;
       font-style: normal;
@@ -1121,7 +1102,7 @@ form input {
           border-bottom: none;
           padding: 0.85em 1.7em 0.85em 0; }
         #menu-wrapper .menu ul#menu-primary-items li.menu-item-has-children > a:after {
-          content: "";
+          content: "\f107";
           display: inline-block;
           font-family: FontAwesome;
           font-style: normal;
@@ -1140,7 +1121,7 @@ form input {
           position: absolute;
           top: 2.8em;
           left: 0;
-          border: solid 1px #DDD;
+          border: solid 1px #dddddd;
           border-top: none;
           z-index: 9999; }
           #menu-wrapper .menu ul#menu-primary-items li ul li {
@@ -1148,7 +1129,7 @@ form input {
             margin: 0;
             padding: 0; }
             #menu-wrapper .menu ul#menu-primary-items li ul li.menu-item-has-children > a:after {
-              content: "";
+              content: "\f105";
               display: inline-block;
               font-family: FontAwesome;
               font-style: normal;
@@ -1160,11 +1141,11 @@ form input {
               -moz-osx-font-smoothing: grayscale; }
             #menu-wrapper .menu ul#menu-primary-items li ul li a {
               background-color: #FFF;
-              border-top: solid 1px #DDD;
+              border-top: solid 1px #dddddd;
               height: auto;
               padding-left: 0.4em;
               white-space: normal;
-              filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+              filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
               opacity: 1; }
             #menu-wrapper .menu ul#menu-primary-items li ul li ul {
               top: 0;

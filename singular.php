@@ -21,7 +21,7 @@ get_header(); ?>
 
 	<?php endwhile; ?>
 
-	<?php if( is_single() ): // Only Display Excerpts for Single ?>
+	<?php if( is_single() ): // Only Display Navigatio for Single ?>
 		<?php the_post_navigation(); ?>
 	<?php endif; ?>
 

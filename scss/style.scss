@@ -267,34 +267,6 @@ ul.articles {
 	margin-bottom: 2%;
 }
 
-.page-links {
-	clear: both;
-	margin: #{$line-height}em 0;
-	font-weight: bold;
-
-	span {
-		color: $link-color;
-		 padding: #{$line-height /4}em #{$line-height /2}em;
-		text-decoration:none;
-		text-align: center;
-		border-bottom: solid 2px $link-color;
-		display: inline-block;
-		line-height: 1;
-	}
-
-	a {
-		span {
-			font-weight: normal;
-			color: $text-color;
-			border-bottom: solid 2px $border-color;
-
-			&:hover {
-				border-color: $link-color;
-			}
-		}
-	}
-}
-
 .more-link {
 
 	&:after {

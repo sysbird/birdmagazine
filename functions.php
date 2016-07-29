@@ -41,88 +41,20 @@ add_action( 'widgets_init', 'birdmagazine_widgets_init' );
 // Header Style
 function birdmagazine_header_style() {
 
-return;
-
 ?>
-
 <style type="text/css">
 
 <?php
-	//Theme Option
-	$header_color = get_theme_mod( 'birdmagazine_header_color', '#5EC1D6');
-	$navigation_color = get_theme_mod( 'birdmagazine_navigation_color', '#999');
-	$link_color = get_theme_mod( 'birdmagazine_link_color', '#06A');
-	$text_color = get_theme_mod( 'birdmagazine_text_color', '#544021');
-
-	if ( 'blank' != get_header_textcolor() ) { ?>
-		#header h1 a,
-		#header #site-title a,
-		#header p {
+	if ( display_header_text() ) { ?>
+		.site-header,
+		.site-header a {
 			color: #<?php header_textcolor();?>;
-			}
-	<?php } ?>
-
-	#wrapper,
-	#content .hentry .entry-header .entry-title,
-	#content .hentry .entry-header .entry-title a,
-	.archive #content ul li a, .search #content ul li a,
-	.error404 #content ul li a,
-	.widget ul li a,
-	.widget #wp-calendar th, .widget #wp-calendar td {
-		color: <?php echo $text_color; ?>;
-	}
-
-	a,
-	#content .hentry .page-link,
-	#content .hentry .page-link a,
-	#content .tablenav,
-	#content .tablenav a.page-numbers,
-	.widget #wp-calendar th a, .widget #wp-calendar td a {
-		color: <?php echo $link_color; ?>;
-	}
-
-	#content .hentry .page-link a,
-	#content .tablenav a.page-numbers,
-	#content .tablenav .current {
-		border-color: <?php echo $link_color; ?>;
-	}
-
-	#content .tablenav .current {
-		background-color: <?php echo $link_color; ?>;
-	}
-
-	#wrapper,
-	#sidebar .widget h3,
-	#sidebar .widget #searchform #s {
-		border-color: <?php echo $header_color; ?>;
-	}
-
-	#sidebar .widget #searchform #searchsubmit,
-	#footer {
-		background-color: <?php echo $header_color; ?>;
-	}
-
-	#menu-wrapper .menu,
-	#menu-wrapper .menu ul li a,
-	#menu-wrapper .menu ul li ul,
-	#menu-wrapper .menu ul li ul li a,
-	#menu-wrapper .menu ul li a {
-	    color: <?php echo $navigation_color; ?>;
-		border-color: <?php echo $navigation_color; ?>;
-	}
-
-	@media screen and (max-width: 650px) {
-		#menu-wrapper .menu ul#menu-primary-items,
-		#menu-wrapper .menu ul#menu-primary-items li a,
-		#menu-wrapper .menu #small-menu {
-			border-color: <?php echo $navigation_color; ?>;
 		}
-	}
+	<?php }
+?>
 
 </style>
-
 <?php
-
 }
 
 //////////////////////////////////////////////////////
@@ -174,7 +106,7 @@ function birdmagazine_setup() {
 		'width'					=> apply_filters( 'birdmagazine_header_image_width', 960 ),
 		'height'				=> apply_filters( 'birdmagazine_header_image_height', 200 ),
 		'default-image'			=> '%s/images/headers/euphorbia.jpg',
-		'default-text-color'	=> 'aa3300',
+		'default-text-color'	=> '#222327',
 		'wp-head-callback'		=> 'birdmagazine_header_style',
 	);
 
@@ -219,8 +151,8 @@ add_action( 'after_setup_theme', 'birdmagazine_setup' );
 // Enqueue Acripts
 function birdmagazine_scripts() {
 
-	wp_enqueue_script( 'birdsite-html5', get_template_directory_uri() . '/js/html5shiv.js', array(), '3.7.2' );
-	wp_script_add_data( 'birdsite-html5', 'conditional', 'lt IE 9' );
+	wp_enqueue_script( 'birdmagazine-html5', get_template_directory_uri() . '/js/html5shiv.js', array(), '3.7.2' );
+	wp_script_add_data( 'birdmagazine-html5', 'conditional', 'lt IE 9' );
 
 	if ( is_singular() && comments_open() && get_option('thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -232,7 +164,7 @@ function birdmagazine_scripts() {
 	wp_enqueue_style( 'birdmagazine', get_stylesheet_uri() );
 
 	if ( strtoupper( get_locale() ) == 'JA' ) {
-		wp_enqueue_style( 'birdfield_ja', get_template_directory_uri().'/css/ja.css' );
+		wp_enqueue_style( 'birdmagazine_ja', get_template_directory_uri().'/css/ja.css' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'birdmagazine_scripts' );
@@ -249,7 +181,7 @@ add_filter('excerpt_more', 'birdmagazine_excerpt_more');
 function birdmagazine_customize( $wp_customize ) {
 	// Text Color
 	$wp_customize->add_setting( 'birdmagazine_text_color', array(
-		'default'		=> '#544021',
+		'default'		=> '#222327',
 		'sanitize_callback'	=> 'maybe_hash_hex_color',
 	) );
 
@@ -341,12 +273,70 @@ function birdmagazine_sanitize_checkbox( $input ) {
 }
 
 //////////////////////////////////////////////////////
+// Enqueues front-end CSS for the text color.
+function birdmagazine_text_color_css() {
+
+	$birdmagazine_color = get_theme_mod( 'birdmagazine_text_color', '#222327' );
+
+	// Don't do anything if the current color is the default.
+	if ( $birdmagazine_color === '#222327' ) {
+		return;
+	}
+
+	$birdmagazine_css = "
+		/* Custom Text Color */
+		body,
+		.entry-header .entry-title,
+		.entry-header .entry-title a,
+		.page-header .page-title,
+		.page-header .page-title a,
+		.entry-meta a,
+		.archive ul.articles li a,
+		.search ul.articles li a,
+		.error404 ul.articles li a,
+		.pagination .page-numbers,
+		.pagination .page-numbers.prev,
+		.pagination .page-numbers.next,
+		.page-link,
+		.page-link a span {
+			color: {$birdmagazine_color};
+		}
+
+		hr {
+			background-color: {$birdmagazine_color};
+		}
+	";
+
+	wp_add_inline_style( 'birdmagazine', $birdmagazine_css );
+}
+add_action( 'wp_enqueue_scripts', 'birdmagazine_text_color_css', 11 );
+
+//////////////////////////////////////////////////////
+// Enqueues front-end CSS for the link color.
+function birdmagazine_link_color_css() {
+
+	$birdmagazine_color = get_theme_mod( 'birdmagazine_link_color', '#06A' );
+
+	// Don't do anything if the current color is the default.
+	if ( $birdmagazine_color === '#06A' ) {
+		return;
+	}
+
+	$birdmagazine_css = "
+		/* Custom Link Color */
+	";
+
+	wp_add_inline_style( 'birdmagazine', $birdmagazine_css );
+}
+add_action( 'wp_enqueue_scripts', 'birdmagazine_link_color_css', 11 );
+
+//////////////////////////////////////////////////////
 // Copyright Year
 function birdmagazine_get_copyright_year() {
 
-	$birdsite_copyright_year = date( "Y" );
+	$birdmagazine_copyright_year = date( "Y" );
 
-	$birdsite_first_year = $birdsite_copyright_year;
+	$birdmagazine_first_year = $birdmagazine_copyright_year;
 	$args = array(
 		'numberposts'	=> 1,
 		'orderby'		=> 'post_date',
@@ -355,14 +345,14 @@ function birdmagazine_get_copyright_year() {
 	$posts = get_posts( $args );
 
 	foreach ( $posts as $post ) {
-		$birdsite_first_year = mysql2date( 'Y', $post->post_date, true );
+		$birdmagazine_first_year = mysql2date( 'Y', $post->post_date, true );
 	}
 
-	if( $birdsite_copyright_year <> $birdsite_first_year ){
-		$birdsite_copyright_year = $birdsite_first_year .' - ' .$birdsite_copyright_year;
+	if( $birdmagazine_copyright_year <> $birdmagazine_first_year ){
+		$birdmagazine_copyright_year = $birdmagazine_first_year .' - ' .$birdmagazine_copyright_year;
 	}
 
-	return $birdsite_copyright_year;
+	return $birdmagazine_copyright_year;
 }
 
 //////////////////////////////////////////////////////

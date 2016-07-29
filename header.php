@@ -21,7 +21,7 @@
 <?php
 	// The header text
 	$birdmagazine_header_text = '';
-	if ( 'blank' == get_header_textcolor() ) {
+	if ( !display_header_text() ) {
 		$birdmagazine_header_text .= 'no-header-text';
 	}
 ?>

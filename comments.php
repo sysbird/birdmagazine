@@ -15,7 +15,7 @@ if ( post_password_required() ) {
 <?php if ( have_comments() ) : ?>
 	<h2>
 		<?php
-		printf( _n( 'One Comment', '%1$s Comments', get_comments_number(), 'birdsite' ),
+		printf( _n( 'One Comment', '%1$s Comments', get_comments_number(), 'birdmagazine' ),
 		number_format_i18n( get_comments_number() ));
 		?>
 	</h2>
