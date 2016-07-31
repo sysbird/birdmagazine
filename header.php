@@ -24,6 +24,11 @@
 	if ( !display_header_text() ) {
 		$birdmagazine_header_text .= 'no-header-text';
 	}
+
+	$birdmagazine_layout = get_theme_mod( 'birdmagazine_layout', 'normal' );
+	if( !($birdmagazine_layout  === 'normal' )){
+		$birdmagazine_header_text .= ' ' .$birdmagazine_layout;
+	}
 ?>
 
 <body <?php body_class( $birdmagazine_header_text ); ?>>

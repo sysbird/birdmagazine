@@ -20,12 +20,11 @@ This theme, like WordPress, is licensed under the GPL.
 // variable
 $background-color: #f4f4f4;
 $header-background-color: #E5E5E5;
-$text-color: #222327;
+$header-text-color: #aa3300;
+$text-color: #333333;
 $link-color: #1c4bbe;
-$hover-background-color: #f4f4f4;
 $border-color: #DDD;
-$meta-color: #999;
-$accent-color: #2b3876;
+$meta-color: #999999;
 $line-height: 1.7;
 
 /*------------------------------
@@ -70,8 +69,8 @@ a {
 	box-sizing: border-box;
 }
 
-/* Body
--------------------------------------------------------------- */
+/* Structure
+--------------------------------------------- */
 body {
 	font-family: "Hiragino Maru Gothic W4 JIS2004", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	line-height: $line-height;
@@ -82,18 +81,21 @@ body {
 }
 
 .container {
-	padding: 0 2%;
+	width: 96%;
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
 }
 
 /* Header
 -------------------------------------------------------------- */
 .site-header {
 	position: relative;
-	color: $accent-color;
+	color: $header-text-color;
 	background: $header-background-color;
 
 	a {
-		color: $accent-color;
+		color: $header-text-color;
 	}
 
 	#branding {
@@ -135,7 +137,7 @@ body {
 			display: block;
 			padding: 5px;
 			font-size: 1rem;
-			background: $accent-color;
+			background: $header-text-color;
 			color: #FFF;
 			border-radius: 4px;
 			font-size: 1.4rem;
@@ -156,10 +158,10 @@ body {
 				a {
 					padding: 0.4em 0;
 					display: block;
-					color: $accent-color;
+					color: $header-text-color;
 					text-decoration: none;
 					line-height: 1.2;
-					border-bottom: dotted 1px $accent-color;
+					border-bottom: dotted 1px $header-text-color;
 				}
 
 				ul {
@@ -279,10 +281,6 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0.7em 0;
 	line-height: 1.2;
 	font-weight: normal;
-
-	a {
-		color: $accent-color;
-	}
 }
 
 h1 {font-size:2.4rem;}
@@ -473,6 +471,14 @@ ins {
 	ul.articles {
 		line-height:  $line-height;
 	}
+
+	&.masonry {
+		ul.articles {
+			.entry {
+				width: 100%;
+			}
+		}
+	}
 }
 
 /* Archive
@@ -585,7 +591,6 @@ a:hover img {
 }
 
 .wp-caption {
-
 	margin-bottom: #{$line-height}em;
 
 	&.alignleft,
@@ -649,7 +654,7 @@ a:hover img {
 		max-width: 12.5%;
 	}
 
-	&.gallery--9 .gallery-item {
+	&.gallery-columns-9 .gallery-item {
 		max-width: 11.11%;
 	}
 }
@@ -768,7 +773,10 @@ video {
 			&.bypostauthor {
 				.comment-author {
 					.fn {
-						color : $accent-color;
+						background : $text-color;
+						color : #FFF;
+						padding: 2px 5px;
+						border-radius: 4px;
 					}
 				}
 			}
@@ -871,7 +879,7 @@ form {
 			overflow: hidden;
 
 			li {
-				margin-top: -1px;
+				margin-top: -2px;
 				border-top: dotted 1px $border-color;
 				padding: 0.3em 0 0.3em 0.6em;
 				text-indent: -0.3em;
@@ -919,12 +927,6 @@ form {
 
 					a {
 						font-weight: bold;
-						display: block;
-						padding: 2px 0;
-						margin: 0 auto;
-						background: #FFF;
-						color: $accent-color;
-						border-radius: 2px;
 					}
 				}
 			}
@@ -1000,12 +1002,33 @@ form {
 	}
 
 	.widget-wrapper {
-		background: $accent-color;
+		background: $header-text-color;
 		color: #E5E5E5;
 		padding-top: #{$line-height /2}em;
+		@include clearfix;
 
 		a {
 			color: #FFF;
+		}
+
+		.widget {
+			width: 100%;
+
+			#wp-calendar  {
+				tbody {
+					th,
+					td {
+						a {
+							background: #FFF;
+							color: $header-text-color;
+							display: block;
+							padding: 2px 0;
+							margin: 0 auto;
+							border-radius: 2px;
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -1059,11 +1082,10 @@ form {
 -------------------------------------------------------------------- */
 .pagination {
 	clear: both;
-	color: $link-color;
 	@include clearfix;
 
-	.page-numbers,
-	.current {
+	a,
+	span {
 		display: inline-block;
 		color: $text-color;
 		border-bottom: solid 2px $border-color;
@@ -1074,7 +1096,6 @@ form {
 
 		&.prev,
 		&.next {
-			color: $text-color;
 			font-weight: bold;
 			border: none;
 			padding: 0.4em 0;
@@ -1086,15 +1107,16 @@ form {
 		}
 	}
 
-	a.page-numbers:hover {
+	a:hover {
+		color: $link-color;
 		border-color: $link-color;
+		@include opacity(1);
 	}
 
-	a.page-numbers.prev:hover,
-	a.page-numbers.next:hover {
-		background: none;
+	span.current {
 		color: $link-color;
-		border-bottom: solid 2px $link-color;
+		border-color: $link-color;
+		font-weight: bold;
 	}
 
 	a.page-numbers.prev:before {
@@ -1103,12 +1125,6 @@ form {
 
 	a.page-numbers.next:after {
 		@include font-awesome( "\f054", 0.4em, 0 );
-	}
-
-	.current {
-		color: $link-color;
-		border-color: $link-color;
-		font-weight: bold;
 	}
 }
 
@@ -1137,6 +1153,7 @@ form {
 
 			&:hover {
 				border-color: $link-color;
+				@include opacity(1);
 			}
 		}
 	}
@@ -1149,7 +1166,7 @@ form {
 	@include clearfix;
 
 	a {
-		display: block;
+		display: inline-block;
 	}
 
 	.nav-next {
@@ -1175,11 +1192,6 @@ form {
 --------------------------------------------- */
 /* --- iPad Landscape --- */
 @media screen and (min-width: 660px) {
-
-	.container {
-		max-width: 1000px;
-		margin: 0 auto;
-	}
 
 	.site-header {
 		#branding {
@@ -1225,6 +1237,21 @@ form {
 	.entry-meta {
 		&.entry-inner {
 			padding: #{$line-height /2}em #{$line-height}em;
+		}
+	}
+
+	.home {
+		&.masonry {
+			ul.articles {
+				margin-left: -2%;
+				@include clearfix;
+
+				.entry {
+					width: 48%;
+					margin-left: 2%;
+					margin-bottom: 2%;
+				}
+			}
 		}
 	}
 
@@ -1333,7 +1360,7 @@ form {
 @media screen and (min-width: 1000px) {
 
 	.container {
-		padding: 0;
+		width: 1000px;
 	}
 
 	#footer {
