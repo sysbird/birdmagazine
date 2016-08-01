@@ -7,7 +7,7 @@
  * @since birdMAGAZINE 1.0
  */
 ?>
-<aside id="secondary" class="sidebar">
+<aside id="sidebar">
 	<div class="widget-wrapper">
 
 		<?php if ( ! dynamic_sidebar( 'widget-area' ) ) : ?>

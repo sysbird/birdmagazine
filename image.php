@@ -8,66 +8,53 @@
  */
 get_header(); ?>
 
-<?php get_header(); ?>
+<div id="main">
 
-<div id="primary" class="content-area">
-
-	<?php while ( have_posts() ) : the_post(); ?>
+	<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
+
 			<div class="entry-inner">
-			<header class="entry-header">
-				<h1 class="entry-title"><?php the_title(); ?></h1>
-				<time class="postdate" datetime="<?php echo get_the_time('Y-m-d') ?>" pubdate><?php echo get_post_time(get_option('date_format')); ?></time>
-			</header>
+				<header class="entry-header">
+					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+					<?php if ( has_excerpt() ) : ?>
+						<?php the_excerpt(); ?>
+					<?php endif; ?>
+				</header><!-- .entry-header -->
 
-			<div class="entry-content">
+				<div class="entry-content">
+					<div class="entry-attachment">
+						<?php
+							$image_size = apply_filters( 'twentysixteen_attachment_size', 'large' );
+							echo wp_get_attachment_image( get_the_ID(), $image_size );
+						?>
+					</div>
 
-				<div class="entry-attachment">
-					<div class="attachment">
-<?php
-$attachments = array_values( get_children( array( 'post_parent' => $post->post_parent, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID' ) ) );
-foreach ( $attachments as $k => $attachment ) {
-if ( $attachment->ID == $post->ID )
-	break;
-}
-$k++;
+					<?php the_content(); ?>
 
-if ( count( $attachments ) > 1 ) {
-if ( isset( $attachments[ $k ] ) )
-	$next_attachment_url = get_attachment_link( $attachments[ $k ]->ID );
-else
-	$next_attachment_url = get_attachment_link( $attachments[ 0 ]->ID );
-} else {
-	$next_attachment_url = wp_get_attachment_url();
-}
-?>
-						<a href="<?php echo esc_url( $next_attachment_url ); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php
-						$attachment_size = apply_filters( 'birdmagazine_attachment_size', 848 );
-						echo wp_get_attachment_image( $post->ID, array( $attachment_size, 960 ) );
-						?></a>
-
-						<?php if ( ! empty( $post->post_excerpt ) ) : ?>
-						<div class="wp-caption">
-							<?php the_excerpt(); ?>
-						</div>
-						<?php endif; ?>
+					<div class="nav-links">
+						<div class="nav-previous"><?php next_image_link( false, __( 'Next Image' , 'birdmagazine' )); ?></div>
+						<div class="nav-next"><?php previous_image_link( false, __( 'Previous Image' , 'birdmagazine' ) ); ?></div>
 					</div>
 				</div>
-
-				<?php the_content(); ?>
-				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'birdmagazine' ), 'after' => '</div>' ) ); ?>
 			</div>
 
-			<nav id="nav-below">
-				<span class="nav-previous"><?php next_image_link( false, __( 'Next Image' , 'birdmagazine' )); ?></span>
-				<span class="nav-next"><?php previous_image_link( false, __( 'Previous Image' , 'birdmagazine' ) ); ?></span>
-			</nav>
-			<?php comments_template(); ?>
+			<footer class="entry-meta entry-inner">
 
-			</div>
+				<span class="icon postdate"><time datetime="<?php echo get_the_time('Y-m-d') ?>" pubdate><?php echo get_post_time(get_option('date_format')); ?></time></span><br>
+
+				<div class="icon parent-post-link"><a href="<?php echo get_permalink( $post->post_parent ); ?>"><?php echo get_the_title( $post->post_parent ); ?></a></div>
+
+			</footer>
+
+			<?php if ( comments_open() || get_comments_number() ) {
+					comments_template();
+				} ?>
 		</article>
-	<?php endwhile; // end of the loop. ?>
-</div><!-- .content-area -->
 
+	<?php endwhile;	?>
+
+</div><!-- #main -->
+
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -8,7 +8,7 @@
  */
 get_header(); ?>
 
-<div id="primary" class="content-area">
+<div id="main">
 	<div class="entry">
 		<div class="entry-inner">
 			<?php if (have_posts()) : ?>
@@ -36,7 +36,7 @@ get_header(); ?>
 
 	<?php the_posts_pagination( array( 'mid_size' => 3 ) ); ?>
 
-</div><!-- .content-area -->
+</div><!-- #main -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

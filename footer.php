@@ -1,7 +1,11 @@
 <?php
-/*
-The template for displaying the footer.
-*/
+/**
+ * The template for displaying the footer
+ *
+ * @package WordPress
+ * @subpackage BirdMAGAZINE
+ * @since BirdMAGAZINE 1.0
+ */
 ?>
 		</div>
 	</div><!-- .site-content -->

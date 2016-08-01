@@ -7,7 +7,7 @@ yellow, two-columns, right-sidebar, flexible-width, custom-background, custom-co
 
 
 === Features ===
-Responsive Layout, Theme Customize, Page Navigation
+Responsive Layout, Theme Customize, Page Navigation, Grid Layout
 
 
 === Widgets Areas ===
@@ -16,15 +16,30 @@ You can use these area to customize the content of your website.
 
 
 == License ==
-Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License version 2, see file license.txt.
-The exceptions to this license are as follows:
-The script html5.js and css3-mediaqueries.js are released under the  MIT License.
-The iconfont Genericons is released under the GPL license..
-Header Images are photo by theme author and are released under the GPL license.
+BirdMAGAZINE WordPress theme, Copyright (C) 2013 Sysbird
+The theme is licensed under the GPL.
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+The header image is created by theme author and is released under GPL license.
+
+
+== Third-party Resources ==
+html5shiv.js
+License: MIT/GPL2 Licensed
+Source:  https://github.com/aFarkas/html5shiv
+
+jquery.tile.js
+License: Dual licensed under the MIT and GPL licenses
+Source:  https://github.com/urin/jquery.tile.js
+
+Font Awesome
+License: SIL Open Font License, 1.1/MIT License
+Source:  http://fortawesome.github.io/Font-Awesome/
 
 
 == Author ==
 The theme built by TORIYAMA Yuko at Sysbird.
+http://www.sysbird.jp
 You can contact me at inquiry form.
 http://www.sysbird.jp/wptips/contact/
 

@@ -7,7 +7,7 @@
  * @since BirdMAGAZINE 1.0
  */
 get_header(); ?>
-<div id="primary" class="content-area">
+<div id="main">
 
 	<ul class="articles">
 		<?php while ( have_posts() ) : the_post(); ?>
