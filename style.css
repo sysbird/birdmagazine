@@ -1,7 +1,7 @@
 @charset "utf-8";
 /*
 Theme Name: birdMagazine
-Theme URI: http://www.sysbird.jp/toriko/
+Theme URI: http://www.sysbird.jp/theme/birdmagazine/
 Description: BirdMAGAZINE is a flexible two-column blog theme. Features the grid layout by a jQuery Masonry. and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the text color, link color, header color and home layout.
 Author: Sysbird
 Author URI: http://www.sysbird.jp
@@ -73,12 +73,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* Elements
 --------------------------------------------- */
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box; }
+html {
+  background: #aa3300;
+  color: #e5e5e5; }
+  html * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box; }
 
 body {
   font-family: "Hiragino Maru Gothic W4 JIS2004", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -98,8 +101,7 @@ a {
   color: #1c4bbe;
   text-decoration: none; }
   a:hover {
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
-    opacity: 0.8; }
+    text-decoration: underline; }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0.7em 0;
@@ -262,7 +264,6 @@ form input {
   font-size: 100%; }
 
 #commentform {
-  border: 1px dotted #dddddd;
   padding: 10px 15px 0;
   max-width: 640px; }
   #commentform p {
@@ -324,7 +325,7 @@ form input {
     height: 30px;
     border-radius: 0 4px 4px 0;
     margin: 0;
-    background: #CCC;
+    background: #dddddd;
     color: #FFF;
     -webkit-appearance: button; }
     #searchform #searchsubmit:before {
@@ -384,7 +385,6 @@ form input {
     display: inline-block;
     color: #333333;
     border-bottom: solid 2px #dddddd;
-    text-decoration: none;
     text-align: center;
     padding: 0.425em 0.85em;
     margin-bottom: 5px; }
@@ -401,8 +401,7 @@ form input {
   .pagination a:hover {
     color: #1c4bbe;
     border-color: #1c4bbe;
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-    opacity: 1; }
+    text-decoration: none; }
   .pagination span.current {
     color: #1c4bbe;
     border-color: #1c4bbe;
@@ -449,9 +448,7 @@ form input {
     background: #FFF;
     border-color: #dddddd; }
     .page-link a span:hover {
-      border-color: #1c4bbe;
-      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-      opacity: 1; }
+      border-color: #1c4bbe; }
 
 /* Menu
 -------------------------------------------------------------- */
@@ -717,6 +714,11 @@ video {
   position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px); }
 
+/* Content
+--------------------------------------------- */
+#content {
+  padding: 2% 0; }
+
 /* Posts
 --------------------------------------------- */
 ul.articles {
@@ -730,12 +732,9 @@ ul.articles {
   border-bottom: solid 2px #dddddd;
   word-wrap: break-word;
   margin-bottom: 0.85em;
+  padding: 2%;
   overflow: hidden;
   *zoom: 1; }
-  .entry .entry-inner {
-    padding: 2%;
-    overflow: hidden;
-    *zoom: 1; }
 
 .entry-header,
 .page-header {
@@ -758,7 +757,11 @@ ul.articles {
 
 .entry-meta {
   border-top: dotted 1px #dddddd;
-  font-size: 0.9rem; }
+  font-size: 0.9rem;
+  padding: 2%;
+  margin: 0 -2%; }
+  .entry-meta.has-comments {
+    border-bottom: dotted 1px #dddddd; }
   .entry-meta a {
     color: #333333; }
   .entry-meta .postdate:before {
@@ -830,7 +833,7 @@ ul.articles {
 
 .entry-eyecatch {
   text-align: center;
-  margin-bottom: 2%; }
+  margin: 0 -2% 2%; }
 
 .more-link:after {
   text-decoration: none;
@@ -847,73 +850,79 @@ ul.articles {
 
 /* Comments
 -------------------------------------------------------------- */
-#comments {
-  border-top: dotted 1px #dddddd; }
-  #comments .navigation {
-    margin: 1.7em 0; }
-  #comments ol.commentlist {
-    list-style: none;
-    margin: 0; }
-    #comments ol.commentlist ul {
-      margin-left: 4%; }
-    #comments ol.commentlist li.pingback,
-    #comments ol.commentlist li.comment {
-      border-top: 1px solid #dddddd;
-      padding-top: 1.7em;
-      position: relative;
-      list-style: none; }
-      #comments ol.commentlist li.pingback:after,
-      #comments ol.commentlist li.comment:after {
-        overflow: hidden;
-        *zoom: 1; }
-      #comments ol.commentlist li.pingback .comment-meta,
-      #comments ol.commentlist li.comment .comment-meta {
-        font-size: 0.96em;
-        margin-bottom: 1.7em; }
-      #comments ol.commentlist li.pingback .comment-author .fn,
-      #comments ol.commentlist li.comment .comment-author .fn {
-        font-weight: bold; }
-      #comments ol.commentlist li.pingback .comment-author img,
-      #comments ol.commentlist li.comment .comment-author img {
-        border: none;
-        margin: 0 10px 10px 0;
-        float: left; }
-      #comments ol.commentlist li.pingback .comment-metadata a,
-      #comments ol.commentlist li.comment .comment-metadata a {
-        color: #999999; }
-      #comments ol.commentlist li.pingback .comment-awaiting-moderation,
-      #comments ol.commentlist li.comment .comment-awaiting-moderation {
-        font-size: 0.9em;
-        color: #999999; }
-      #comments ol.commentlist li.pingback .reply,
-      #comments ol.commentlist li.comment .reply {
-        margin-bottom: 1.7em; }
-        #comments ol.commentlist li.pingback .reply a.comment-reply-link,
-        #comments ol.commentlist li.comment .reply a.comment-reply-link {
-          font-style: 0.9em; }
-          #comments ol.commentlist li.pingback .reply a.comment-reply-link:before,
-          #comments ol.commentlist li.comment .reply a.comment-reply-link:before {
-            content: "\f0da";
-            display: inline-block;
-            font-family: FontAwesome;
-            font-style: normal;
-            font-weight: normal;
-            line-height: 1;
-            padding-left: 0;
-            padding-right: 0.2em;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale; }
-      #comments ol.commentlist li.pingback.bypostauthor .comment-author .fn,
-      #comments ol.commentlist li.comment.bypostauthor .comment-author .fn {
-        background: #333333;
-        color: #FFF;
-        padding: 2px 5px;
-        border-radius: 4px; }
+#comments .navigation {
+  margin: 1.7em 0; }
+#comments ol.commentlist {
+  list-style: none;
+  margin: 0; }
+  #comments ol.commentlist ul {
+    margin-left: 4%; }
+  #comments ol.commentlist li.pingback,
+  #comments ol.commentlist li.comment {
+    border-top: 1px solid #dddddd;
+    padding-top: 1.7em;
+    position: relative;
+    list-style: none; }
+    #comments ol.commentlist li.pingback:after,
+    #comments ol.commentlist li.comment:after {
+      overflow: hidden;
+      *zoom: 1; }
+    #comments ol.commentlist li.pingback .comment-meta,
+    #comments ol.commentlist li.comment .comment-meta {
+      font-size: 0.96em;
+      margin-bottom: 1.7em; }
+    #comments ol.commentlist li.pingback .comment-author .fn,
+    #comments ol.commentlist li.comment .comment-author .fn {
+      font-weight: bold; }
+    #comments ol.commentlist li.pingback .comment-author img,
+    #comments ol.commentlist li.comment .comment-author img {
+      border: none;
+      margin: 0 10px 10px 0;
+      float: left; }
+    #comments ol.commentlist li.pingback .comment-metadata a,
+    #comments ol.commentlist li.comment .comment-metadata a {
+      color: #999999; }
+    #comments ol.commentlist li.pingback .comment-awaiting-moderation,
+    #comments ol.commentlist li.comment .comment-awaiting-moderation {
+      font-size: 0.9em;
+      color: #999999; }
+    #comments ol.commentlist li.pingback .reply,
+    #comments ol.commentlist li.comment .reply {
+      margin-bottom: 1.7em; }
+      #comments ol.commentlist li.pingback .reply a.comment-reply-link,
+      #comments ol.commentlist li.comment .reply a.comment-reply-link {
+        font-style: 0.9em; }
+        #comments ol.commentlist li.pingback .reply a.comment-reply-link:before,
+        #comments ol.commentlist li.comment .reply a.comment-reply-link:before {
+          content: "\f0da";
+          display: inline-block;
+          font-family: FontAwesome;
+          font-style: normal;
+          font-weight: normal;
+          line-height: 1;
+          padding-left: 0;
+          padding-right: 0.2em;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale; }
+    #comments ol.commentlist li.pingback.bypostauthor .comment-author .fn,
+    #comments ol.commentlist li.comment.bypostauthor .comment-author .fn {
+      background: #333333;
+      color: #FFF;
+      padding: 2px 5px;
+      border-radius: 4px; }
 
 /* Footer
 --------------------------------------------- */
+#footer hr {
+  background-color: #aa3300;
+  height: 2px;
+  margin: 0; }
 #footer .site-title {
+  background: #aa3300;
+  color: #e5e5e5;
   padding: 0.85em 0; }
+  #footer .site-title a {
+    color: #e5e5e5; }
   #footer .site-title .generator:after {
     content: "\f19a";
     display: inline-block;
@@ -961,29 +970,44 @@ ul.articles {
       font-size: 60px;
       display: block; }
 #footer .widget-wrapper {
-  background: #aa3300;
-  color: #e5e5e5;
+  background: #e5e5e5;
+  color: #aa3300;
   padding-top: 0.85em;
   overflow: hidden;
   *zoom: 1; }
-  #footer .widget-wrapper a {
-    color: #e5e5e5; }
 #footer .widget {
   width: 100%; }
+  #footer .widget a {
+    color: #aa3300; }
+  #footer .widget h3 {
+    border-bottom: solid 2px #aa3300; }
+  #footer .widget ul li {
+    border-color: #aa3300; }
   #footer .widget #wp-calendar tbody th a,
   #footer .widget #wp-calendar tbody td a {
-    background: #e5e5e5;
-    color: #aa3300;
+    background: #aa3300;
+    color: #e5e5e5;
     display: block;
     padding: 2px 0;
     margin: 0 auto;
     border-radius: 2px; }
+    #footer .widget #wp-calendar tbody th a:hover,
+    #footer .widget #wp-calendar tbody td a:hover {
+      text-decoration: none; }
+#footer #searchform #s {
+  color: #aa3300;
+  border-color: #aa3300; }
+#footer #searchform #searchsubmit {
+  color: #e5e5e5;
+  background: #aa3300; }
 
 /* Home
 -------------------------------------------------------------------- */
 .home ul.articles {
   line-height: 1.7; }
-.home.masonry ul.articles .entry, .home.tile ul.articles .entry {
+.home .entry-meta {
+  padding-bottom: 0; }
+.home.masonry ul.articles .entry {
   width: 100%; }
 
 /* Archive
@@ -1008,7 +1032,8 @@ ul.articles {
       .archive ul.articles li a:hover,
       .search ul.articles li a:hover,
       .error404 ul.articles li a:hover {
-        background: #f4f4f4; }
+        background: #f4f4f4;
+        text-decoration: none; }
     .archive ul.articles li span,
     .search ul.articles li span,
     .error404 ul.articles li span {
@@ -1023,10 +1048,10 @@ ul.articles {
 
 /* Attachment
 -------------------------------------------------------------------- */
-.attachment #content .hentry .entry-attachment {
+.attachment .entry .entry-attachment {
   text-align: center;
   margin-bottom: 1.7em; }
-  .attachment #content .hentry .entry-attachment .wp-caption {
+  .attachment .entry .entry-attachment .wp-caption {
     text-align: left;
     margin-top: 1.7em; }
 
@@ -1111,16 +1136,16 @@ ul.articles {
               left: 100%; }
 
   .entry {
+    padding: 1.7em;
     margin-bottom: 1.7em; }
-    .entry .entry-inner {
-      padding: 1.7em; }
 
   .entry-header,
   .page-header {
     margin-bottom: 1.7em; }
 
-  .entry-meta.entry-inner {
-    padding: 0.85em 1.7em; }
+  .entry-meta {
+    padding: 0.85em 1.7em;
+    margin: 0 -1.7em; }
 
   #header #site-description {
     display: block; }
@@ -1138,16 +1163,18 @@ ul.articles {
       flex: 1;
       margin: 0 0 0 4%; }
 
-  .home.masonry ul.articles, .home.tile ul.articles {
+  .home .entry {
+    padding-bottom: 0.85em; }
+  .home.masonry ul.articles {
     margin-left: -2%;
     overflow: hidden;
     *zoom: 1; }
-    .home.masonry ul.articles .entry, .home.tile ul.articles .entry {
+    .home.masonry ul.articles .entry {
       width: 48%;
       margin-left: 2%;
       margin-bottom: 2%; }
-  .home.tile ul.articles .entry {
-    float: left; }
+    .home.masonry ul.articles .entry-eyecatch {
+      margin: 0 -1.7em; }
 
   .archive ul.articles,
   .search ul.articles {
@@ -1169,7 +1196,7 @@ ul.articles {
       float: left; }
 
   .single #content .entry-eyecatch,
-  .home #content .entry-eyecatch {
+  .home:not(.masonry) #content .entry-eyecatch {
     width: 30%;
     float: right;
     margin: 0 0 2% 2%; } }

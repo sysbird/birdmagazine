@@ -17,8 +17,9 @@
 			</div>
 		</div>
 
-		<div class="container">
-			<div class="site-title"><span class="home"><a href="<?php echo esc_url( home_url( '/' ) ) ; ?>"><?php bloginfo( 'name' ); ?></a></span>
+		<div class="site-title">
+			<div class="container">
+				<span class="home"><a href="<?php echo esc_url( home_url( '/' ) ) ; ?>"><?php bloginfo( 'name' ); ?></a></span>
 
 				<?php if( get_theme_mod( 'birdmagazine_copyright', true ) ): ?>
 					<?php printf(__( 'Copyright &copy; %s All Rights Reserved.', 'birdmagazine' ), birdmagazine_get_copyright_year() ); ?>

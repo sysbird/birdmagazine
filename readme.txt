@@ -28,10 +28,6 @@ html5shiv.js
 License: MIT/GPL2 Licensed
 Source:  https://github.com/aFarkas/html5shiv
 
-jquery.tile.js
-License: Dual licensed under the MIT and GPL licenses
-Source:  https://github.com/urin/jquery.tile.js
-
 Font Awesome
 License: SIL Open Font License, 1.1/MIT License
 Source:  http://fortawesome.github.io/Font-Awesome/

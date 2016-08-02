@@ -8,25 +8,30 @@
  */
 ?>
 
-<div class="entry-inner">
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header>
+<header class="entry-header">
+	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+</header>
 
-	<div class="entry-content">
-		<?php the_content(); ?>
+<div class="entry-content">
+	<?php the_content(); ?>
 
-		<?php wp_link_pages( array(
-			'before'		=> '<div class="page-link">' . __( 'Pages:', 'birdmagazine' ),
-			'after'			=> '</div>',
-			'link_before'	=> '<span>',
-			'link_after'	=> '</span>'
-			) ); ?>
-	</div>
-</div><!-- .entry-inner -->
+	<?php wp_link_pages( array(
+		'before'		=> '<div class="page-link">' . __( 'Pages:', 'birdmagazine' ),
+		'after'			=> '</div>',
+		'link_before'	=> '<span>',
+		'link_after'	=> '</span>'
+		) ); ?>
+</div>
 
 <?php if( is_single() ): // Only Display Meta for Single ?>
-	<footer class="entry-meta entry-inner">
+<?php
+	 $birdmagazine_has_comments = '';
+	if ( comments_open() || get_comments_number() ) {
+		$birdmagazine_has_comments = 'has-comments';
+	}
+?>
+
+	<footer class="entry-meta <?php echo $birdmagazine_has_comments; ?>">
 
 		<span class="icon postdate"><time datetime="<?php echo get_the_time('Y-m-d') ?>" pubdate><?php echo get_post_time(get_option('date_format')); ?></time></span><br>
 

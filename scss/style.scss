@@ -1,7 +1,7 @@
 @charset "utf-8";
 /*
 Theme Name: birdMagazine
-Theme URI: http://www.sysbird.jp/toriko/
+Theme URI: http://www.sysbird.jp/theme/birdmagazine/
 Description: BirdMAGAZINE is a flexible two-column blog theme. Features the grid layout by a jQuery Masonry. and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the text color, link color, header color and home layout.
 Author: Sysbird
 Author URI: http://www.sysbird.jp
@@ -54,12 +54,17 @@ $line-height: 1.7;
 
 /* Elements
 --------------------------------------------- */
-* {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-o-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	box-sizing: border-box;
+html {
+	background: $header-text-color;
+	color: $header-background-color;
+
+	* {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-o-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		box-sizing: border-box;
+	}
 }
 
 body {
@@ -83,7 +88,7 @@ a {
 	text-decoration: none;
 
 	&:hover {
-		@include opacity( 0.8 );
+		text-decoration: underline;
 	}
 }
 
@@ -284,7 +289,6 @@ form {
 }
 
 #commentform {
-	border: 1px dotted $border-color;
 	padding: 10px 15px 0;
 	max-width: 640px;
 
@@ -371,7 +375,7 @@ form {
 		height: 30px;
 		border-radius: 0 4px 4px 0;
 		margin: 0;
-		background: #CCC;
+		background: $border-color;
 		color: #FFF;
 		-webkit-appearance: button;
 
@@ -422,7 +426,6 @@ form {
 		display: inline-block;
 		color: $text-color;
 		border-bottom: solid 2px $border-color;
-		text-decoration:none;
 		text-align: center;
 		padding: #{$line-height /4}em #{$line-height /2}em;
 		margin-bottom: 5px;
@@ -443,7 +446,7 @@ form {
 	a:hover {
 		color: $link-color;
 		border-color: $link-color;
-		@include opacity(1);
+		text-decoration: none;
 	}
 
 	span.current {
@@ -486,8 +489,7 @@ form {
 
 			&:hover {
 				border-color: $link-color;
-				@include opacity(1);
-			}
+				}
 		}
 	}
 }
@@ -841,6 +843,12 @@ video {
 	clip: rect(1px, 1px, 1px, 1px);
 }
 
+/* Content
+--------------------------------------------- */
+#content {
+	padding: 2% 0;
+}
+
 /* Posts
 --------------------------------------------- */
 ul.articles {
@@ -855,12 +863,8 @@ ul.articles {
 	border-bottom: solid 2px $border-color;
 	word-wrap: break-word;
 	margin-bottom: #{$line-height /2}em;
+	padding: 2%;
 	@include clearfix;
-
-	.entry-inner {
-		padding: 2%;
-		@include clearfix;
-	}
 }
 
 .entry-header,
@@ -885,6 +889,12 @@ ul.articles {
 .entry-meta {
 	border-top: dotted 1px $border-color;
 	font-size: 0.9rem;
+	padding: 2%;
+	margin: 0 -2%;
+
+	&.has-comments {
+		border-bottom: dotted 1px $border-color;
+	}
 
 	a {
 		color: $text-color;
@@ -921,7 +931,7 @@ ul.articles {
 
 .entry-eyecatch {
 	text-align: center;
-	margin-bottom: 2%;
+	margin: 0 -2% 2%;
 }
 
 .more-link {
@@ -935,8 +945,6 @@ ul.articles {
 /* Comments
 -------------------------------------------------------------- */
 #comments {
-	border-top: dotted 1px $border-color;
-
 	.navigation {
 		margin: #{$line-height}em 0;
 	}
@@ -1017,8 +1025,20 @@ ul.articles {
 /* Footer
 --------------------------------------------- */
 #footer {
+	hr {
+		background-color: $header-text-color;
+		height: 2px;
+		margin: 0;
+	}
+
 	.site-title {
+		background: $header-text-color;
+		color: $header-background-color;
 		padding: #{$line-height /2}em 0;
+
+		a {
+			color: $header-background-color;
+		}
 
 		.generator {
 			&:after {
@@ -1060,33 +1080,59 @@ ul.articles {
 	}
 
 	.widget-wrapper {
-		background: $header-text-color;
-		color: $header-background-color;
+		background: $header-background-color;
+		color: $header-text-color;
 		padding-top: #{$line-height /2}em;
 		@include clearfix;
-
-		a {
-			color: $header-background-color;
-		}
 	}
 
 	.widget {
 		width: 100%;
+
+		a {
+			color: $header-text-color;
+		}
+
+		h3 {
+			border-bottom: solid 2px $header-text-color;
+		}
+
+		ul {
+			li {
+				border-color: $header-text-color;
+			}
+		}
 
 		#wp-calendar  {
 			tbody {
 				th,
 				td {
 					a {
-						background: $header-background-color;
-						color: $header-text-color;
+						background: $header-text-color;
+						color: $header-background-color;
 						display: block;
 						padding: 2px 0;
 						margin: 0 auto;
 						border-radius: 2px;
+
+						&:hover {
+							text-decoration: none;
+						}
 					}
 				}
 			}
+		}
+	}
+
+	#searchform {
+		#s {
+			color: $header-text-color;
+			border-color: $header-text-color;
+		}
+
+		#searchsubmit {
+			color: $header-background-color;
+			background: $header-text-color;
 		}
 	}
 }
@@ -1098,8 +1144,11 @@ ul.articles {
 		line-height:  $line-height;
 	}
 
-	&.masonry,
-	&.tile,  {
+	.entry-meta {
+		padding-bottom: 0;
+	}
+
+	&.masonry {
 		ul.articles {
 			.entry {
 				width: 100%;
@@ -1129,6 +1178,7 @@ ul.articles {
 
 				&:hover {
 					background: $background-color;
+					text-decoration: none;
 				}
 			}
 
@@ -1149,18 +1199,14 @@ ul.articles {
 /* Attachment
 -------------------------------------------------------------------- */
 .attachment {
+	.entry {
+		.entry-attachment {
+			text-align: center;
+			margin-bottom: #{$line-height}em;
 
-	#content {
-		.hentry {
-
-			.entry-attachment {
-				text-align: center;
-				margin-bottom: #{$line-height}em;
-
-				.wp-caption {
-					text-align: left;
-					margin-top: #{$line-height}em;
-				}
+			.wp-caption {
+				text-align: left;
+				margin-top: #{$line-height}em;
 			}
 		}
 	}
@@ -1263,11 +1309,8 @@ ul.articles {
 	}
 
 	.entry {
+		padding: #{$line-height}em;
 		margin-bottom: #{$line-height}em;
-
-		.entry-inner {
-			padding: #{$line-height}em;
-		}
 	}
 
 	.entry-header,
@@ -1276,9 +1319,8 @@ ul.articles {
 	}
 
 	.entry-meta {
-		&.entry-inner {
-			padding: #{$line-height /2}em #{$line-height}em;
-		}
+		padding: #{$line-height /2}em #{$line-height}em;
+		margin: 0 #{-$line-height}em;
 	}
 
 	#header {
@@ -1308,8 +1350,11 @@ ul.articles {
 	}
 
 	.home {
-		&.masonry,
-		&.tile {
+		.entry {
+			padding-bottom: #{$line-height /2}em;
+		}
+
+		&.masonry {
 			ul.articles {
 				margin-left: -2%;
 				@include clearfix;
@@ -1319,17 +1364,12 @@ ul.articles {
 					margin-left: 2%;
 					margin-bottom: 2%;
 				}
-			}
-		}
 
-		&.tile {
-			ul.articles {
-				.entry {
-					float: left;
+				.entry-eyecatch {
+					margin: 0 #{-$line-height}em;
 				}
 			}
 		}
-
 	}
 
 	.archive,
@@ -1344,7 +1384,6 @@ ul.articles {
 --------------------------------------------- */
 /* --- PCs --- */
 @media screen and (min-width: 1000px) {
-
 	.container {
 		width: 1000px;
 	}
@@ -1366,7 +1405,7 @@ ul.articles {
 	}
 
 	.single,
-	.home {
+	.home:not(.masonry) {
 		#content {
 			.entry-eyecatch {
 				width: 30%;
@@ -1375,5 +1414,4 @@ ul.articles {
 			}
 		}
 	}
-
 }

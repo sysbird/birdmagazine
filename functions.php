@@ -137,13 +137,6 @@ function birdmagazine_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	if( is_home() ){
-		$birdmagazine_layout = get_theme_mod( 'birdmagazine_layout', 'normal' );
-		if( $birdmagazine_layout  === 'tile' ){
-			wp_enqueue_script( 'birdmagazine_jquerytile', get_template_directory_uri() .'/js/jquery.tile.js', array( 'jquery' ), '20140801' );
-		}
-	}
-
 	wp_enqueue_script( 'birdmagazine', get_template_directory_uri() .'/js/birdmagazine.js', array( 'jquery', 'jquery-masonry' ), '1.03' );
 
 	wp_enqueue_style( 'birdmagazine', get_stylesheet_uri() );
@@ -216,38 +209,6 @@ function birdmagazine_customize( $wp_customize ) {
 		'settings'	=> 'birdmagazine_header_text_color',
 	) ) );
 
-	// Footer Section
-	$wp_customize->add_section( 'birdmagazine_footer', array(
-		'title'		=> __( 'Footer', 'birdmagazine' ),
-		'priority'	=> 999,
-	) );
-
-	// Display Copyright
-	$wp_customize->add_setting( 'birdmagazine_copyright', array(
-		'default'		=> true,
-		'sanitize_callback'	=> 'birdmagazine_sanitize_checkbox',
-	) );
-
-	$wp_customize->add_control( 'birdmagazine_copyright', array(
-		'label'		=> __( 'Display Copyright', 'birdmagazine' ),
-		'section'	=> 'birdmagazine_footer',
-		'type'		=> 'checkbox',
-		'settings'	=> 'birdmagazine_copyright',
-	) );
-
-	// Display Credit
-	$wp_customize->add_setting( 'birdmagazine_credit', array(
-		'default'		=> true,
-		'sanitize_callback'	=> 'birdmagazine_sanitize_checkbox',
-	) );
-
-	$wp_customize->add_control( 'birdmagazine_credit', array(
-		'label'		=> __( 'Display Credit', 'birdmagazine' ),
-		'section'	=> 'birdmagazine_footer',
-		'type'		=> 'checkbox',
-		'settings'	=> 'birdmagazine_credit',
-	) );
-
 	// Layout Section
 	$wp_customize->add_section( 'birdmagazine_layout', array(
 		'title'		=> __( 'Layout', 'birdmagazine' ),
@@ -266,9 +227,34 @@ function birdmagazine_customize( $wp_customize ) {
 		'settings'	=> 'birdmagazine_layout',
 		'choices'	=> array(
 					'normal'	=> 'normal',
-					'tile'		=> 'tile',
 					'masonry'	=> 'masonry',
 					)
+	) );
+
+	// Display Copyright
+	$wp_customize->add_setting( 'birdmagazine_copyright', array(
+		'default'		=> true,
+		'sanitize_callback'	=> 'birdmagazine_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'birdmagazine_copyright', array(
+		'label'		=> __( 'Display Copyright', 'birdmagazine' ),
+		'section'	=> 'birdmagazine_layout',
+		'type'		=> 'checkbox',
+		'settings'	=> 'birdmagazine_copyright',
+	) );
+
+	// Display Credit
+	$wp_customize->add_setting( 'birdmagazine_credit', array(
+		'default'		=> true,
+		'sanitize_callback'	=> 'birdmagazine_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'birdmagazine_credit', array(
+		'label'		=> __( 'Display Credit', 'birdmagazine' ),
+		'section'	=> 'birdmagazine_layout',
+		'type'		=> 'checkbox',
+		'settings'	=> 'birdmagazine_credit',
 	) );
 }
 add_action('customize_register', 'birdmagazine_customize');
@@ -288,7 +274,7 @@ function birdmagazine_sanitize_checkbox( $input ) {
 // Santize a checkbox
 function birdmagazine_sanitize_radiobutton( $input ) {
 
-	if ( $input === 'tile' || $input === 'masonry' ) {
+	if ( $input === 'masonry' ) {
 		return $input;
 	} else {
 		return 'normal';
@@ -368,7 +354,7 @@ function birdmagazine_link_color_css() {
 add_action( 'wp_enqueue_scripts', 'birdmagazine_link_color_css', 11 );
 
 //////////////////////////////////////////////////////
-// Enqueues front-end CSS for the header text background color.
+// Enqueues front-end CSS for the header color.
 function birdmagazine_header_color_css() {
 
 	$birdmagazine_color = get_theme_mod( 'birdmagazine_header_color', '#E5E5E5' );
@@ -380,13 +366,23 @@ function birdmagazine_header_color_css() {
 
 	$birdmagazine_css = "
 		/* Custom Header Color */
-		#header {
+		#header,
+		#footer .widget-wrapper {
 			background: {$birdmagazine_color};
 		}
 
-		#footer .widget-wrapper,
-		#footer .widget-wrapper a {
+		#menu-wrapper .menu #small-menu,
+		#footer #searchform #searchsubmit,
+		#footer .widget-wrapper .widget #wp-calendar tbody td a,
+		#footer .site-title,
+		#footer .site-title a {
 			color: {$birdmagazine_color};
+		}
+
+		@media screen and (min-width: 660px) {
+			#menu-wrapper .menu ul#menu-primary-items li ul li a {
+				background: {$birdmagazine_color};
+			}
 		}
 	";
 
@@ -411,16 +407,26 @@ function birdmagazine_header_text_color_css() {
 		#header,
 		#header a,
 		#menu-wrapper .menu ul#menu-primary-items li a,
-		#footer .widget-wrapper .widget #wp-calendar tbody td a {
+		#footer .widget,
+		#footer .widget a,
+		#footer #searchform #s {
 			color: {$birdmagazine_color};
 		}
 
-		#menu-wrapper .menu ul#menu-primary-items li a {
+		#menu-wrapper .menu ul#menu-primary-items li ul,
+		#menu-wrapper .menu ul#menu-primary-items li ul li a,
+		#menu-wrapper .menu ul#menu-primary-items li a,
+		#footer .widget h3,
+		#footer .widget ul li,
+		#footer #searchform #s {
 			border-color: {$birdmagazine_color};
 		}
 
+		html,
 		#menu-wrapper .menu #small-menu,
-		#footer .widget-wrapper  {
+		#footer .widget-wrapper .widget #wp-calendar tbody td a,
+		#footer #searchform #searchsubmit,
+		#footer .site-title {
 			background: {$birdmagazine_color};
 		}
 	";
