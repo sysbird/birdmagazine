@@ -337,7 +337,8 @@ function birdmagazine_link_color_css() {
 		.pagination a:hover,
 		.pagination span.current,
 		.page-link span,
-		.page-link a span:hover {
+		.page-link a span:hover,
+		.home .sticky .entry-title a {
 			color: {$birdmagazine_color};
 		}
 
@@ -413,6 +414,7 @@ function birdmagazine_header_text_color_css() {
 			color: {$birdmagazine_color};
 		}
 
+		.wrapper,
 		#menu-wrapper .menu ul#menu-primary-items li ul,
 		#menu-wrapper .menu ul#menu-primary-items li ul li a,
 		#menu-wrapper .menu ul#menu-primary-items li a,
