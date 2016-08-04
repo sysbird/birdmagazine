@@ -8,35 +8,11 @@
  */
 //////////////////////////////////////////
 // Set the content width based on the theme's design and stylesheet.
-if ( ! isset( $content_width ) )
+if ( ! isset( $content_width ) ){
 	$content_width = 620;
-
-//////////////////////////////////////////
-// Set Widgets
-function birdmagazine_widgets_init() {
-
-	register_sidebar( array (
-		'name'			=>__( 'Widget Area for sidebar', 'birdmagazine' ),
-		'id'			=> 'widget-area',
-		'description'	=> __( 'Widget Area for sidebar', 'birdmagazine' ),
-		'before_widget'	=> '<div class="widget">',
-		'after_widget' 	=> '</div>',
-		'before_title'	=> '<h3>',
-		'after_title'	=> '</h3>',
-		) );
-
-	register_sidebar( array (
-		'name'			=> __( 'Widget Area for footer', 'birdmagazine' ),
-		'id'			=> 'widget-area-footer',
-		'description'	=> __( 'Widget Area for footer', 'birdmagazine' ),
-		'before_widget'	=> '<div class="widget">',
-		'after_widget'	=> '</div>',
-		'before_title'	=> '<h3>',
-		'after_title'	=> '</h3>',
-		) );
 }
-add_action( 'widgets_init', 'birdmagazine_widgets_init' );
 
+if ( ! function_exists( 'sketch_setup' ) ) :
 //////////////////////////////////////////////////////
 // Setup Theme
 function birdmagazine_setup() {
@@ -69,8 +45,10 @@ function birdmagazine_setup() {
 	 * This theme supports custom background color and image, and here
 	 * we also set up the default background color.
 	 */
+	$birdmagazine_default_colors = birdmagazine_get_default_colors();
+	$birdmagazine_color = trim( $birdmagazine_default_colors[ 'background_color' ], '#' );
 	add_theme_support( 'custom-background', array(
-		'default-color' => 'f4f4f4',
+		'default-color' => $birdmagazine_color,
 	) );
 
 	// This theme uses wp_nav_menu() in one location.
@@ -82,11 +60,12 @@ function birdmagazine_setup() {
 	add_theme_support( 'title-tag' );
 
 	// Add support for custom headers.
+	$birdmagazine_color = trim( $birdmagazine_default_colors[ 'text_color' ], '#' );
 	$custom_header_support = array(
 		'width'			=> apply_filters( 'birdmagazine_header_image_width', 960 ),
 		'height'			=> apply_filters( 'birdmagazine_header_image_height', 200 ),
 		'default-image'		=> '%s/images/headers/euphorbia.jpg',
-		'default-text-color'	=> '#333333'
+		'default-text-color'	=> $birdmagazine_color
 	);
 
 	add_theme_support( 'custom-header', $custom_header_support );
@@ -96,38 +75,40 @@ function birdmagazine_setup() {
 			'url' => '%s/images/headers/alocasia.jpg',
 			'thumbnail_url' => '%s/images/headers/alocasia-thumbnail.jpg',
 			'description' => 'Alocasia'
-		),
-		'calathea' => array(
-			'url' => '%s/images/headers/calathea.jpg',
-			'thumbnail_url' => '%s/images/headers/calathea-thumbnail.jpg',
-			'description' => 'Calathea'
-		),
-		'euphorbia' => array(
-			'url' => '%s/images/headers/euphorbia.jpg',
-			'thumbnail_url' => '%s/images/headers/euphorbia-thumbnail.jpg',
-			'description' => 'Euphorbia'
-		),
-		'fatsia' => array(
-			'url' => '%s/images/headers/fatsia.jpg',
-			'thumbnail_url' => '%s/images/headers/fatsia-thumbnail.jpg',
-			'description' => 'Fatsia'
-		),
-		'fern' => array(
-			'url' => '%s/images/headers/fern.jpg',
-			'thumbnail_url' => '%s/images/headers/fern-thumbnail.jpg',
-			'description' => 'Fern'
-		),
-		'mint' => array(
-			'url' => '%s/images/headers/mint.jpg',
-			'thumbnail_url' => '%s/images/headers/mint-thumbnail.jpg',
-			'description' => 'Mint'
-		),
+		)
 	) );
 }
+endif; // birdmagazine_setup
 add_action( 'after_setup_theme', 'birdmagazine_setup' );
 
+//////////////////////////////////////////
+// Set Widgets
+function birdmagazine_widgets_init() {
+
+	register_sidebar( array (
+		'name'			=>__( 'Widget Area for sidebar', 'birdmagazine' ),
+		'id'			=> 'widget-area',
+		'description'	=> __( 'Widget Area for sidebar', 'birdmagazine' ),
+		'before_widget'	=> '<div class="widget">',
+		'after_widget' 	=> '</div>',
+		'before_title'	=> '<h3>',
+		'after_title'	=> '</h3>',
+		) );
+
+	register_sidebar( array (
+		'name'			=> __( 'Widget Area for footer', 'birdmagazine' ),
+		'id'			=> 'widget-area-footer',
+		'description'	=> __( 'Widget Area for footer', 'birdmagazine' ),
+		'before_widget'	=> '<div class="widget">',
+		'after_widget'	=> '</div>',
+		'before_title'	=> '<h3>',
+		'after_title'	=> '</h3>',
+		) );
+}
+add_action( 'widgets_init', 'birdmagazine_widgets_init' );
+
 //////////////////////////////////////////////////////
-// Enqueue Acripts
+// Enqueue Scripts
 function birdmagazine_scripts() {
 
 	wp_enqueue_script( 'birdmagazine-html5', get_template_directory_uri() . '/js/html5shiv.js', array(), '3.7.2' );
@@ -161,9 +142,12 @@ function birdmagazine_customize( $wp_customize ) {
 	// Remove the core header textcolor control, as it shares the main text color.
 	$wp_customize->remove_control( 'header_textcolor' );
 
+	// defaut colors
+	$birdmagazine_default_colors = birdmagazine_get_default_colors();
+
 	// Text Color
 	$wp_customize->add_setting( 'birdmagazine_text_color', array(
-		'default'		=> '#333333',
+		'default'			=> $birdmagazine_default_colors[ 'text_color' ],
 		'sanitize_callback'	=> 'maybe_hash_hex_color',
 	) );
 
@@ -175,7 +159,7 @@ function birdmagazine_customize( $wp_customize ) {
 
 	// Link Color
 	$wp_customize->add_setting( 'birdmagazine_link_color', array(
-		'default'		=> '#1c4bbe',
+		'default'		=> $birdmagazine_default_colors[ 'link_color' ],
 		'sanitize_callback'	=> 'maybe_hash_hex_color',
 	) );
 
@@ -187,7 +171,7 @@ function birdmagazine_customize( $wp_customize ) {
 
 	// HeaderColor
 	$wp_customize->add_setting( 'birdmagazine_header_color', array(
-		'default'		=> '#E5E5E5',
+		'default'			=> $birdmagazine_default_colors[ 'header_color' ],
 		'sanitize_callback'	=> 'maybe_hash_hex_color',
 	) );
 
@@ -199,11 +183,11 @@ function birdmagazine_customize( $wp_customize ) {
 
 	// Header Text Color
 	$wp_customize->add_setting( 'birdmagazine_header_text_color', array(
-		'default'		=> '#aa3300',
+		'default'		=> $birdmagazine_default_colors[ 'header_text_color' ],
 		'sanitize_callback'	=> 'maybe_hash_hex_color',
 	) );
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'birdmagazine_navigation_color', array(
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'birdmagazine_header_text_color', array(
 		'label'		=> __( 'Header Text Color', 'birdmagazine' ),
 		'section'	=> 'colors',
 		'settings'	=> 'birdmagazine_header_text_color',
@@ -221,13 +205,13 @@ function birdmagazine_customize( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'birdmagazine_layout', array(
-		'label'		=> __( 'Home Layout', 'birdmagazine' ),
+		'label'		=> __( 'Front page Layout', 'birdmagazine' ),
 		'section'	=> 'birdmagazine_layout',
 		'type'		=> 'radio',
 		'settings'	=> 'birdmagazine_layout',
 		'choices'	=> array(
-					'normal'	=> 'normal',
-					'masonry'	=> 'masonry',
+					'normal'	=> __( 'normal', 'birdmagazine' ),
+					'masonry'	=> __( 'masonry', 'birdmagazine' ),
 					)
 	) );
 
@@ -282,13 +266,24 @@ function birdmagazine_sanitize_radiobutton( $input ) {
 }
 
 //////////////////////////////////////////////////////
+// Get default colors
+function birdmagazine_get_default_colors() {
+	return array( 'background_color'	=> '#f4f4f4',
+					'text_color'		=> '#333333',
+					'link_color'		=> '#1c4bbe',
+					'header_color'		=> '#E5E5E5',
+					'header_text_color'	=> '#aa3300' );
+}
+
+//////////////////////////////////////////////////////
 // Enqueues front-end CSS for the text color.
 function birdmagazine_text_color_css() {
 
-	$birdmagazine_color = get_theme_mod( 'birdmagazine_text_color', '#333333' );
+	$birdmagazine_default_colors = birdmagazine_get_default_colors();
+	$birdmagazine_color = get_theme_mod( 'birdmagazine_text_color', $birdmagazine_default_colors[ 'text_color' ] );
 
 	// Don't do anything if the current color is the default.
-	if ( $birdmagazine_color === '#333333' ) {
+	if ( $birdmagazine_color === $birdmagazine_default_colors[ 'text_color' ] ) {
 		return;
 	}
 
@@ -324,10 +319,11 @@ add_action( 'wp_enqueue_scripts', 'birdmagazine_text_color_css', 11 );
 // Enqueues front-end CSS for the link color.
 function birdmagazine_link_color_css() {
 
-	$birdmagazine_color = get_theme_mod( 'birdmagazine_link_color', '#1c4bbe' );
+	$birdmagazine_default_colors = birdmagazine_get_default_colors();
+	$birdmagazine_color = get_theme_mod( 'birdmagazine_link_color', $birdmagazine_default_colors[ 'link_color' ] );
 
 	// Don't do anything if the current color is the default.
-	if ( $birdmagazine_color === '#1c4bbe' ) {
+	if ( $birdmagazine_color === $birdmagazine_default_colors[ 'link_color' ] ) {
 		return;
 	}
 
@@ -358,10 +354,11 @@ add_action( 'wp_enqueue_scripts', 'birdmagazine_link_color_css', 11 );
 // Enqueues front-end CSS for the header color.
 function birdmagazine_header_color_css() {
 
-	$birdmagazine_color = get_theme_mod( 'birdmagazine_header_color', '#E5E5E5' );
+	$birdmagazine_default_colors = birdmagazine_get_default_colors();
+	$birdmagazine_color = get_theme_mod( 'birdmagazine__header_color', $birdmagazine_default_colors[ 'header_color' ] );
 
 	// Don't do anything if the current color is the default.
-	if ( $birdmagazine_color === '#E5E5E5' ) {
+	if ( $birdmagazine_color === $birdmagazine_default_colors[ 'header_color' ] ) {
 		return;
 	}
 
@@ -391,15 +388,15 @@ function birdmagazine_header_color_css() {
 }
 add_action( 'wp_enqueue_scripts', 'birdmagazine_header_color_css', 11 );
 
-
 //////////////////////////////////////////////////////
 // Enqueues front-end CSS for the header text color.
 function birdmagazine_header_text_color_css() {
 
-	$birdmagazine_color = get_theme_mod( 'birdmagazine_header_text_color', '#aa3300' );
+	$birdmagazine_default_colors = birdmagazine_get_default_colors();
+	$birdmagazine_color = get_theme_mod( 'birdmagazine_header_text_color', $birdmagazine_default_colors[ 'header_text_color' ] );
 
 	// Don't do anything if the current color is the default.
-	if ( $birdmagazine_color === '#aa3300' ) {
+	if ( $birdmagazine_color === $birdmagazine_default_colors[ 'header_text_color' ] ) {
 		return;
 	}
 
@@ -436,6 +433,26 @@ function birdmagazine_header_text_color_css() {
 	wp_add_inline_style( 'birdmagazine', $birdmagazine_css );
 }
 add_action( 'wp_enqueue_scripts', 'birdmagazine_header_text_color_css', 11 );
+
+//////////////////////////////////////////////////////
+// Enqueues front-end CSS for the entry border color.
+function birdmagazine_entry_border_color_css() {
+
+	$birdmagazine_color = get_background_color();
+	if( $birdmagazine_color === 'ffffff' ){
+		$birdmagazine_css = "
+			/* Border Color */
+			.entry {
+				border-top: solid 1px #dddddd;
+				border-right: solid 1px #dddddd;
+				border-left: solid 1px #dddddd;
+			}
+		";
+
+		wp_add_inline_style( 'birdmagazine', $birdmagazine_css );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'birdmagazine_entry_border_color_css', 11 );
 
 //////////////////////////////////////////////////////
 // Copyright Year

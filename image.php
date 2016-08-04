@@ -23,10 +23,7 @@ get_header(); ?>
 
 			<div class="entry-content">
 				<div class="entry-attachment">
-					<?php
-						$image_size = apply_filters( 'twentysixteen_attachment_size', 'large' );
-						echo wp_get_attachment_image( get_the_ID(), $image_size );
-					?>
+					<?php echo wp_get_attachment_image( get_the_ID(), 'full' ); ?>
 				</div>
 
 				<?php the_content(); ?>

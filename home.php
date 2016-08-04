@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage BirdMAGAZINE
- * @since BirdMAGAZINE 1.0
+ * @since BirdMAGAZINE 1.03
  */
 get_header(); ?>
 <div id="main">
