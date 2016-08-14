@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "UTF-8";
 /*
 Theme Name: birdMagazine
 Theme URI: http://www.sysbird.jp/theme/birdmagazine/
@@ -59,7 +59,7 @@ q, blockquote {
 a img {
   border: none; }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
 /* Font Awesome
@@ -70,12 +70,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   src: url("font-awesome/fontawesome-webfont.eot?#iefix&v=4.1.0") format("embedded-opentype"), url("font-awesome/fontawesome-webfont.woff?v=4.1.0") format("woff"), url("font-awesome/fontawesome-webfont.ttf?v=4.1.0") format("truetype"), url("font-awesome/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 /* Elements
 --------------------------------------------- */
 html {
   background: #aa3300;
-  color: #e5e5e5; }
+  color: #E5E5E5; }
   html * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -90,9 +89,6 @@ body {
   background: #f4f4f4;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%; }
-
-.wrapper {
-  border-top: solid 5px #aa3300; }
 
 .container {
   width: 96%;
@@ -133,7 +129,7 @@ p {
   margin: 0 0 1.7em; }
 
 blockquote {
-  border-left: 4px solid #dddddd;
+  border-left: 4px solid #DDD;
   font-style: italic;
   line-height: 1.4736842105;
   margin: 0 0 1.4736842105em;
@@ -157,7 +153,7 @@ table {
   margin-bottom: 1.7em; }
   table th,
   table td {
-    border: 1px solid #dddddd;
+    border: 1px solid #DDD;
     line-height: 1.4;
     padding: 0.85em;
     text-align: left;
@@ -279,13 +275,13 @@ form input {
     max-width: 300px;
     padding: 5px;
     background: #FFF;
-    border: solid 1px #dddddd; }
+    border: solid 1px #DDD; }
   #commentform textarea {
     width: 100%;
     height: 100px;
     padding: 5px;
     background: #FFF;
-    border: solid 1px #dddddd; }
+    border: solid 1px #DDD; }
   #commentform input#submit {
     padding: 5px 10px; }
   #commentform #email-notes {
@@ -298,7 +294,7 @@ form input {
 .post-password-form input:not([type="submit"]) {
   padding: 5px;
   background: #FFF;
-  border: solid 1px #dddddd; }
+  border: solid 1px #DDD; }
 
 /* Search Forms
 -------------------------------------------------------------- */
@@ -317,7 +313,7 @@ form input {
     height: 30px;
     line-height: 1;
     border-radius: 4px 0 0 4px;
-    border: solid 1px #dddddd; }
+    border: solid 1px #DDD; }
   #searchform #searchsubmit {
     position: absolute;
     top: 0;
@@ -328,12 +324,12 @@ form input {
     height: 30px;
     border-radius: 0 4px 4px 0;
     margin: 0;
-    background: #dddddd;
+    background: #DDD;
     color: #FFF;
     -webkit-appearance: button; }
     #searchform #searchsubmit:before {
       font-size: 1.4rem;
-      content: "\f002";
+      content: "";
       display: inline-block;
       font-family: FontAwesome;
       font-style: normal;
@@ -353,7 +349,7 @@ form input {
   .nav-links a {
     display: inline-block; }
   .nav-links .nav-next a:before {
-    content: "\f053";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -366,7 +362,7 @@ form input {
   .nav-links .nav-previous {
     text-align: right; }
     .nav-links .nav-previous a:after {
-      content: "\f054";
+      content: "";
       display: inline-block;
       font-family: FontAwesome;
       font-style: normal;
@@ -387,7 +383,7 @@ form input {
   .pagination span {
     display: inline-block;
     color: #333333;
-    border-bottom: solid 2px #dddddd;
+    border-bottom: solid 2px #DDD;
     text-align: center;
     padding: 0.425em 0.85em;
     margin-bottom: 5px; }
@@ -410,7 +406,7 @@ form input {
     border-color: #1c4bbe;
     font-weight: bold; }
   .pagination a.page-numbers.prev:before {
-    content: "\f053";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -421,7 +417,7 @@ form input {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   .pagination a.page-numbers.next:after {
-    content: "\f054";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -449,7 +445,7 @@ form input {
   .page-link a span {
     color: #333333;
     background: #FFF;
-    border-color: #dddddd; }
+    border-color: #DDD; }
     .page-link a span:hover {
       border-color: #1c4bbe; }
 
@@ -467,7 +463,7 @@ form input {
     border-radius: 4px;
     font-size: 1.4rem; }
     #menu-wrapper .menu #small-menu:before {
-      content: "\f0c9";
+      content: "";
       display: inline-block;
       font-family: FontAwesome;
       font-style: normal;
@@ -634,7 +630,7 @@ video {
     font-weight: normal;
     margin: 0 0 0.4em 0;
     padding: 0 0 0.4em 0;
-    border-bottom: solid 2px #dddddd;
+    border-bottom: solid 2px #DDD;
     font-size: 1.4rem; }
   .widget ul {
     list-style: none;
@@ -643,11 +639,11 @@ video {
     overflow: hidden; }
     .widget ul li {
       margin-top: -2px;
-      border-top: dotted 1px #dddddd;
+      border-top: dotted 1px #DDD;
       padding: 0.3em 0 0.3em 0.6em;
       text-indent: -0.3em; }
       .widget ul li:before {
-        content: "\f0da";
+        content: "";
         display: inline-block;
         font-family: FontAwesome;
         font-style: normal;
@@ -693,9 +689,34 @@ video {
 
 /* Header
 -------------------------------------------------------------- */
+#header_image {
+  width: 100%;
+  height: 0;
+  padding-top: 120%;
+  overflow: hidden; }
+  #header_image img {
+    /*		position: absolute;
+    		display: block;
+    		width: 150%;
+    		height: auto;
+    		top: 50%;
+    		left: 50%;
+    		-webkit-transform: translate3d(-50%, -50%, 0);
+    		-moz-transform: translate3d(-50%, -50%, 0);
+    		-ms-transform: translate(-50%, -50%);
+    		transform: translate3d(-50%, -50%, 0); */
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: auto;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+
 #header {
   color: #aa3300;
-  background: #e5e5e5; }
+  background: #E5E5E5; }
   #header a {
     color: #aa3300; }
   #header #branding {
@@ -733,7 +754,7 @@ ul.articles {
 .entry {
   background: #FFF;
   border-radius: 4px;
-  border-bottom: solid 2px #dddddd;
+  border-bottom: solid 2px #DDD;
   word-wrap: break-word;
   margin-bottom: 0.85em;
   padding: 0.85em;
@@ -743,6 +764,9 @@ ul.articles {
 .entry-header,
 .page-header {
   margin-bottom: 0.85em; }
+  .entry-header a,
+  .page-header a {
+    color: #333333; }
   .entry-header .entry-title,
   .entry-header .page-title,
   .page-header .entry-title,
@@ -752,24 +776,26 @@ ul.articles {
     margin: 0;
     line-height: 1.2;
     padding: 0; }
-    .entry-header .entry-title a,
-    .entry-header .page-title a,
-    .page-header .entry-title a,
-    .page-header .page-title a {
-      color: #333333; }
+  .entry-header .postdate,
+  .page-header .postdate {
+    border-left: solid 4px #333333;
+    padding: 0.85em 0 0 0.85em;
+    margin-top: -0.85em;
+    margin-bottom: 0.85em;
+    line-height: 1; }
 
 .entry-meta {
-  border-top: dotted 1px #dddddd;
+  border-top: dotted 1px #DDD;
   font-size: 0.9rem;
   padding: 0.85em 0.85em 0;
   margin: 0 -0.85em; }
-  .entry-meta.has-comments {
+  .entry-meta.enable-comments {
     padding-bottom: 0.85em;
-    border-bottom: dotted 1px #dddddd; }
+    border-bottom: dotted 1px #DDD; }
   .entry-meta a {
     color: #333333; }
   .entry-meta .postdate:before {
-    content: "\f133";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -780,7 +806,7 @@ ul.articles {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   .entry-meta .author:before {
-    content: "\f007";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -791,7 +817,7 @@ ul.articles {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   .entry-meta .comment:before {
-    content: "\f0e5";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -802,7 +828,7 @@ ul.articles {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   .entry-meta .parent-post-link a:before {
-    content: "\f1c5";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -813,7 +839,7 @@ ul.articles {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   .entry-meta .category:before {
-    content: "\f07b";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -824,7 +850,7 @@ ul.articles {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   .entry-meta .tag:before {
-    content: "\f02b";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -841,7 +867,7 @@ ul.articles {
 
 .more-link:after {
   text-decoration: none;
-  content: "\f054";
+  content: "";
   display: inline-block;
   font-family: FontAwesome;
   font-style: normal;
@@ -863,7 +889,7 @@ ul.articles {
     margin-left: 4%; }
   #comments ol.commentlist li.pingback,
   #comments ol.commentlist li.comment {
-    border-top: 1px solid #dddddd;
+    border-top: 1px solid #DDD;
     padding-top: 1.7em;
     position: relative;
     list-style: none; }
@@ -898,7 +924,7 @@ ul.articles {
         font-style: 0.9em; }
         #comments ol.commentlist li.pingback .reply a.comment-reply-link:before,
         #comments ol.commentlist li.comment .reply a.comment-reply-link:before {
-          content: "\f0da";
+          content: "";
           display: inline-block;
           font-family: FontAwesome;
           font-style: normal;
@@ -923,12 +949,12 @@ ul.articles {
   margin: 0; }
 #footer .site-title {
   background: #aa3300;
-  color: #e5e5e5;
+  color: #E5E5E5;
   padding: 0.85em 0; }
   #footer .site-title a {
-    color: #e5e5e5; }
+    color: #E5E5E5; }
   #footer .site-title .generator:after {
-    content: "\f19a";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -944,7 +970,7 @@ ul.articles {
   right: 10px;
   z-index: 3; }
   #footer #back-top a {
-    color: #dddddd;
+    color: #DDD;
     display: block;
     height: 60px;
     width: 60px;
@@ -955,13 +981,14 @@ ul.articles {
       text-indent: -119988px;
       overflow: hidden;
       text-align: left;
+      text-transform: capitalize;
       display: block; }
     #footer #back-top a:hover {
       text-decoration: none;
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
       opacity: 0.8; }
     #footer #back-top a:before {
-      content: "\f0aa";
+      content: "";
       display: inline-block;
       font-family: FontAwesome;
       font-style: normal;
@@ -974,7 +1001,7 @@ ul.articles {
       font-size: 60px;
       display: block; }
 #footer .widget-wrapper {
-  background: #e5e5e5;
+  background: #E5E5E5;
   color: #aa3300;
   padding-top: 0.85em;
   overflow: hidden;
@@ -990,7 +1017,7 @@ ul.articles {
   #footer .widget #wp-calendar tbody th a,
   #footer .widget #wp-calendar tbody td a {
     background: #aa3300;
-    color: #e5e5e5;
+    color: #E5E5E5;
     display: block;
     padding: 2px 0;
     margin: 0 auto;
@@ -1002,15 +1029,13 @@ ul.articles {
   color: #aa3300;
   border-color: #aa3300; }
 #footer #searchform #searchsubmit {
-  color: #e5e5e5;
+  color: #E5E5E5;
   background: #aa3300; }
 
 /* Home
 -------------------------------------------------------------------- */
 .home ul.articles {
   line-height: 1.7; }
-.home .sticky .entry-title a {
-  color: #aa3300; }
 .home.masonry ul.articles .entry {
   padding: 0.85em;
   margin-bottom: 2%;
@@ -1019,6 +1044,13 @@ ul.articles {
   margin-bottom: 0.85em; }
 .home.masonry .entry-eyecatch {
   margin: 0 -0.85em 0.85em; }
+
+.sticky .entry-header,
+.sticky .entry-header a {
+  color: #aa3300; }
+  .sticky .entry-header .postdate,
+  .sticky .entry-header a .postdate {
+    border-color: #aa3300; }
 
 /* Archive
 -------------------------------------------------------------------- */
@@ -1031,7 +1063,7 @@ ul.articles {
   .error404 ul.articles li {
     margin-bottom: 0;
     padding: 0;
-    border-bottom: solid 1px #dddddd; }
+    border-bottom: solid 1px #DDD; }
     .archive ul.articles li a,
     .search ul.articles li a,
     .error404 ul.articles li a {
@@ -1095,17 +1127,22 @@ ul.articles {
         #menu-wrapper .menu ul#menu-primary-items li a {
           border-bottom: none;
           padding: 0.85em 1.7em 0.85em 0; }
+        #menu-wrapper .menu ul#menu-primary-items li.menu-item-has-children > a {
+          padding-bottom: 0; }
         #menu-wrapper .menu ul#menu-primary-items li.menu-item-has-children > a:after {
-          content: "\f107";
+          content: "";
           display: inline-block;
           font-family: FontAwesome;
           font-style: normal;
           font-weight: normal;
           line-height: 1;
-          padding-left: 0.4em;
+          padding-left: 0;
           padding-right: 0;
           -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale; }
+          -moz-osx-font-smoothing: grayscale;
+          display: block;
+          text-align: center;
+          height: 0.85em; }
         #menu-wrapper .menu ul#menu-primary-items li ul {
           margin: 0;
           padding: 0;
@@ -1115,15 +1152,17 @@ ul.articles {
           position: absolute;
           top: 2.8em;
           left: 0;
-          border: solid 1px #dddddd;
+          border: solid 1px #DDD;
           border-top: none;
           z-index: 9999; }
           #menu-wrapper .menu ul#menu-primary-items li ul li {
             float: none;
             margin: 0;
             padding: 0; }
+            #menu-wrapper .menu ul#menu-primary-items li ul li.menu-item-has-children > a {
+              padding-bottom: 0.85em; }
             #menu-wrapper .menu ul#menu-primary-items li ul li.menu-item-has-children > a:after {
-              content: "\f105";
+              content: "";
               display: inline-block;
               font-family: FontAwesome;
               font-style: normal;
@@ -1135,11 +1174,11 @@ ul.articles {
               -moz-osx-font-smoothing: grayscale; }
             #menu-wrapper .menu ul#menu-primary-items li ul li a {
               background-color: #FFF;
-              border-top: solid 1px #dddddd;
+              border-top: solid 1px #DDD;
               height: auto;
               padding-left: 0.4em;
               white-space: normal;
-              filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+              filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
               opacity: 1; }
             #menu-wrapper .menu ul#menu-primary-items li ul li ul {
               top: 0;

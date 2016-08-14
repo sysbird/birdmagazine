@@ -76,10 +76,6 @@ body {
 	-webkit-text-size-adjust: 100%;
 }
 
-.wrapper {
-	border-top: solid 5px $header-text-color;
-}
-
 .container {
 	width: 96%;
 	margin: 0 auto;
@@ -811,6 +807,34 @@ video {
 
 /* Header
 -------------------------------------------------------------- */
+#header_image {
+	width: 100%;
+	height: 0;
+	padding-top: 20%;
+	overflow: hidden;
+
+	img {
+/*		position: absolute;
+		display: block;
+		width: 150%;
+		height: auto;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate3d(-50%, -50%, 0);
+		-moz-transform: translate3d(-50%, -50%, 0);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate3d(-50%, -50%, 0); */
+  position: relative;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+}
+
 #header {
 	color: $header-text-color;
 	background: $header-background-color;
@@ -876,6 +900,10 @@ ul.articles {
 .page-header {
 	margin-bottom: #{$line-height /2}em;
 
+	a {
+		color: $text-color;
+	}
+
 	.entry-title,
 	.page-title {
 		font-size: 2rem;
@@ -884,9 +912,14 @@ ul.articles {
 		line-height: 1.2;
 		padding: 0;
 
-		a {
-			color: $text-color;
-		}
+	}
+
+	.postdate {
+		border-left: solid 4px $text-color;
+		padding: #{$line-height /2}em 0 0 #{$line-height /2}em;
+		margin-top: #{-$line-height /2}em;
+		margin-bottom: #{$line-height /2}em;
+		line-height: 1;
 	}
 }
 
@@ -896,7 +929,7 @@ ul.articles {
 	padding: #{$line-height /2}em #{$line-height /2}em 0;
 	margin: 0 #{-$line-height /2}em;
 
-	&.has-comments {
+	&.enable-comments {
 		padding-bottom: #{$line-height /2}em;
 		border-bottom: dotted 1px $border-color;
 	}
@@ -1149,12 +1182,6 @@ ul.articles {
 		line-height:  $line-height;
 	}
 
-	.sticky {
-		.entry-title a {
-			color: $header-text-color;
-		}
-	}
-
 	&.masonry {
 		ul.articles {
 			.entry {
@@ -1174,6 +1201,18 @@ ul.articles {
 
 	}
 }
+
+.sticky {
+	.entry-header,
+	.entry-header a {
+		color: $header-text-color;
+
+		.postdate {
+			border-color: $header-text-color;
+		}
+	}
+}
+
 
 /* Archive
 -------------------------------------------------------------------- */
@@ -1278,8 +1317,15 @@ ul.articles {
 					}
 
 					&.menu-item-has-children {
+						>a {
+							padding-bottom: 0;
+						}
+
 						>a:after {
-							@include font-awesome( "\f107", 0.4em );
+							@include font-awesome( "\f107" );
+							display: block;
+							text-align: center;
+							height: #{$line-height /2}em;
 						}
 					}
 
@@ -1301,6 +1347,10 @@ ul.articles {
 							padding: 0;
 
 							&.menu-item-has-children {
+								>a {
+									padding-bottom: #{$line-height /2}em;
+								}
+
 								>a:after {
 									@include font-awesome( "\f105", 0.4em, 0 );
 								}

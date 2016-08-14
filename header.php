@@ -16,7 +16,6 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php endif; ?>
 <?php wp_head(); ?>
-</head>
 
 <?php
 	// The header text
@@ -37,6 +36,13 @@
 
 <div class="wrapper">
 
+	<?php $birdmagazine_header_image = get_header_image(); ?>
+	<?php if( is_home() && ! is_paged() && ! empty( $birdmagazine_header_image ) ): ?>
+		<div id="header_image">
+		<img src="<?php echo esc_url( $birdmagazine_header_image ); ?>" alt="<?php bloginfo( 'name' ); ?>" >
+		</div>
+	<?php endif; ?>
+
 	<header id="header">
 		<div class="container">
 
@@ -47,10 +53,6 @@
 				</<?php echo $heading_tag; ?>>
 				<p id="site-description"><?php bloginfo( 'description' ); ?></p>
 			</div>
-
-			<?php if ( ! empty( $header_image ) ) : ?>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-image"><img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>" ></a>
-			<?php endif; ?>
 
 			<nav id="menu-wrapper">
 				<?php wp_nav_menu( array( 'theme_location'	=> 'primary',

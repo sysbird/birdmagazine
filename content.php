@@ -1,10 +1,10 @@
 <?php
 /**
- * The template for displaying content. Used for archive/search.
+ * The template for displaying content. Used for default.
  *
  * @package WordPress
  * @subpackage BirdMAGAZINE
- * @since BirdMAGAZINE 1.03
+ * @since BirdMAGAZINE 1.0
  */
 ?>
 

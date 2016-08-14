@@ -62,8 +62,8 @@ function birdmagazine_setup() {
 	// Add support for custom headers.
 	$birdmagazine_color = trim( $birdmagazine_default_colors[ 'text_color' ], '#' );
 	$custom_header_support = array(
-		'width'			=> apply_filters( 'birdmagazine_header_image_width', 960 ),
-		'height'			=> apply_filters( 'birdmagazine_header_image_height', 200 ),
+		'width'			=> apply_filters( 'birdmagazine_header_image_width', 1200 ),
+		'height'			=> apply_filters( 'birdmagazine_header_image_height', 300 ),
 		'default-image'		=> '%s/images/headers/euphorbia.jpg',
 		'default-text-color'	=> $birdmagazine_color
 	);
@@ -290,10 +290,8 @@ function birdmagazine_text_color_css() {
 	$birdmagazine_css = "
 		/* Custom Text Color */
 		body,
-		.entry-header .entry-title,
-		.entry-header .entry-title a,
-		.page-header .page-title,
-		.page-header .page-title a,
+		.entry-header,
+		.entry-header a,
 		.entry-meta a,
 		.archive ul.articles li a,
 		.search ul.articles li a,
@@ -303,6 +301,10 @@ function birdmagazine_text_color_css() {
 		.page-link,
 		.page-link a span {
 			color: {$birdmagazine_color};
+		}
+
+		.entry-header .postdate {
+			border-color: {$birdmagazine_color};
 		}
 
 		hr,
@@ -407,17 +409,19 @@ function birdmagazine_header_text_color_css() {
 		#menu-wrapper .menu ul#menu-primary-items li a,
 		#footer .widget,
 		#footer .widget a,
-		#footer #searchform #s {
-			color: {$birdmagazine_color};
+		#footer #searchform #s,
+		.sticky .entry-header a,
+		.sticky .entry-header {
+ 			color: {$birdmagazine_color};
 		}
 
-		.wrapper,
 		#menu-wrapper .menu ul#menu-primary-items li ul,
 		#menu-wrapper .menu ul#menu-primary-items li ul li a,
 		#menu-wrapper .menu ul#menu-primary-items li a,
 		#footer .widget h3,
 		#footer .widget ul li,
-		#footer #searchform #s {
+		#footer #searchform #s,
+		.sticky .entry-header .postdate {
 			border-color: {$birdmagazine_color};
 		}
 
