@@ -36,14 +36,15 @@
 
 <div class="wrapper">
 
-	<?php $birdmagazine_header_image = get_header_image(); ?>
-	<?php if( is_home() && ! is_paged() && ! empty( $birdmagazine_header_image ) ): ?>
-		<div id="header_image">
-		<img src="<?php echo esc_url( $birdmagazine_header_image ); ?>" alt="<?php bloginfo( 'name' ); ?>" >
-		</div>
-	<?php endif; ?>
-
 	<header id="header">
+
+		<?php $birdmagazine_header_image = get_header_image(); ?>
+		<?php if( is_home() && ! is_paged() && ! empty( $birdmagazine_header_image ) ): ?>
+			<div class="header-image">
+			<img src="<?php echo esc_url( $birdmagazine_header_image ); ?>" alt="<?php bloginfo( 'name' ); ?>" >
+			</div>
+		<?php endif; ?>
+
 		<div class="container">
 
 			<div id="branding">

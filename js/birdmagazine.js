@@ -4,14 +4,12 @@ jQuery(function() {
 
 		// Masonry for Home
 		jQuery( '.home.masonry ul.articles' ).masonry({
-			itemSelector: '.entry',
-			isAnimated: true
+			itemSelector: '.entry'
 		});
 
 		// Masonry for Footer
 		jQuery( '#footer .widget-wrapper .container' ).masonry({
-			itemSelector: '.widget',
-			isAnimated: true
+			itemSelector: '.widget'
 		});
 	});
 
