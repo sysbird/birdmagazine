@@ -75,7 +75,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 --------------------------------------------- */
 html {
   background: white;
-  color: #a95858; }
+  color: #e9b000; }
   html * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -87,7 +87,7 @@ body {
   font-family: "Hiragino Maru Gothic W4 JIS2004", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.7;
   color: #333333;
-  background: #f3f3f3;
+  background: #f4f5f0;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%; }
 
@@ -465,7 +465,7 @@ textarea {
     display: block;
     font-size: 1rem;
     background: white;
-    color: #a95858;
+    color: #e9b000;
     border-radius: 4px;
     font-size: 1.4rem; }
     #menu-wrapper .menu #small-menu:before {
@@ -697,7 +697,7 @@ video {
 -------------------------------------------------------------- */
 #header {
   color: white;
-  background: #a95858; }
+  background: #e9b000; }
   #header a {
     color: white; }
   #header #branding {
@@ -771,6 +771,10 @@ ul.articles {
     margin-top: -0.85em;
     margin-bottom: 0.85em;
     line-height: 1; }
+
+.entry-content {
+  overflow: hidden;
+  *zoom: 1; }
 
 .entry-meta {
   border-top: dotted 1px #dddddd;
@@ -880,11 +884,9 @@ ul.articles {
     border-top: 1px solid #dddddd;
     padding-top: 1.7em;
     position: relative;
-    list-style: none; }
-    #comments ol.commentlist li.pingback:after,
-    #comments ol.commentlist li.comment:after {
-      overflow: hidden;
-      *zoom: 1; }
+    list-style: none;
+    overflow: hidden;
+    *zoom: 1; }
     #comments ol.commentlist li.pingback .comment-meta,
     #comments ol.commentlist li.comment .comment-meta {
       font-size: 0.96em;
@@ -936,11 +938,11 @@ ul.articles {
   height: 2px;
   margin: 0; }
 #footer .site-title {
-  background: white;
-  color: #a95858;
+  background-color: white;
+  color: #e9b000;
   padding: 0.85em 0; }
   #footer .site-title a {
-    color: #a95858; }
+    color: #e9b000; }
   #footer .site-title .generator:after {
     content: "\f19a";
     display: inline-block;
@@ -988,7 +990,7 @@ ul.articles {
       font-size: 60px;
       display: block; }
 #footer .widget-wrapper {
-  background: #a95858;
+  background: #e9b000;
   color: white;
   padding-top: 0.85em;
   overflow: hidden;
@@ -1007,7 +1009,7 @@ ul.articles {
   #footer .widget #wp-calendar tbody th a,
   #footer .widget #wp-calendar tbody td a {
     background: white;
-    color: #a95858;
+    color: #e9b000;
     display: block;
     padding: 2px 0;
     margin: 0 auto;
@@ -1031,9 +1033,9 @@ ul.articles {
 
 .sticky .entry-header,
 .sticky .entry-header a {
-  color: #a95858; }
+  color: #e9b000; }
 .sticky .postdate {
-  border-color: #a95858; }
+  border-color: #e9b000; }
 
 /* Archive
 -------------------------------------------------------------------- */
@@ -1057,7 +1059,7 @@ ul.articles {
       .archive ul.articles li a:hover,
       .search ul.articles li a:hover,
       .error404 ul.articles li a:hover {
-        background: #f3f3f3;
+        background: #f4f5f0;
         text-decoration: none; }
     .archive ul.articles li span,
     .search ul.articles li span,
@@ -1135,7 +1137,7 @@ ul.articles {
           position: absolute;
           top: 2.8em;
           left: 0;
-          border: solid 1px #a95858;
+          border: solid 1px #e9b000;
           border-top: none;
           z-index: 9999; }
           #menu-wrapper .menu ul#menu-primary-items li ul li {
@@ -1157,8 +1159,8 @@ ul.articles {
               -moz-osx-font-smoothing: grayscale; }
             #menu-wrapper .menu ul#menu-primary-items li ul li a {
               background-color: #FFF;
-              color: #a95858;
-              border-top: solid 1px #a95858;
+              color: #e9b000;
+              border-top: solid 1px #e9b000;
               height: auto;
               padding-left: 0.4em;
               white-space: normal;

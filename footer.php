@@ -11,11 +11,13 @@
 	</div><!-- .site-content -->
 
 	<footer id="footer">
-		<div class="widget-wrapper">
-			<div class="container">
-				<?php dynamic_sidebar( 'widget-area-footer' ); ?>
+		<?php if( is_active_sidebar( 'widget-area-footer' ) ): ?>
+			<div class="widget-wrapper">
+				<div class="container">
+					<?php dynamic_sidebar( 'widget-area-footer' ); ?>
+				</div>
 			</div>
-		</div>
+		<?php endif; ?>
 
 		<div class="site-title">
 			<div class="container">

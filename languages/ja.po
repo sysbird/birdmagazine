@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BirdMAGAZINE 1.03\n"
 "Report-Msgid-Bugs-To: http://www.sysbird.jp\n"
-"POT-Creation-Date: 2016-09-01 00:00-0900\n"
-"PO-Revision-Date: 2016-09-01 17:59+0900\n"
+"POT-Creation-Date: 2016-09-02 00:00-0900\n"
+"PO-Revision-Date: 2016-09-02 14:55+0900\n"
 "Last-Translator: TORIYAMA Yuko <sysbirdj@gmail.com>\n"
 "Language-Team: TORIYAMA Yuko <sysbirdj@gmail.com>\n"
 "Language: ja\n"
@@ -39,19 +39,19 @@ msgstr "%sへのリンク"
 msgid "published in"
 msgstr "投稿日"
 
-#: footer.php:25
+#: footer.php:27
 msgid "Copyright &copy; %s All Rights Reserved."
 msgstr "Copyright &copy; %s All Rights Reserved."
 
-#: footer.php:30
+#: footer.php:32
 msgid "Proudly powered by WordPress"
 msgstr "Proudly powered by WordPress"
 
-#: footer.php:31
+#: footer.php:33
 msgid "BirdMAGAZINE theme by %sSysbird%s"
 msgstr "BirdMAGAZINE theme by %sSysbird%s"
 
-#: footer.php:35
+#: footer.php:37
 msgid "Go Top"
 msgstr "Topへ"
 

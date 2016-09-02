@@ -15,8 +15,8 @@ This theme, like WordPress, is licensed under the GPL.
 */
 
 // variable
-$background-color: #F3F3F3;
-$header-background-color: #A95858;
+$background-color: #F4F5F0;
+$header-background-color: #E9B000;
 $header-text-color: #FFFFFF;
 $text-color: #333333;
 $link-color: #4C628F;
@@ -911,6 +911,10 @@ ul.articles {
 	}
 }
 
+.entry-content {
+	@include clearfix;
+}
+
 .entry-meta {
 	border-top: dotted 1px $border-color;
 	font-size: 0.9rem;
@@ -990,9 +994,7 @@ ul.articles {
 			position: relative;
 			list-style: none;
 
-			&:after {
-				@include clearfix;
-			}
+			@include clearfix;
 
 			.comment-meta {
 				font-size: 0.96em;
@@ -1058,7 +1060,7 @@ ul.articles {
 	}
 
 	.site-title {
-		background: $header-text-color;
+		background-color: $header-text-color;
 		color: $header-background-color;
 		padding: #{$line-height /2}em 0;
 

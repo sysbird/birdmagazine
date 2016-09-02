@@ -268,10 +268,10 @@ function birdmagazine_sanitize_radiobutton( $input ) {
 //////////////////////////////////////////////////////
 // Get default colors
 function birdmagazine_get_default_colors() {
-	return array( 'background_color'	=> '#F3F3F3',
+	return array( 'background_color'	=> '#F4F5F0',
 					'text_color'		=> '#333333',
 					'link_color'		=> '#4C628F',
-					'header_color'		=> '#A95858',
+					'header_color'		=> '#E9B000',
 					'header_text_color'	=> '#FFFFFF',
 					'border_color'		=> '#DDDDDD' );
 }
