@@ -42,7 +42,7 @@ http://www.sysbird.jp/wptips/contact/
 
 == Changelog ==
 v1.03
-2016/07/04 Working!!!!
+* fix the WordPress 4.6.
 
 v1.02
 * fix based on theme review.
