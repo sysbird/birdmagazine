@@ -1020,16 +1020,23 @@ ul.articles {
 
 /* Home
 -------------------------------------------------------------------- */
-.home ul.articles {
+.home ul.articles,
+.blog ul.articles {
   line-height: 1.7; }
-.home.masonry ul.articles .entry {
+.home.masonry ul.articles .entry,
+.blog.masonry ul.articles .entry {
   padding: 0.85em;
   margin-bottom: 2%;
   width: 100%; }
-.home.masonry .entry-header {
+.home.masonry .entry-header,
+.blog.masonry .entry-header {
   margin-bottom: 0.85em; }
-.home.masonry .entry-eyecatch {
+.home.masonry .entry-eyecatch,
+.blog.masonry .entry-eyecatch {
   margin: 0 -0.85em 0.85em; }
+.home.masonry .entry-meta div.icon,
+.blog.masonry .entry-meta div.icon {
+  display: inline; }
 
 .sticky .entry-header,
 .sticky .entry-header a {
@@ -1061,17 +1068,20 @@ ul.articles {
       .error404 ul.articles li a:hover {
         background: #f4f5f0;
         text-decoration: none; }
-    .archive ul.articles li span,
-    .search ul.articles li span,
-    .error404 ul.articles li span {
+    .archive ul.articles li .entry-title,
+    .search ul.articles li .entry-title,
+    .error404 ul.articles li .entry-title {
       flex: 2;
       margin-bottom: 0; }
-    .archive ul.articles li em,
-    .search ul.articles li em,
-    .error404 ul.articles li em {
+    .archive ul.articles li .entry-meta,
+    .search ul.articles li .entry-meta,
+    .error404 ul.articles li .entry-meta {
       flex: 1;
       text-align: right;
-      font-style: normal; }
+      font-style: normal;
+      margin: 0;
+      padding: 0;
+      border: none; }
 
 /* Attachment
 -------------------------------------------------------------------- */
@@ -1219,16 +1229,20 @@ ul.articles {
       margin: 0 0 0 4%;
       overflow: hidden; }
 
-  .home .entry {
+  .home .entry,
+  .blog .entry {
     padding-bottom: 0.85em; }
-  .home.masonry ul.articles {
+  .home.masonry ul.articles,
+  .blog.masonry ul.articles {
     margin-left: -2%;
     overflow: hidden;
     *zoom: 1; }
-    .home.masonry ul.articles .entry {
+    .home.masonry ul.articles .entry,
+    .blog.masonry ul.articles .entry {
       width: 48%;
       margin-left: 2%; }
-  .home:not(.masonry) .entry-header .postdate {
+  .home:not(.masonry) .entry-header .postdate,
+  .blog:not(.masonry) .entry-header .postdate {
     padding-top: 1.7em;
     margin-top: -1.7em; }
 
@@ -1251,7 +1265,8 @@ ul.articles {
       margin: 0 1% 1.7em;
       float: left; }
 
-  .home:not(.masonry) .entry-eyecatch {
+  .home:not(.masonry) .entry-eyecatch,
+  .blog:not(.masonry) .entry-eyecatch {
     width: 30%;
     float: right;
     margin: 0 0 0.85em 0.85em; } }

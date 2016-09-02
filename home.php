@@ -40,15 +40,7 @@ get_header(); ?>
 
 				</div><!-- .entry-content -->
 
-				<footer class="entry-meta">
-					<span class="icon author"><span class="screen-reader-text"><?php _e( 'wrote by', 'birdmagazine' ); ?></span><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></span>
-
-					<span class="icon category"><span class="screen-reader-text"><?php _e( 'category in', 'birdmagazine' ); ?></span><?php the_category(', ') ?></span>
-
-					<?php if ( comments_open() ) : ?>
-						<span class="icon comment"><?php comments_popup_link(__('No Comments', 'birdmagazine'), __('1 Comment', 'birdmagazine'), __('% Comments', 'birdmagazine'), '', __('Comments Closed', 'birdmagazine') ); ?></span>
-					<?php endif; ?>
-				</footer><!-- .entry-meta -->
+				<?php birdmagazine_entry_meta(); ?>
 			</li><!-- #post -->
 
 		<?php endwhile; ?>

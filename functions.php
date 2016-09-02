@@ -12,7 +12,7 @@ if ( ! isset( $content_width ) ){
 	$content_width = 620;
 }
 
-if ( ! function_exists( 'sketch_setup' ) ) :
+if ( ! function_exists( 'birdmagazine_setup' ) ) :
 //////////////////////////////////////////////////////
 // Setup Theme
 function birdmagazine_setup() {
@@ -529,3 +529,29 @@ function birdmagazine_gallery_atts( $out, $pairs, $atts ) {
 }
 add_filter( 'shortcode_atts_gallery', 'birdmagazine_gallery_atts', 10, 3 );
 add_filter( 'use_default_gallery_style', '__return_false' );
+
+if ( ! function_exists( 'birdmagazine_entry_meta' ) ) :
+//////////////////////////////////////////////////////
+// Display entry meta information
+function birdmagazine_entry_meta( $class='' ) {
+?>
+	<footer class="entry-meta <?php echo $class; ?>">
+
+		<?php if( is_single() || is_archive() ) : ?>
+			<div class="icon postdate"><span class="screen-reader-text"><?php _e( 'published in', 'birdmagazine' ); ?></span><time datetime="<?php echo get_the_time('Y-m-d') ?>" pubdate><?php echo get_post_time(get_option('date_format')); ?></time></div>
+		<?php endif; ?>
+
+		<?php if( !is_archive() ) : ?>
+			<div class="icon author"><span class="screen-reader-text"><?php _e( 'wrote by', 'birdmagazine' ); ?></span><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></div>
+
+			<div class="icon category"><span class="screen-reader-text"><?php _e( 'category in', 'birdmagazine' ); ?></span><?php the_category(', ') ?></div>
+
+			<?php if( is_single() ): ?>
+				<?php the_tags('<div class="icon tag"><span class="screen-reader-text">' .__( 'tagged', 'birdmagazine' ) .'</span>', ', ', '</div>') ?>
+			<?php endif; ?>
+		<?php endif; ?>
+
+	</footer>
+<?php
+}
+endif;

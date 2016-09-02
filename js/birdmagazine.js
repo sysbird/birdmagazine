@@ -3,7 +3,7 @@ jQuery(function() {
 	jQuery( window ).load(function() {
 
 		// Masonry for Home
-		jQuery( '.home.masonry ul.articles' ).masonry({
+		jQuery( 'body.masonry ul.articles' ).masonry({
 			itemSelector: '.entry'
 		});
 

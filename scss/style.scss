@@ -1160,7 +1160,8 @@ ul.articles {
 
 /* Home
 -------------------------------------------------------------------- */
-.home {
+.home,
+.blog {
 	ul.articles {
 		line-height:  $line-height;
 	}
@@ -1182,6 +1183,12 @@ ul.articles {
 			margin: 0 #{-$line-height /2}em #{$line-height /2}em;
 		}
 
+
+		.entry-meta {
+			div.icon {
+				display: inline;
+			}
+		}
 	}
 }
 
@@ -1221,15 +1228,18 @@ ul.articles {
 				}
 			}
 
-			span {
+			.entry-title {
 				flex: 2;
 				margin-bottom: 0;
 			}
 
-			em {
+			.entry-meta {
 				flex: 1;
 				text-align: right;
 				font-style: normal;
+				margin: 0;
+				padding: 0;
+				border: none;
 			}
 		}
 	}
@@ -1427,7 +1437,8 @@ ul.articles {
 		}
 	}
 
-	.home {
+	.home,
+	.blog {
 		.entry {
 			padding-bottom: #{$line-height /2}em;
 		}
@@ -1486,7 +1497,8 @@ ul.articles {
 		}
 	}
 
-	.home:not(.masonry) {
+	.home:not(.masonry),
+	.blog:not(.masonry) {
 		.entry-eyecatch {
 			width: 30%;
 			float: right;

@@ -37,20 +37,8 @@ get_header(); ?>
 			?>
 
 			<?php if( is_single() ): ?>
-
-				<footer class="entry-meta <?php echo $birdmagazine_enable_comments; ?>">
-
-					<span class="icon postdate"><span class="screen-reader-text"><?php _e( 'published in', 'birdmagazine' ); ?></span><time datetime="<?php echo get_the_time('Y-m-d') ?>" pubdate><?php echo get_post_time(get_option('date_format')); ?></time></span><br>
-
-					<span class="icon author"><span class="screen-reader-text"><?php _e( 'wrote by', 'birdmagazine' ); ?></span><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></span><br>
-
-					<span class="icon category"><span class="screen-reader-text"><?php _e( 'category in', 'birdmagazine' ); ?></span><?php the_category(', ') ?></span><br>
-
-					<?php the_tags('<span class="icon tag"><span class="screen-reader-text">' .__( 'tagged', 'birdmagazine' ) .'</span>', ', ', '</span><br>') ?>
-
-				</footer>
+				<?php birdmagazine_entry_meta( $birdmagazine_enable_comments ); ?>
 			<?php endif; ?>
-
 
 			<?php if ( $birdmagazine_enable_comments === 'enable-comments' ) {
 				comments_template();
