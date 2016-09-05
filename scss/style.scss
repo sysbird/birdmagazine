@@ -1041,8 +1041,12 @@ ul.articles {
 					.fn {
 						background : $text-color;
 						color : #FFF;
-						padding: 2px 5px;
+						padding: 0 2px;
 						border-radius: 4px;
+
+						a {
+							color : #FFF;
+						}
 					}
 				}
 			}
@@ -1166,6 +1170,12 @@ ul.articles {
 		line-height:  $line-height;
 	}
 
+	.entry-meta {
+		div.icon {
+			display: inline;
+		}
+	}
+
 	&.masonry {
 		ul.articles {
 			.entry {
@@ -1181,13 +1191,6 @@ ul.articles {
 
 		.entry-eyecatch {
 			margin: 0 #{-$line-height /2}em #{$line-height /2}em;
-		}
-
-
-		.entry-meta {
-			div.icon {
-				display: inline;
-			}
 		}
 	}
 }
@@ -1233,13 +1236,9 @@ ul.articles {
 				margin-bottom: 0;
 			}
 
-			.entry-meta {
+			.postdate {
 				flex: 1;
 				text-align: right;
-				font-style: normal;
-				margin: 0;
-				padding: 0;
-				border: none;
 			}
 		}
 	}

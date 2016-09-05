@@ -928,8 +928,11 @@ ul.articles {
     #comments ol.commentlist li.comment.bypostauthor .comment-author .fn {
       background: #333333;
       color: #FFF;
-      padding: 2px 5px;
+      padding: 0 2px;
       border-radius: 4px; }
+      #comments ol.commentlist li.pingback.bypostauthor .comment-author .fn a,
+      #comments ol.commentlist li.comment.bypostauthor .comment-author .fn a {
+        color: #FFF; }
 
 /* Footer
 --------------------------------------------- */
@@ -1023,6 +1026,9 @@ ul.articles {
 .home ul.articles,
 .blog ul.articles {
   line-height: 1.7; }
+.home .entry-meta div.icon,
+.blog .entry-meta div.icon {
+  display: inline; }
 .home.masonry ul.articles .entry,
 .blog.masonry ul.articles .entry {
   padding: 0.85em;
@@ -1034,9 +1040,6 @@ ul.articles {
 .home.masonry .entry-eyecatch,
 .blog.masonry .entry-eyecatch {
   margin: 0 -0.85em 0.85em; }
-.home.masonry .entry-meta div.icon,
-.blog.masonry .entry-meta div.icon {
-  display: inline; }
 
 .sticky .entry-header,
 .sticky .entry-header a {
@@ -1073,15 +1076,11 @@ ul.articles {
     .error404 ul.articles li .entry-title {
       flex: 2;
       margin-bottom: 0; }
-    .archive ul.articles li .entry-meta,
-    .search ul.articles li .entry-meta,
-    .error404 ul.articles li .entry-meta {
+    .archive ul.articles li .postdate,
+    .search ul.articles li .postdate,
+    .error404 ul.articles li .postdate {
       flex: 1;
-      text-align: right;
-      font-style: normal;
-      margin: 0;
-      padding: 0;
-      border: none; }
+      text-align: right; }
 
 /* Attachment
 -------------------------------------------------------------------- */

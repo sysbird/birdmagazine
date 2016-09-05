@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BirdMAGAZINE 1.03\n"
 "Report-Msgid-Bugs-To: http://www.sysbird.jp\n"
-"POT-Creation-Date: 2016-09-02 00:00-0900\n"
-"PO-Revision-Date: 2016-09-02 14:55+0900\n"
+"POT-Creation-Date: 2016-09-05 00:00-0900\n"
+"PO-Revision-Date: 2016-09-05 16:47+0900\n"
 "Last-Translator: TORIYAMA Yuko <sysbirdj@gmail.com>\n"
 "Language-Team: TORIYAMA Yuko <sysbirdj@gmail.com>\n"
 "Language: ja\n"
@@ -22,22 +22,22 @@ msgstr ""
 msgid "Error 404 - Not Found"
 msgstr "エラー404 - ページが見つかりませんでした"
 
-#: 404.php:17 sidebar.php:16
-msgid "Recent Articles"
-msgstr "最近の記事"
-
 #: comments.php:18
 msgid "One Comment"
 msgid_plural "%1$s Comments"
 msgstr[0] "%1$s件のコメント"
 
-#: content.php:12 home.php:17 home.php:19
+#: content.php:12 content-home.php:12 content-home.php:14
 msgid "Permalink to %s"
 msgstr "%sへのリンク"
 
-#: content.php:13　home.php:17　singular.php:43
+#: content-home.php:12　functions.php:539
 msgid "published in"
 msgstr "投稿日"
+
+#: content-home.php:30 content-singular.php:19
+msgid "Pages:"
+msgstr "ページ:"
 
 #: footer.php:27
 msgid "Copyright &copy; %s All Rights Reserved."
@@ -55,7 +55,7 @@ msgstr "BirdMAGAZINE theme by %sSysbird%s"
 msgid "Go Top"
 msgstr "Topへ"
 
-#: functions.php:55
+#: functions.php:56
 msgid "Primary Navigation"
 msgstr "メインナビゲーション"
 
@@ -91,7 +91,7 @@ msgstr "ヘッダー文字色"
 msgid "Layout"
 msgstr "レイアウト"
 
-#: functions.php:198
+#: functions.php:208
 msgid "Front page Layout"
 msgstr "フロントページのレイアウト"
 
@@ -111,39 +111,27 @@ msgstr "コピーライトを表示"
 msgid "Display Credit"
 msgstr "クレジットを表示"
 
-#: home.php:35 singular.php:25
-msgid "Pages:"
-msgstr "ページ:"
-
-#: home:44 singular.php:45
+#: functions:543
 msgid "wrote by"
 msgstr "投稿者"
 
-#: home:46　singular.php:47
+#: functions:545
 msgid "category in"
 msgstr "カテゴリー"
 
-#: home:49
-msgid "No Comments"
-msgstr "コメントをどうぞ"
+#: functions:548
+msgid "tagged"
+msgstr "タグ"
 
-#: home:49
-msgid "1 Comment"
-msgstr "1件のコメント"
+#: header.php:49
+msgid "Menu"
+msgstr "メニュー"
 
-#: home:49
-msgid "% Comments"
-msgstr "%件のコメント"
-
-#: home.php:49
-msgid "Comments Closed"
-msgstr "コメントは受け付けていません"
-
-#: image.php:32
+#: image.php:53
 msgid "Next Image"
 msgstr "次の画像へ"
 
-#: image.php:33
+#: image.php:54
 msgid "Previous Image"
 msgstr "前の画像へ"
 
@@ -163,16 +151,13 @@ msgstr "「%s」 は見つかりませんでした。"
 msgid "Search..."
 msgstr "検索…"
 
-msgid "tagged"
-msgstr "タグ"
-
 #. Description of the plugin/theme
 msgid ""
 "BirdMAGAZINE is a flexible two-column blog theme. Features the grid layout "
 "like the Pinterest. You can choose the text color, link color, header color "
 "and frontpage layout etc on the Theme Customize."
 msgstr ""
-"BirdFIELDは、2カラムレスポンシブWebデザインのWordPressテーマです。フロント"
-"ページでピンタレスト風のグリッドレイアウトを備えています。テーマカスタマイズ"
-"ではテキストの色、リンクの色、ヘッダー背景色、レイアウトを選択することができ"
-"ます。"
+"BirdMAGAZINEは、2カラムレスポンシブWebデザインのブログ向けテーマです。フロン"
+"トページでピンタレスト風のグリッドレイアウトを備えています。テーマカスタマイ"
+"ズではテキストの色、リンクの色、ヘッダー背景色、レイアウトを選択することがで"
+"きます。"

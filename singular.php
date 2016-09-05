@@ -13,36 +13,7 @@ get_header(); ?>
 	<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
-
-			<header class="entry-header">
-				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-			</header>
-
-			<div class="entry-content">
-				<?php the_content(); ?>
-
-				<?php wp_link_pages( array(
-					'before'		=> '<div class="page-link">' . __( 'Pages:', 'birdmagazine' ),
-					'after'			=> '</div>',
-					'link_before'	=> '<span>',
-					'link_after'	=> '</span>'
-					) ); ?>
-			</div>
-
-			<?php
-				 $birdmagazine_enable_comments = '';
-				if ( comments_open() || get_comments_number() ) {
-					$birdmagazine_enable_comments = 'enable-comments';
-				}
-			?>
-
-			<?php if( is_single() ): ?>
-				<?php birdmagazine_entry_meta( $birdmagazine_enable_comments ); ?>
-			<?php endif; ?>
-
-			<?php if ( $birdmagazine_enable_comments === 'enable-comments' ) {
-				comments_template();
-			} ?>
+			<?php get_template_part( 'content', 'singular' ); ?>
 		</article>
 
 	<?php endwhile; ?>

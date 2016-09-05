@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage BirdMAGAZINE
- * @since BirdMAGAZINE 1.03
+ * @since BirdMAGAZINE 1.0
  */
 ?>
 
@@ -13,4 +13,4 @@
 		<?php the_title( '<div class="entry-title">', '</div>' ); ?>
 		<?php birdmagazine_entry_meta(); ?>
 	</a>
-</li>
+</li><!-- #post -->

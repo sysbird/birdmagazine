@@ -28,26 +28,31 @@ get_header(); ?>
 
 				<?php the_content(); ?>
 
-				<div class="nav-links">
-					<div class="nav-previous"><?php next_image_link( false, __( 'Next Image' , 'birdmagazine' )); ?></div>
-					<div class="nav-next"><?php previous_image_link( false, __( 'Previous Image' , 'birdmagazine' ) ); ?></div>
-				</div>
-			</div>
+			</div><!-- .entry-content -->
 
-			<footer class="entry-meta">
+			<?php $birdmagazine_enable_comments = '';
+			if ( comments_open() || get_comments_number() ) {
+				$birdmagazine_enable_comments = 'enable-comments';
+			}
+			?>
 
-				<span class="icon postdate"><time datetime="<?php echo get_the_time('Y-m-d') ?>" pubdate><?php echo get_post_time(get_option('date_format')); ?></time></span><br>
-
+			<footer class="entry-meta <?php echo $birdmagazine_enable_comments; ?>">
+				<div class="icon postdate"><time datetime="<?php echo get_the_time('Y-m-d') ?>"><?php echo get_post_time(get_option('date_format')); ?></time></div>
 				<div class="icon parent-post-link"><a href="<?php echo get_permalink( $post->post_parent ); ?>"><?php echo get_the_title( $post->post_parent ); ?></a></div>
+			</footer><!-- .entry-footer -->
 
-			</footer>
+			<?php if ( $birdmagazine_enable_comments === 'enable-comments' ): ?>
+				<?php comments_template(); ?>
+			<?php endif; ?>
 
-			<?php if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				} ?>
 		</article>
 
 	<?php endwhile;	?>
+
+	<div class="nav-links">
+		<div class="nav-previous"><?php next_image_link( false, __( 'Next Image' , 'birdmagazine' )); ?></div>
+		<div class="nav-next"><?php previous_image_link( false, __( 'Previous Image' , 'birdmagazine' ) ); ?></div>
+	</div>
 
 </div><!-- #main -->
 

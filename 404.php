@@ -13,14 +13,7 @@ get_header(); ?>
 		<header class="page-header">
 			<h1 class="page-title"><?php _e('Error 404 - Not Found', 'birdmagazine'); ?></h1>
 		</header>
-
-		<h2><?php _e( 'Recent Articles', 'birdmagazine' ); ?></h2>
-		<?php query_posts('cat=&showposts=10'); ?>
-		<ul class="articles">
-			<?php while (have_posts()) : the_post(); ?>
-				<?php get_template_part( 'content', 'archive' ); ?>
-			<?php endwhile; ?>
-		</ul>
+		<?php get_search_form(); ?>
 	</div>
 </div>
 
