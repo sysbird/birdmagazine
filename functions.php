@@ -64,19 +64,10 @@ function birdmagazine_setup() {
 	$custom_header_support = array(
 		'width'			=> apply_filters( 'birdmagazine_header_image_width', 1200 ),
 		'height'			=> apply_filters( 'birdmagazine_header_image_height', 300 ),
-		'default-image'		=> '%s/images/headers/euphorbia.jpg',
 		'default-text-color'	=> $birdmagazine_color
 	);
 
 	add_theme_support( 'custom-header', $custom_header_support );
-
-	register_default_headers( array(
-		'alocasia' => array(
-			'url' => '%s/images/headers/alocasia.jpg',
-			'thumbnail_url' => '%s/images/headers/alocasia-thumbnail.jpg',
-			'description' => 'Alocasia'
-		)
-	) );
 }
 endif; // birdmagazine_setup
 add_action( 'after_setup_theme', 'birdmagazine_setup' );
@@ -266,13 +257,26 @@ function birdmagazine_sanitize_radiobutton( $input ) {
 }
 
 //////////////////////////////////////////////////////
+// Sanitizes a hex color
+function birdmagazine_sanitize_hex_color( $color ) {
+	if ( '' === $color )
+		return '';
+
+	// 3 or 6 hex digits, or the empty string.
+	if ( preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) )
+		return $color;
+
+	return null;
+}
+
+//////////////////////////////////////////////////////
 // Get default colors
 function birdmagazine_get_default_colors() {
 	return array( 'background_color'	=> '#F4F5F0',
 					'text_color'		=> '#333333',
 					'link_color'		=> '#4C628F',
-					'header_color'		=> '#E9B000',
-					'header_text_color'	=> '#FFFFFF',
+					'header_color'		=> '#C0392B',
+					'header_text_color'	=> '#F4F5F0',
 					'border_color'		=> '#DDDDDD' );
 }
 
@@ -280,8 +284,8 @@ function birdmagazine_get_default_colors() {
 // Recomend colors dark or light
 function birdmagazine_recomend_colors( $color_1, $color_2 ) {
 
-	$color_1 = sanitize_hex_color( $color_1 );
-	$color_2 = sanitize_hex_color( $color_2 );
+	$color_1 = birdmagazine_sanitize_hex_color( $color_1 );
+	$color_2 = birdmagazine_sanitize_hex_color( $color_2 );
 
 	if( empty( $color_1 ) || empty( $color_2 ) ){
 		return '';

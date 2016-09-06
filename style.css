@@ -74,8 +74,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* Elements
 --------------------------------------------- */
 html {
-  background: white;
-  color: #e9b000; }
+  background: #f4f5f0;
+  color: #c0392b; }
   html * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -464,8 +464,8 @@ textarea {
     cursor: pointer;
     display: block;
     font-size: 1rem;
-    background: white;
-    color: #e9b000;
+    background: #f4f5f0;
+    color: #c0392b;
     border-radius: 4px;
     font-size: 1.4rem; }
     #menu-wrapper .menu #small-menu:before {
@@ -488,10 +488,10 @@ textarea {
       #menu-wrapper .menu ul#menu-primary-items li a {
         padding: 0.4em 0;
         display: block;
-        color: white;
+        color: #f4f5f0;
         text-decoration: none;
         line-height: 1.2;
-        border-bottom: dotted 1px white; }
+        border-bottom: dotted 1px #f4f5f0; }
       #menu-wrapper .menu ul#menu-primary-items li ul {
         padding-left: 0.85em; }
     #menu-wrapper .menu ul#menu-primary-items .current-menu-item > a,
@@ -696,10 +696,10 @@ video {
 /* Header
 -------------------------------------------------------------- */
 #header {
-  color: white;
-  background: #e9b000; }
+  color: #f4f5f0;
+  background: #c0392b; }
   #header a {
-    color: white; }
+    color: #f4f5f0; }
   #header #branding {
     padding: 1.7em 0; }
   #header #site-title {
@@ -937,15 +937,15 @@ ul.articles {
 /* Footer
 --------------------------------------------- */
 #footer hr {
-  background-color: white;
+  background-color: #f4f5f0;
   height: 2px;
   margin: 0; }
 #footer .site-title {
-  background-color: white;
-  color: #e9b000;
+  background-color: #f4f5f0;
+  color: #c0392b;
   padding: 0.85em 0; }
   #footer .site-title a {
-    color: #e9b000; }
+    color: #c0392b; }
   #footer .site-title .generator:after {
     content: "\f19a";
     display: inline-block;
@@ -993,26 +993,26 @@ ul.articles {
       font-size: 60px;
       display: block; }
 #footer .widget-wrapper {
-  background: #e9b000;
-  color: white;
+  background: #c0392b;
+  color: #f4f5f0;
   padding-top: 0.85em;
   overflow: hidden;
   *zoom: 1; }
 #footer .widget {
   width: 100%; }
   #footer .widget a {
-    color: white; }
+    color: #f4f5f0; }
   #footer .widget h3 {
-    border-bottom: solid 2px white; }
+    border-bottom: solid 2px #f4f5f0; }
   #footer .widget ul li {
-    border-color: white; }
+    border-color: #f4f5f0; }
   #footer .widget .wp-caption,
   #footer .widget .gallery-caption {
-    color: white; }
+    color: #f4f5f0; }
   #footer .widget #wp-calendar tbody th a,
   #footer .widget #wp-calendar tbody td a {
-    background: white;
-    color: #e9b000;
+    background: #f4f5f0;
+    color: #c0392b;
     display: block;
     padding: 2px 0;
     margin: 0 auto;
@@ -1043,9 +1043,9 @@ ul.articles {
 
 .sticky .entry-header,
 .sticky .entry-header a {
-  color: #e9b000; }
+  color: #c0392b; }
 .sticky .postdate {
-  border-color: #e9b000; }
+  border-color: #c0392b; }
 
 /* Archive
 -------------------------------------------------------------------- */
@@ -1146,7 +1146,7 @@ ul.articles {
           position: absolute;
           top: 2.8em;
           left: 0;
-          border: solid 1px #e9b000;
+          border: solid 1px #c0392b;
           border-top: none;
           z-index: 9999; }
           #menu-wrapper .menu ul#menu-primary-items li ul li {
@@ -1168,8 +1168,8 @@ ul.articles {
               -moz-osx-font-smoothing: grayscale; }
             #menu-wrapper .menu ul#menu-primary-items li ul li a {
               background-color: #FFF;
-              color: #e9b000;
-              border-top: solid 1px #e9b000;
+              color: #c0392b;
+              border-top: solid 1px #c0392b;
               height: auto;
               padding-left: 0.4em;
               white-space: normal;
