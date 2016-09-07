@@ -331,7 +331,8 @@ function birdmagazine_color_css() {
 			body,
 			.entry-header,
 			.entry-header a,
-			.entry-meta a,
+			.home .entry-meta a,
+			.blog .entry-meta a,
 			.archive ul.articles li a,
 			.search ul.articles li a,
 			.error404 ul.articles li a,
@@ -346,8 +347,7 @@ function birdmagazine_color_css() {
 				border-color: {$birdmagazine_text_color};
 			}
 
-			hr,
-			#comments ol.commentlist li.comment.bypostauthor .comment-author .fn {
+			hr {
 				background-color: {$birdmagazine_text_color};
 			}
 		";
@@ -455,7 +455,9 @@ function birdmagazine_color_css() {
 			$birdmagazine_css = "
 				/* Sticky Color */
 				.sticky .entry-header a,
-				.sticky .entry-header {
+				.sticky .entry-header,
+				#comments ol.commentlist li.comment.bypostauthor .comment-author .fn,
+				#comments ol.commentlist li.comment.bypostauthor .comment-author .fn a {
 					color: {$birdmagazine_recomend_colors[ 'dark_color' ]};
 				}
 

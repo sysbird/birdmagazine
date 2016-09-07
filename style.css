@@ -784,8 +784,6 @@ ul.articles {
   .entry-meta.enable-comments {
     padding-bottom: 0.85em;
     border-bottom: dotted 1px #dddddd; }
-  .entry-meta a {
-    color: #333333; }
   .entry-meta .postdate:before {
     content: "\f133";
     display: inline-block;
@@ -926,13 +924,10 @@ ul.articles {
           -moz-osx-font-smoothing: grayscale; }
     #comments ol.commentlist li.pingback.bypostauthor .comment-author .fn,
     #comments ol.commentlist li.comment.bypostauthor .comment-author .fn {
-      background: #333333;
-      color: #FFF;
-      padding: 0 2px;
-      border-radius: 4px; }
+      color: #c0392b; }
       #comments ol.commentlist li.pingback.bypostauthor .comment-author .fn a,
       #comments ol.commentlist li.comment.bypostauthor .comment-author .fn a {
-        color: #FFF; }
+        color: #c0392b; }
 
 /* Footer
 --------------------------------------------- */
@@ -1029,6 +1024,9 @@ ul.articles {
 .home .entry-meta div.icon,
 .blog .entry-meta div.icon {
   display: inline; }
+.home .entry-meta a,
+.blog .entry-meta a {
+  color: #333333; }
 .home.masonry ul.articles .entry,
 .blog.masonry ul.articles .entry {
   padding: 0.85em;
@@ -1050,35 +1048,29 @@ ul.articles {
 /* Archive
 -------------------------------------------------------------------- */
 .archive ul.articles,
-.search ul.articles,
-.error404 ul.articles {
+.search ul.articles {
   margin-bottom: 0.85em; }
   .archive ul.articles li,
-  .search ul.articles li,
-  .error404 ul.articles li {
+  .search ul.articles li {
     margin-bottom: 0;
     padding: 0;
     border-bottom: solid 1px #dddddd; }
     .archive ul.articles li a,
-    .search ul.articles li a,
-    .error404 ul.articles li a {
+    .search ul.articles li a {
       color: #333333;
       padding: 0.4em 0;
       display: -webkit-flex;
       display: flex; }
       .archive ul.articles li a:hover,
-      .search ul.articles li a:hover,
-      .error404 ul.articles li a:hover {
+      .search ul.articles li a:hover {
         background: #f4f5f0;
         text-decoration: none; }
     .archive ul.articles li .entry-title,
-    .search ul.articles li .entry-title,
-    .error404 ul.articles li .entry-title {
+    .search ul.articles li .entry-title {
       flex: 2;
       margin-bottom: 0; }
     .archive ul.articles li .postdate,
-    .search ul.articles li .postdate,
-    .error404 ul.articles li .postdate {
+    .search ul.articles li .postdate {
       flex: 1;
       text-align: right; }
 
