@@ -111,6 +111,7 @@ function birdmagazine_scripts() {
 
 	wp_enqueue_script( 'birdmagazine', get_template_directory_uri() .'/js/birdmagazine.js', array( 'jquery', 'jquery-masonry' ), '1.03' );
 
+	wp_enqueue_style( 'birdmagazine-google-font', '//fonts.googleapis.com/css?family=Open+Sans' );
 	wp_enqueue_style( 'birdmagazine', get_stylesheet_uri() );
 
 	if ( strtoupper( get_locale() ) == 'JA' ) {

@@ -1,8 +1,8 @@
-@charset "utf-8";
+@charset "UTF-8";
 /*
 Theme Name: birdMAGAZINE
-Theme URI: http://www.sysbird.jp/theme/birdmagazine/
-Description: BirdMAGAZINE is a flexible two-column blog theme. Features the grid layout like the Pinterest. You can choose the text color, link color, header color and frontpage layout etc on the Theme Customize.
+Theme URI: http://www.sysbird.jp/birdmagazine/theme/
+Description: BirdMAGAZINE is a flexible two-column blog theme. Features the grid layout like the Pinterest. You can choose the background color, text color, link color, header color scheme and frontpage layout on the Theme Customize.
 Author: Sysbird
 Author URI: http://www.sysbird.jp
 Version: 1.03
@@ -59,7 +59,7 @@ q, blockquote {
 a img {
   border: none; }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
 /* Font Awesome
@@ -70,12 +70,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   src: url("font-awesome/fontawesome-webfont.eot?#iefix&v=4.1.0") format("embedded-opentype"), url("font-awesome/fontawesome-webfont.woff?v=4.1.0") format("woff"), url("font-awesome/fontawesome-webfont.ttf?v=4.1.0") format("truetype"), url("font-awesome/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 /* Elements
 --------------------------------------------- */
 html {
-  background: #f4f5f0;
-  color: #c0392b; }
+  background: #F4F5F0;
+  color: #C0392B; }
   html * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -84,10 +83,10 @@ html {
     box-sizing: border-box; }
 
 body {
-  font-family: "Hiragino Maru Gothic W4 JIS2004", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', "Hiragino Maru Gothic W4 JIS2004", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, Open Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.7;
   color: #333333;
-  background: #f4f5f0;
+  background: #F4F5F0;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%; }
 
@@ -98,7 +97,7 @@ body {
   position: relative; }
 
 a {
-  color: #4c628f;
+  color: #4C628F;
   text-decoration: none; }
   a:hover {
     text-decoration: underline; }
@@ -130,7 +129,7 @@ p {
   margin: 0 0 1.7em; }
 
 blockquote {
-  border-left: 4px solid #dddddd;
+  border-left: 4px solid #DDDDDD;
   font-style: italic;
   line-height: 1.4736842105;
   margin: 0 0 1.4736842105em;
@@ -154,7 +153,7 @@ table {
   margin-bottom: 1.7em; }
   table th,
   table td {
-    border: 1px solid #dddddd;
+    border: 1px solid #DDDDDD;
     line-height: 1.4;
     padding: 0.85em;
     text-align: left;
@@ -282,13 +281,13 @@ textarea {
     max-width: 300px;
     padding: 5px;
     background: #FFF;
-    border: solid 1px #dddddd; }
+    border: solid 1px #DDDDDD; }
   #commentform textarea {
     width: 100%;
     height: 100px;
     padding: 5px;
     background: #FFF;
-    border: solid 1px #dddddd; }
+    border: solid 1px #DDDDDD; }
   #commentform input#submit {
     padding: 5px 10px; }
   #commentform #email-notes {
@@ -301,7 +300,7 @@ textarea {
 .post-password-form input:not([type="submit"]) {
   padding: 5px;
   background: #FFF;
-  border: solid 1px #dddddd; }
+  border: solid 1px #DDDDDD; }
 
 /* Search Forms
 -------------------------------------------------------------- */
@@ -320,7 +319,7 @@ textarea {
     height: 30px;
     line-height: 1;
     border-radius: 4px 0 0 4px;
-    border: solid 1px #dddddd; }
+    border: solid 1px #DDDDDD; }
   #searchform #searchsubmit {
     position: absolute;
     top: 0;
@@ -331,12 +330,12 @@ textarea {
     height: 30px;
     border-radius: 0 4px 4px 0;
     margin: 0;
-    background: #dddddd;
+    background: #DDDDDD;
     color: #FFF;
     -webkit-appearance: button; }
     #searchform #searchsubmit:before {
       font-size: 1.4rem;
-      content: "\f002";
+      content: "";
       display: inline-block;
       font-family: FontAwesome;
       font-style: normal;
@@ -356,7 +355,7 @@ textarea {
   .nav-links a {
     display: inline-block; }
   .nav-links .nav-next a:before {
-    content: "\f053";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -369,7 +368,7 @@ textarea {
   .nav-links .nav-previous {
     text-align: right; }
     .nav-links .nav-previous a:after {
-      content: "\f054";
+      content: "";
       display: inline-block;
       font-family: FontAwesome;
       font-style: normal;
@@ -390,7 +389,7 @@ textarea {
   .pagination span {
     display: inline-block;
     color: #333333;
-    border-bottom: solid 2px #dddddd;
+    border-bottom: solid 2px #DDDDDD;
     text-align: center;
     padding: 0.425em 0.85em;
     margin-bottom: 5px; }
@@ -405,15 +404,15 @@ textarea {
       border: none;
       padding: 0.4em; }
   .pagination a:hover {
-    color: #4c628f;
-    border-color: #4c628f;
+    color: #4C628F;
+    border-color: #4C628F;
     text-decoration: none; }
   .pagination span.current {
-    color: #4c628f;
-    border-color: #4c628f;
+    color: #4C628F;
+    border-color: #4C628F;
     font-weight: bold; }
   .pagination a.page-numbers.prev:before {
-    content: "\f053";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -424,7 +423,7 @@ textarea {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   .pagination a.page-numbers.next:after {
-    content: "\f054";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -443,8 +442,8 @@ textarea {
   color: #333333; }
   .page-link span {
     display: inline-block;
-    color: #4c628f;
-    border-bottom: solid 2px #4c628f;
+    color: #4C628F;
+    border-bottom: solid 2px #4C628F;
     text-decoration: none;
     text-align: center;
     padding: 0.425em 0.85em;
@@ -452,9 +451,9 @@ textarea {
   .page-link a span {
     color: #333333;
     background: #FFF;
-    border-color: #dddddd; }
+    border-color: #DDDDDD; }
     .page-link a span:hover {
-      border-color: #4c628f; }
+      border-color: #4C628F; }
 
 /* Menu
 -------------------------------------------------------------- */
@@ -464,12 +463,12 @@ textarea {
     cursor: pointer;
     display: block;
     font-size: 1rem;
-    background: #f4f5f0;
-    color: #c0392b;
+    background: #F4F5F0;
+    color: #C0392B;
     border-radius: 4px;
     font-size: 1.4rem; }
     #menu-wrapper .menu #small-menu:before {
-      content: "\f0c9";
+      content: "";
       display: inline-block;
       font-family: FontAwesome;
       font-style: normal;
@@ -488,10 +487,10 @@ textarea {
       #menu-wrapper .menu ul#menu-primary-items li a {
         padding: 0.4em 0;
         display: block;
-        color: #f4f5f0;
+        color: #F4F5F0;
         text-decoration: none;
         line-height: 1.2;
-        border-bottom: dotted 1px #f4f5f0; }
+        border-bottom: dotted 1px #F4F5F0; }
       #menu-wrapper .menu ul#menu-primary-items li ul {
         padding-left: 0.85em; }
     #menu-wrapper .menu ul#menu-primary-items .current-menu-item > a,
@@ -588,19 +587,20 @@ a:hover img {
   overflow: hidden;
   *zoom: 1; }
   .gallery .gallery-item {
-    float: left;
-    padding: 0 5px;
-    margin-bottom: 10px;
+    display: inline-block;
+    padding: 0 1.1400652% 2.2801304%;
     text-align: center;
-    width: 33%; }
+    vertical-align: top;
+    max-width: 33.33%; }
     .gallery .gallery-item a {
       display: block; }
     .gallery .gallery-item img {
       vertical-align: bottom; }
+  .gallery.gallery-columns-1 .gallery-item {
+    display: block;
+    max-width: 100%; }
   .gallery.gallery-columns-2 .gallery-item {
     max-width: 50%; }
-  .gallery.gallery-columns-3 .gallery-item {
-    max-width: 33.33%; }
   .gallery.gallery-columns-4 .gallery-item {
     max-width: 25%; }
   .gallery.gallery-columns-5 .gallery-item {
@@ -613,6 +613,8 @@ a:hover img {
     max-width: 12.5%; }
   .gallery.gallery-columns-9 .gallery-item {
     max-width: 11.11%; }
+  .gallery.gallery-columns-6 .gallery-caption, .gallery.gallery-columns-7 .gallery-caption, .gallery.gallery-columns-8 .gallery-caption, .gallery.gallery-columns-9 .gallery-caption {
+    display: none; }
 
 /* Make sure videos and embeds fit their containers
 -------------------------------------------------------------- */
@@ -636,7 +638,7 @@ video {
     font-weight: normal;
     margin: 0 0 0.4em 0;
     padding: 0 0 0.4em 0;
-    border-bottom: solid 2px #dddddd;
+    border-bottom: solid 2px #DDDDDD;
     font-size: 1.4rem; }
   .widget ul {
     list-style: none;
@@ -645,11 +647,11 @@ video {
     overflow: hidden; }
     .widget ul li {
       margin-top: -2px;
-      border-top: dotted 1px #dddddd;
+      border-top: dotted 1px #DDDDDD;
       padding: 0.3em 0 0.3em 0.6em;
       text-indent: -0.3em; }
       .widget ul li:before {
-        content: "\f0da";
+        content: "";
         display: inline-block;
         font-family: FontAwesome;
         font-style: normal;
@@ -696,10 +698,10 @@ video {
 /* Header
 -------------------------------------------------------------- */
 #header {
-  color: #f4f5f0;
-  background: #c0392b; }
+  color: #F4F5F0;
+  background: #C0392B; }
   #header a {
-    color: #f4f5f0; }
+    color: #F4F5F0; }
   #header #branding {
     padding: 1.7em 0; }
   #header #site-title {
@@ -742,7 +744,7 @@ ul.articles {
 .entry {
   background: #FFF;
   border-radius: 4px;
-  border-bottom: solid 2px #dddddd;
+  border-bottom: solid 2px #DDDDDD;
   word-wrap: break-word;
   margin-bottom: 0.85em;
   padding: 0.85em;
@@ -777,15 +779,15 @@ ul.articles {
   *zoom: 1; }
 
 .entry-meta {
-  border-top: dotted 1px #dddddd;
+  border-top: dotted 1px #DDDDDD;
   font-size: 0.9rem;
   padding: 0.85em 0.85em 0;
   margin: 0 -0.85em; }
   .entry-meta.enable-comments {
     padding-bottom: 0.85em;
-    border-bottom: dotted 1px #dddddd; }
+    border-bottom: dotted 1px #DDDDDD; }
   .entry-meta .postdate:before {
-    content: "\f133";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -796,7 +798,7 @@ ul.articles {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   .entry-meta .author:before {
-    content: "\f007";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -807,7 +809,7 @@ ul.articles {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   .entry-meta .comment:before {
-    content: "\f0e5";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -818,7 +820,7 @@ ul.articles {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   .entry-meta .parent-post-link a:before {
-    content: "\f1c5";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -829,7 +831,7 @@ ul.articles {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   .entry-meta .category:before {
-    content: "\f07b";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -840,7 +842,7 @@ ul.articles {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   .entry-meta .tag:before {
-    content: "\f02b";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -857,7 +859,7 @@ ul.articles {
 
 .more-link:after {
   text-decoration: none;
-  content: "\f054";
+  content: "";
   display: inline-block;
   font-family: FontAwesome;
   font-style: normal;
@@ -879,7 +881,7 @@ ul.articles {
     margin-left: 4%; }
   #comments ol.commentlist li.pingback,
   #comments ol.commentlist li.comment {
-    border-top: 1px solid #dddddd;
+    border-top: 1px solid #DDDDDD;
     padding-top: 1.7em;
     position: relative;
     list-style: none;
@@ -912,7 +914,7 @@ ul.articles {
         font-style: 0.9em; }
         #comments ol.commentlist li.pingback .reply a.comment-reply-link:before,
         #comments ol.commentlist li.comment .reply a.comment-reply-link:before {
-          content: "\f0da";
+          content: "";
           display: inline-block;
           font-family: FontAwesome;
           font-style: normal;
@@ -924,25 +926,25 @@ ul.articles {
           -moz-osx-font-smoothing: grayscale; }
     #comments ol.commentlist li.pingback.bypostauthor .comment-author .fn,
     #comments ol.commentlist li.comment.bypostauthor .comment-author .fn {
-      color: #c0392b; }
+      color: #C0392B; }
       #comments ol.commentlist li.pingback.bypostauthor .comment-author .fn a,
       #comments ol.commentlist li.comment.bypostauthor .comment-author .fn a {
-        color: #c0392b; }
+        color: #C0392B; }
 
 /* Footer
 --------------------------------------------- */
 #footer hr {
-  background-color: #f4f5f0;
+  background-color: #F4F5F0;
   height: 2px;
   margin: 0; }
 #footer .site-title {
-  background-color: #f4f5f0;
-  color: #c0392b;
+  background-color: #F4F5F0;
+  color: #C0392B;
   padding: 0.85em 0; }
   #footer .site-title a {
-    color: #c0392b; }
+    color: #C0392B; }
   #footer .site-title .generator:after {
-    content: "\f19a";
+    content: "";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -958,7 +960,7 @@ ul.articles {
   right: 10px;
   z-index: 3; }
   #footer #back-top a {
-    color: #dddddd;
+    color: #DDDDDD;
     display: block;
     height: 60px;
     width: 60px;
@@ -969,13 +971,14 @@ ul.articles {
       text-indent: -119988px;
       overflow: hidden;
       text-align: left;
+      text-transform: capitalize;
       display: block; }
     #footer #back-top a:hover {
       text-decoration: none;
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
       opacity: 0.8; }
     #footer #back-top a:before {
-      content: "\f0aa";
+      content: "";
       display: inline-block;
       font-family: FontAwesome;
       font-style: normal;
@@ -988,26 +991,26 @@ ul.articles {
       font-size: 60px;
       display: block; }
 #footer .widget-wrapper {
-  background: #c0392b;
-  color: #f4f5f0;
+  background: #C0392B;
+  color: #F4F5F0;
   padding-top: 0.85em;
   overflow: hidden;
   *zoom: 1; }
 #footer .widget {
   width: 100%; }
   #footer .widget a {
-    color: #f4f5f0; }
+    color: #F4F5F0; }
   #footer .widget h3 {
-    border-bottom: solid 2px #f4f5f0; }
+    border-bottom: solid 2px #F4F5F0; }
   #footer .widget ul li {
-    border-color: #f4f5f0; }
+    border-color: #F4F5F0; }
   #footer .widget .wp-caption,
   #footer .widget .gallery-caption {
-    color: #f4f5f0; }
+    color: #F4F5F0; }
   #footer .widget #wp-calendar tbody th a,
   #footer .widget #wp-calendar tbody td a {
-    background: #f4f5f0;
-    color: #c0392b;
+    background: #F4F5F0;
+    color: #C0392B;
     display: block;
     padding: 2px 0;
     margin: 0 auto;
@@ -1041,9 +1044,9 @@ ul.articles {
 
 .sticky .entry-header,
 .sticky .entry-header a {
-  color: #c0392b; }
+  color: #C0392B; }
 .sticky .postdate {
-  border-color: #c0392b; }
+  border-color: #C0392B; }
 
 /* Archive
 -------------------------------------------------------------------- */
@@ -1054,7 +1057,7 @@ ul.articles {
   .search ul.articles li {
     margin-bottom: 0;
     padding: 0;
-    border-bottom: solid 1px #dddddd; }
+    border-bottom: solid 1px #DDDDDD; }
     .archive ul.articles li a,
     .search ul.articles li a {
       color: #333333;
@@ -1063,7 +1066,7 @@ ul.articles {
       display: flex; }
       .archive ul.articles li a:hover,
       .search ul.articles li a:hover {
-        background: #f4f5f0;
+        background: #F4F5F0;
         text-decoration: none; }
     .archive ul.articles li .entry-title,
     .search ul.articles li .entry-title {
@@ -1116,7 +1119,7 @@ ul.articles {
         #menu-wrapper .menu ul#menu-primary-items li.menu-item-has-children > a {
           padding-bottom: 0; }
         #menu-wrapper .menu ul#menu-primary-items li.menu-item-has-children > a:after {
-          content: "\f107";
+          content: "";
           display: inline-block;
           font-family: FontAwesome;
           font-style: normal;
@@ -1138,7 +1141,7 @@ ul.articles {
           position: absolute;
           top: 2.8em;
           left: 0;
-          border: solid 1px #c0392b;
+          border: solid 1px #C0392B;
           border-top: none;
           z-index: 9999; }
           #menu-wrapper .menu ul#menu-primary-items li ul li {
@@ -1148,7 +1151,7 @@ ul.articles {
             #menu-wrapper .menu ul#menu-primary-items li ul li.menu-item-has-children > a {
               padding-bottom: 0.85em; }
             #menu-wrapper .menu ul#menu-primary-items li ul li.menu-item-has-children > a:after {
-              content: "\f105";
+              content: "";
               display: inline-block;
               font-family: FontAwesome;
               font-style: normal;
@@ -1160,12 +1163,12 @@ ul.articles {
               -moz-osx-font-smoothing: grayscale; }
             #menu-wrapper .menu ul#menu-primary-items li ul li a {
               background-color: #FFF;
-              color: #c0392b;
-              border-top: solid 1px #c0392b;
+              color: #C0392B;
+              border-top: solid 1px #C0392B;
               height: auto;
               padding-left: 0.4em;
               white-space: normal;
-              filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+              filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
               opacity: 1; }
             #menu-wrapper .menu ul#menu-primary-items li ul li ul {
               top: 0;

@@ -1,8 +1,8 @@
 @charset "utf-8";
 /*
 Theme Name: birdMAGAZINE
-Theme URI: http://www.sysbird.jp/theme/birdmagazine/
-Description: BirdMAGAZINE is a flexible two-column blog theme. Features the grid layout like the Pinterest. You can choose the text color, link color, header color and frontpage layout etc on the Theme Customize.
+Theme URI: http://www.sysbird.jp/birdmagazine/theme/
+Description: BirdMAGAZINE is a flexible two-column blog theme. Features the grid layout like the Pinterest. You can choose the background color, text color, link color, header color scheme and frontpage layout on the Theme Customize.
 Author: Sysbird
 Author URI: http://www.sysbird.jp
 Version: 1.03
@@ -68,7 +68,7 @@ html {
 }
 
 body {
-	font-family: "Hiragino Maru Gothic W4 JIS2004", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'Open Sans', "Hiragino Maru Gothic W4 JIS2004", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, Open Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	line-height: $line-height;
 	color: $text-color;
 	background: $background-color;
@@ -655,11 +655,11 @@ a:hover img {
 	@include clearfix;
 
 	.gallery-item {
-		float: left;
-		padding: 0 5px;
-		margin-bottom: 10px;
+		display: inline-block;
+		padding: 0 1.1400652% 2.2801304%;
 		text-align: center;
-		width: 33%;
+		vertical-align: top;
+		max-width: 33.33%;
 
 		a {
 			display: block;
@@ -670,13 +670,15 @@ a:hover img {
 		}
 	}
 
+	&.gallery-columns-1 .gallery-item {
+		display: block;
+		max-width: 100%;
+	}
+
 	&.gallery-columns-2 .gallery-item {
 		max-width: 50%;
 	}
 
-	&.gallery-columns-3 .gallery-item {
-		max-width: 33.33%;
-	}
 	&.gallery-columns-4 .gallery-item {
 		max-width: 25%;
 	}
@@ -700,6 +702,14 @@ a:hover img {
 	&.gallery-columns-9 .gallery-item {
 		max-width: 11.11%;
 	}
+
+	&.gallery-columns-6 .gallery-caption,
+	&.gallery-columns-7 .gallery-caption,
+	&.gallery-columns-8 .gallery-caption,
+	&.gallery-columns-9 .gallery-caption {
+		display: none;
+	}
+
 }
 
 /* Make sure videos and embeds fit their containers
