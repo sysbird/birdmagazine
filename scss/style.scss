@@ -15,9 +15,10 @@ This theme, like WordPress, is licensed under the GPL.
 */
 
 // variable
-$background-color: #F4F5F0;
+$background-color: #F6F6F6;
 $header-background-color: #C0392B;
-$header-text-color: #F4F5F0;
+$header-background-color: #DE575E;
+$header-text-color: #F6F6F6;
 $text-color: #333333;
 $link-color: #4C628F;
 $border-color: #DDDDDD;
@@ -851,7 +852,7 @@ video {
 	#site-description {
 		display: none;
 		margin: 0;
-		padding: #{$line-height /2}em 0 0 0;
+		padding: #{$line-height /4}em 0 0 0;
 	}
 }
 
@@ -922,7 +923,7 @@ ul.articles {
 }
 
 .entry-content {
-	@include clearfix;
+	@include pie-clearfix;
 }
 
 .entry-meta {
@@ -1310,7 +1311,7 @@ ul.articles {
 
 					a {
 						border-bottom: none;
-						padding: #{$line-height /2}em #{$line-height}em #{$line-height /2}em 0;
+						padding: 0 #{$line-height}em #{$line-height /2}em 0;
 					}
 
 					&.menu-item-has-children {
@@ -1332,8 +1333,7 @@ ul.articles {
 						display: none; /* hide dropdown */
 						width: 200px;
 						position: absolute;
-						top: 2.8em;
-						left: 0;
+						top: 2.05em;
 						border: solid 1px $header-background-color;
 						border-top: none;
 						z-index: 9999;
@@ -1358,7 +1358,7 @@ ul.articles {
 								color: $header-background-color;
 								border-top: solid 1px $header-background-color;
 								height: auto;
-								padding-left: 0.4em;
+								padding: #{$line-height /2}em;
 								white-space: normal;
 								@include opacity( 1 );
 							}
@@ -1505,7 +1505,7 @@ ul.articles {
 	.home:not(.masonry),
 	.blog:not(.masonry) {
 		.entry-eyecatch {
-			width: 30%;
+			width: 40%;
 			float: right;
 			margin: 0 0 #{$line-height /2}em #{$line-height /2}em;
 		}
