@@ -75,7 +75,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 --------------------------------------------- */
 html {
   background: #f6f6f6;
-  color: #de575e; }
+  color: #af574d; }
   html * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -351,34 +351,31 @@ textarea {
 -------------------------------------------------------------------- */
 .nav-links {
   line-height: 1.2;
-  overflow: hidden;
-  *zoom: 1; }
-  .nav-links a {
-    display: inline-block; }
-  .nav-links .nav-next a:before {
-    content: "\f053";
-    display: inline-block;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    padding-left: 0;
-    padding-right: 0.4em;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
-  .nav-links .nav-previous {
-    text-align: right; }
-    .nav-links .nav-previous a:after {
-      content: "\f054";
+  padding-bottom: 1.7em; }
+  .nav-links .nav-next {
+    padding-top: 0.85em; }
+    .nav-links .nav-next a:before {
+      content: "\f053";
       display: inline-block;
       font-family: FontAwesome;
       font-style: normal;
       font-weight: normal;
       line-height: 1;
-      padding-left: 0.4em;
-      padding-right: 0;
+      padding-left: 0;
+      padding-right: 0.4em;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale; }
+  .nav-links .nav-previous a:after {
+    content: "\f054";
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 0.4em;
+    padding-right: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
 
 /* Pagination at archive
 -------------------------------------------------------------------- */
@@ -465,7 +462,7 @@ textarea {
     display: block;
     font-size: 1rem;
     background: #f6f6f6;
-    color: #de575e;
+    color: #af574d;
     border-radius: 4px;
     font-size: 1.4rem; }
     #menu-wrapper .menu #small-menu:before {
@@ -700,7 +697,7 @@ video {
 -------------------------------------------------------------- */
 #header {
   color: #f6f6f6;
-  background: #de575e; }
+  background: #af574d; }
   #header a {
     color: #f6f6f6; }
   #header #branding {
@@ -930,10 +927,10 @@ ul.articles {
           -moz-osx-font-smoothing: grayscale; }
     #comments ol.commentlist li.pingback.bypostauthor .comment-author .fn,
     #comments ol.commentlist li.comment.bypostauthor .comment-author .fn {
-      color: #de575e; }
+      color: #af574d; }
       #comments ol.commentlist li.pingback.bypostauthor .comment-author .fn a,
       #comments ol.commentlist li.comment.bypostauthor .comment-author .fn a {
-        color: #de575e; }
+        color: #af574d; }
 
 /* Footer
 --------------------------------------------- */
@@ -943,10 +940,10 @@ ul.articles {
   margin: 0; }
 #footer .site-title {
   background-color: #f6f6f6;
-  color: #de575e;
+  color: #af574d;
   padding: 0.85em 0; }
   #footer .site-title a {
-    color: #de575e; }
+    color: #af574d; }
   #footer .site-title .generator:after {
     content: "\f19a";
     display: inline-block;
@@ -994,7 +991,7 @@ ul.articles {
       font-size: 60px;
       display: block; }
 #footer .widget-wrapper {
-  background: #de575e;
+  background: #af574d;
   color: #f6f6f6;
   padding-top: 0.85em;
   overflow: hidden;
@@ -1013,7 +1010,7 @@ ul.articles {
   #footer .widget #wp-calendar tbody th a,
   #footer .widget #wp-calendar tbody td a {
     background: #f6f6f6;
-    color: #de575e;
+    color: #af574d;
     display: block;
     padding: 2px 0;
     margin: 0 auto;
@@ -1047,9 +1044,9 @@ ul.articles {
 
 .sticky .entry-header,
 .sticky .entry-header a {
-  color: #de575e; }
+  color: #af574d; }
 .sticky .postdate {
-  border-color: #de575e; }
+  border-color: #af574d; }
 
 /* Archive
 -------------------------------------------------------------------- */
@@ -1093,11 +1090,18 @@ ul.articles {
 --------------------------------------------- */
 /* --- iPad Landscape --- */
 @media screen and (min-width: 660px) {
-  .nav-links .nav-next {
-    width: 50%; }
-  .nav-links .nav-previous {
-    width: 50%;
-    float: right; }
+  .nav-links {
+    display: -webkit-flex;
+    display: flex;
+    padding-bottom: 0; }
+    .nav-links .nav-next {
+      flex: 1;
+      order: 1;
+      padding-top: 0; }
+    .nav-links .nav-previous {
+      flex: 1;
+      order: 2;
+      text-align: right; }
 
   #menu-wrapper {
     padding-bottom: 0;
@@ -1109,7 +1113,12 @@ ul.articles {
     #menu-wrapper .menu #small-menu {
       display: none; }
     #menu-wrapper .menu ul#menu-primary-items {
-      display: block !important; }
+      display: block !important;
+      *zoom: 1; }
+      #menu-wrapper .menu ul#menu-primary-items:after {
+        content: "";
+        display: table;
+        clear: both; }
       #menu-wrapper .menu ul#menu-primary-items li {
         float: left;
         position: relative;
@@ -1143,7 +1152,7 @@ ul.articles {
           width: 200px;
           position: absolute;
           top: 2.05em;
-          border: solid 1px #de575e;
+          border: solid 1px #af574d;
           border-top: none;
           z-index: 9999; }
           #menu-wrapper .menu ul#menu-primary-items li ul li {
@@ -1165,8 +1174,8 @@ ul.articles {
               -moz-osx-font-smoothing: grayscale; }
             #menu-wrapper .menu ul#menu-primary-items li ul li a {
               background-color: #FFF;
-              color: #de575e;
-              border-top: solid 1px #de575e;
+              color: #af574d;
+              border-top: solid 1px #af574d;
               height: auto;
               padding: 0.85em;
               white-space: normal;
@@ -1255,7 +1264,12 @@ ul.articles {
   #footer .site-title {
     padding: 1.7em 0; }
   #footer .widget-wrapper {
-    padding-top: 1.7em; }
+    padding-top: 1.7em;
+    *zoom: 1; }
+    #footer .widget-wrapper:after {
+      content: "";
+      display: table;
+      clear: both; }
     #footer .widget-wrapper .widget {
       width: 30%;
       margin: 0 1% 1.7em;

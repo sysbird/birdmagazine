@@ -16,8 +16,7 @@ This theme, like WordPress, is licensed under the GPL.
 
 // variable
 $background-color: #F6F6F6;
-$header-background-color: #C0392B;
-$header-background-color: #DE575E;
+$header-background-color: #AF574D;
 $header-text-color: #F6F6F6;
 $text-color: #333333;
 $link-color: #4C628F;
@@ -398,13 +397,11 @@ textarea {
 -------------------------------------------------------------------- */
 .nav-links {
 	line-height: 1.2;
-	@include clearfix;
-
-	a {
-		display: inline-block;
-	}
+	padding-bottom: #{$line-height}em;
 
 	.nav-next {
+		padding-top: #{$line-height /2}em;
+
 		a {
 			&:before {
 				@include font-awesome( "\f053", 0, 0.4em );
@@ -413,8 +410,6 @@ textarea {
 	}
 
 	.nav-previous {
-		text-align: right;
-
 		a {
 			&:after {
 				@include font-awesome( "\f054", 0.4em, 0 );
@@ -1273,13 +1268,20 @@ ul.articles {
 @media screen and (min-width: 660px) {
 
 	.nav-links {
+		display: -webkit-flex;
+		display: flex;
+		padding-bottom: 0;
+
 		.nav-next {
-			width: 50%;
+			flex: 1;
+			order: 1;
+			padding-top: 0;
 		}
 
 		.nav-previous {
-			width: 50%;
-			float: right;
+			flex: 1;
+			order: 2;
+			text-align: right;
 		}
 	}
 
@@ -1299,6 +1301,7 @@ ul.articles {
 
 			ul#menu-primary-items {
 				display: block !important;
+				@include pie-clearfix;
 
 				li {
 					float: left;
@@ -1493,6 +1496,7 @@ ul.articles {
 
 		.widget-wrapper {
 			padding-top: #{$line-height}em;
+			@include pie-clearfix;
 
 			.widget {
 				width: 30%;
