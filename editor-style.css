@@ -1,5 +1,5 @@
 /*
-Theme Name: BirdTIPS
+Theme Name: BirdMAGAZINE
 */
 /*
 Used to style the TinyMCE editor.
@@ -9,252 +9,172 @@ html .mceContentBody {
 	}
 
 * {
-	font-family:  Verdana,Arial,"ÉÅÉCÉäÉI",Meiryo,"ÉqÉâÉMÉmäpÉSPro W3","Hiragino Kaku Gothic Pro","ÇlÇr ÇoÉSÉVÉbÉN",sans-serif;
-	color: #544021;
+	font-family: "Open Sans", "Hiragino Maru Gothic W4 JIS2004", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, Open Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #333333;
 	}
 
 body, input, textarea {
 	}
 
 a {
-	color:#39C !important;
+	color: #4c628f !important;
 	text-decoration: none !important;
 	}
 
-hr {
-	background-color: #E7E7E7;
-	border:0;
-	height: 1px;
-	margin-bottom: 1em;
-	clear:both;
-	}
-
-p {
-	text-align: left;
-	line-height: 1.6;
-	}
-
 h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  line-height: 1em; }
+  margin: 0.7em 0;
+  line-height: 1.2;
+  font-weight: normal; }
 
 h1 {
-  font-size: 2em;
-  margin-bottom: .5em; }
+  font-size: 2.4rem; }
 
 h2 {
-  font-size: 1.75em;
-  margin-bottom: .5142em;
-  padding-top: .2em; }
+  font-size: 2rem; }
 
 h3 {
-  font-size: 1.5em;
-  margin-bottom: .7em;
-  padding-top: .3em; }
+  font-size: 1.8rem; }
 
 h4 {
-  font-size: 1.25em;
-  margin-bottom: .6em; }
+  font-size: 1.6rem; }
 
 h5 {
-  font-size: 1.1em;
-  margin-bottom: .5em;
-  font-weight: bold; }
+  font-size: 1.4rem; }
 
 h6 {
-  font-size: 1em;
-  margin-bottom: .5em;
-  font-weight: bold; }
+  font-size: 1.2rem; }
+
+p {
+  margin: 0 0 1.7em; }
 
 blockquote {
-  margin-left: 1em;
-  padding-left: 1em;
-  border-left: 5px solid #dddddd;
-  }
-
-pre {
-	border: dashed 1px #CCC;
-	padding: 10px;
-	}
-
-ul {
-	margin: 0 0 0 1em;
-	padding: 0 0 0 1em;
-	list-style: disc;
-	}
-
-ul ul {
-	list-style: circle;
-	}
-
-ul ul ul {
-	list-style: square;
-	}
-
-ul ul ul ul {
-	list-style: disk;
-	}
-
-ol {
-	list-style: decimal;
-	}
-
-ol ol {
-	list-style:upper-alpha;
-	}
-
-ol ol ol {
-	list-style:lower-roman;
-	}
-
-ol ol ol ol {
-	list-style:lower-alpha;
-	}
-
-dl {
-	margin:0 0 1em 0;
-	line-height: 1.6;
-	}
-
-dt {
-	font-weight: bold;
-	}
-
-dd {
-	margin-bottom: 1em;
-	padding: 0;
-	}
-
-strong {
-	font-weight: bold;
-	}
-
-em,
-i,
-q {
-	font-style: italic;
-	}
-
-cite {
-	border-bottom: dashed 1px #CCC;
-	font-style: italic;
-	}
-
-big {
-	font-size: 130%;
-	}
-
-ins {
-	background: #ffc;
-	border: none;
-	color: #555;
-	}
-
-abbr {
-	text-transform: lowercase;
-	border-bottom: 1px dotted #666;
-	cursor: help;
-	}
-
-acronym {
-	text-transform: uppercase;
-	border-bottom: 1px dotted #666;
-	cursor: help;
-	}
-
-pre, code, samp, kbd, var{
-	font:100% mono-space,monospace;
-	}
-
-del {
-	color: #C00;
-	}
+  border-left: 4px solid #dddddd;
+  font-style: italic;
+  line-height: 1.4736842105;
+  margin: 0 0 1.4736842105em;
+  padding: 0 0 0 1.263157895em; }
+  blockquote small {
+    display: block;
+    color: #999999; }
+  blockquote small:before {
+    content: '\2014 \00A0'; }
+  blockquote cite:before {
+    content: "-"; }
+  blockquote cite {
+    color: #999999;
+    display: block; }
 
 table {
   max-width: 100%;
   width: 100%;
   border-collapse: collapse;
-  border-spacing: 0; }
-
-table th,
-table td {
-    border-bottom: 1px solid #dddddd;
-    line-height: 20px;
-    padding: 8px;
+  border-spacing: 0;
+  margin-bottom: 1.7em; }
+  table th,
+  table td {
+    border: 1px solid #dddddd;
+    line-height: 1.4;
+    padding: 0.85em;
     text-align: left;
     vertical-align: top; }
+  table th {
+    font-weight: bold; }
 
-img[class*="wp-image-"] {
-	height: auto;
-	max-width: 100%;
-	}
+pre {
+  padding: 0.85em;
+  background: #EEE;
+  margin-bottom: 1.7em;
+  line-height: 1.4;
+  max-width: 100%;
+  overflow: auto;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
 
-img.size-full {
-	width: auto; /* Prevent stretching of full-size images in IE8 */
-	}
+code {
+  background: #EEE; }
 
-img.wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
-	}
+code,
+kbd,
+tt,
+var,
+samp,
+pre {
+  font-family: Inconsolata, monospace; }
 
-p img,
-.wp-caption {
-	margin-top: 0.4em;
-	}
+hr {
+  background-color: #333333;
+  border: 0 none;
+  height: 1px;
+  margin-bottom: 1.7m; }
 
-.aligncenter {
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-	}
+sup, sub {
+  font-size: 80%;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
 
-.alignleft {
-	float: left;
-	margin-right: 0.5em;
-	}
+sub {
+  top: 0.5ex; }
 
-.alignright {
-	float: right;
-	margin-left: 0.5em;
-	}
+sup {
+  bottom: 1ex; }
 
-img.alignleft,
-img.alignright,
-img.aligncenter {
-	margin-bottom: 0.75em;
-	}
+em {
+  font-style: italic; }
 
-.wp-caption {
-    background: none repeat scroll 0 0 #F5F5F5;
-    color: #999999;
-    font-size: 0.8em;
-    max-width: 100%;
-    padding-top: 5px;
-    text-align: center;
-	}
+strong {
+  font-weight: bold; }
 
-.wp-caption img {
-	display: block;
-	margin: 5px auto 0 !important;
-	max-width: 98%;
-	}
+abbr, acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help; }
 
-.wp-caption a {
-	border: none !important;
-	}
+ul,
+ol {
+  margin: 0 0 1.7em 1em;
+  padding: 0 0 0 1em;
+  line-height: 1.4; }
+  ul li,
+  ol li {
+    padding: 0.2em 0; }
+  ul ul,
+  ul ol,
+  ol ul,
+  ol ol {
+    margin-bottom: 0; }
 
-.wp-caption .wp-caption-text,
-.wp-caption-dd {
-    color: #999999;
-	margin: 0 0 0.6em 0 !important;
-	padding: 0 0 5px 0;
-	position: relative;
-	}
+ul {
+  list-style: disc; }
+  ul ul {
+    list-style: circle; }
+    ul ul ul {
+      list-style: square; }
 
-.wp-smiley {
-	margin:0;
-	}
-	
+ol {
+  list-style: decimal; }
+  ol ol {
+    list-style: upper-alpha; }
+    ol ol ol {
+      list-style: lower-roman; }
+      ol ol ol ol {
+        list-style: lower-alpha; }
+
+dl {
+  margin: 0 0 1em 0; }
+  dl dt {
+    font-weight: bold; }
+  dl dd {
+    margin: 0 1.7em 1.7em;
+    padding: 0; }
+
+del {
+  color: #C00; }
+
+ins {
+  background: #ffc;
+  text-decoration: none; }
+
+  .gallery.gallery-columns-6 .gallery-caption, .gallery.gallery-columns-7 .gallery-caption, .gallery.gallery-columns-8 .gallery-caption, .gallery.gallery-columns-9 .gallery-caption {
+    display: none; }
