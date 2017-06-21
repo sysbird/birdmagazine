@@ -57,6 +57,11 @@ http://www.sysbird.jp/wptips/contact/
 
 
 == Changelog ==
+v1.04
+2017-06-20
+* fix the WordPress 4.8.
+* support the theme tag rtl-language-support.
+
 v1.03
 * fix the WordPress 4.6.
 

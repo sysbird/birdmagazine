@@ -557,8 +557,8 @@ function birdmagazine_entry_meta() {
 	<?php endif; ?>
 
 	<?php if( is_home() ): ?>
-		<?php if ( comments_open() || get_comments_number() ): ?>
-			<div class="icon comment"><?php comments_number( '0', '1', '%' ); ?></div>
+		<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
+			<div class="icon comment"><?php comments_popup_link( '0', '1', '%' ); ?></div>
 		<?php endif; ?>
 	<?php endif; ?>
 
