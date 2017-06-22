@@ -16,12 +16,13 @@ get_header(); ?>
 
 			<header class="entry-header">
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-				<?php if ( has_excerpt() ) : ?>
-					<?php the_excerpt(); ?>
-				<?php endif; ?>
 			</header><!-- .entry-header -->
 
 			<div class="entry-content">
+				<?php if ( has_excerpt() ) : ?>
+					<?php the_excerpt(); ?>
+				<?php endif; ?>
+
 				<div class="entry-attachment">
 					<?php echo wp_get_attachment_image( get_the_ID(), 'full' ); ?>
 				</div>
@@ -37,8 +38,8 @@ get_header(); ?>
 			?>
 
 			<footer class="entry-meta <?php echo $birdmagazine_enable_comments; ?>">
-				<div class="icon postdate"><time datetime="<?php echo get_the_time('Y-m-d') ?>"><?php echo get_post_time(get_option('date_format')); ?></time></div>
-				<div class="icon parent-post-link"><a href="<?php echo get_permalink( $post->post_parent ); ?>"><?php echo get_the_title( $post->post_parent ); ?></a></div>
+				<div class="postdate"><time datetime="<?php echo get_the_time('Y-m-d') ?>"><?php echo get_post_time(get_option('date_format')); ?></time></div>
+				<div class="parent-post-link"><a href="<?php echo get_permalink( $post->post_parent ); ?>"><?php echo get_the_title( $post->post_parent ); ?></a></div>
 			</footer><!-- .entry-footer -->
 
 			<?php if ( $birdmagazine_enable_comments === 'enable-comments' ): ?>

@@ -401,7 +401,7 @@ textarea {
 				&:before {
 					@include font-awesome();
 					content: "\f053";
-					paddin-right: 0.4em;
+					padding-right: 0.4em;
 				}
 			}
 		}
@@ -413,7 +413,7 @@ textarea {
 				&:after {
 					@include font-awesome();
 					content: "\f054";
-					paddin-left: 0.4em;
+					padding-left: 0.4em;
 				}
 			}
 		}
@@ -541,10 +541,6 @@ textarea {
 					text-decoration: none;
 					line-height: 1.2;
 					border-bottom: dotted 1px $header-text-color;
-				}
-
-				ul {
-					padding-left: #{$line-height /2}em;
 				}
 			}
 
@@ -968,11 +964,9 @@ ul.articles {
 	}
 
 	.parent-post-link {
-		a {
-			&:before {
-				@include font-awesome();
-				content: "\f1c5";
-			}
+		&:before {
+			@include font-awesome();
+			content: "\f1c5";
 		}
 	}
 
