@@ -463,13 +463,13 @@ textarea {
 	a.page-numbers.prev:before {
 		@include font-awesome();
 		content: "\f053";
-		paddin-right: 0.4em;
+		padding-right: 0.4em;
 	}
 
 	a.page-numbers.next:after {
 		@include font-awesome();
 		content: "\f054";
-		paddin-left: 0.4em;
+		padding-left: 0.4em;
 	}
 }
 
@@ -756,7 +756,7 @@ video {
 			&:before {
 				@include font-awesome();
 				content: "\f0da";
-				paddin-right: 0.2em;
+				padding-right: 0.2em;
 			}
 
 			ul {

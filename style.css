@@ -69,7 +69,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   src: url("font-awesome/fontawesome-webfont.eot?#iefix&v=4.1.0") format("embedded-opentype"), url("font-awesome/fontawesome-webfont.woff?v=4.1.0") format("woff"), url("font-awesome/fontawesome-webfont.ttf?v=4.1.0") format("truetype"), url("font-awesome/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 /* Elements
 --------------------------------------------- */
 html {
@@ -413,7 +412,7 @@ textarea {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     content: "\f053";
-    paddin-right: 0.4em; }
+    padding-right: 0.4em; }
   .pagination a.page-numbers.next:after {
     display: inline-block;
     font-family: FontAwesome;
@@ -423,7 +422,7 @@ textarea {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     content: "\f054";
-    paddin-left: 0.4em; }
+    padding-left: 0.4em; }
 
 /* Page link at singular
 -------------------------------------------------------------------- */
@@ -602,10 +601,7 @@ a:hover img {
     max-width: 12.5%; }
   .gallery.gallery-columns-9 .gallery-item {
     max-width: 11.11%; }
-  .gallery.gallery-columns-6 .gallery-caption,
-  .gallery.gallery-columns-7 .gallery-caption,
-  .gallery.gallery-columns-8 .gallery-caption,
-  .gallery.gallery-columns-9 .gallery-caption {
+  .gallery.gallery-columns-6 .gallery-caption, .gallery.gallery-columns-7 .gallery-caption, .gallery.gallery-columns-8 .gallery-caption, .gallery.gallery-columns-9 .gallery-caption {
     display: none; }
 
 /* Make sure videos and embeds fit their containers
@@ -651,7 +647,7 @@ video {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         content: "\f0da";
-        paddin-right: 0.2em; }
+        padding-right: 0.2em; }
       .widget ul li ul {
         padding: 0.5em 0 0 0.5em; }
   .widget table {
@@ -860,7 +856,6 @@ ul.articles {
 -------------------------------------------------------------- */
 #comments .navigation {
   margin: 1.7em 0; }
-
 #comments ol.commentlist {
   list-style: none;
   margin: 0; }
@@ -923,7 +918,6 @@ ul.articles {
   background-color: #F6F6F6;
   height: 2px;
   margin: 0; }
-
 #footer .site-title {
   background-color: #F6F6F6;
   color: #AF574D;
@@ -940,7 +934,6 @@ ul.articles {
     -moz-osx-font-smoothing: grayscale;
     content: "\f19a";
     padding-left: 0.4em; }
-
 #footer #back-top {
   position: fixed;
   bottom: 10px;
@@ -958,6 +951,7 @@ ul.articles {
       text-indent: -119988px;
       overflow: hidden;
       text-align: left;
+      text-transform: capitalize;
       display: block; }
     #footer #back-top a:hover {
       text-decoration: none;
@@ -974,14 +968,12 @@ ul.articles {
       content: "\f0aa";
       font-size: 60px;
       display: block; }
-
 #footer .widget-wrapper {
   background: #AF574D;
   color: #F6F6F6;
   padding-top: 0.85em;
   overflow: hidden;
   *zoom: 1; }
-
 #footer .widget {
   width: 100%; }
   #footer .widget a {
@@ -1010,25 +1002,20 @@ ul.articles {
 .home ul.articles,
 .blog ul.articles {
   line-height: 1.7; }
-
 .home .entry-meta div.icon,
 .blog .entry-meta div.icon {
   display: inline; }
-
 .home .entry-meta a,
 .blog .entry-meta a {
   color: #333333; }
-
 .home.masonry ul.articles .entry,
 .blog.masonry ul.articles .entry {
   padding: 0.85em;
   margin-bottom: 2%;
   width: 100%; }
-
 .home.masonry .entry-header,
 .blog.masonry .entry-header {
   margin-bottom: 0.85em; }
-
 .home.masonry .entry-eyecatch,
 .blog.masonry .entry-eyecatch {
   margin: 0 -0.85em 0.85em; }
@@ -1036,7 +1023,6 @@ ul.articles {
 .sticky .entry-header,
 .sticky .entry-header a {
   color: #AF574D; }
-
 .sticky .entry-header .postdate {
   border-color: #AF574D; }
 
@@ -1089,6 +1075,7 @@ ul.articles {
     .single .nav-links .nav-previous {
       flex: 1;
       order: 2; }
+
   #menu-wrapper {
     padding-bottom: 0;
     *zoom: 1; }
@@ -1162,26 +1149,32 @@ ul.articles {
               height: auto;
               padding: 0.85em;
               white-space: normal;
-              filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+              filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
               opacity: 1; }
             #menu-wrapper .menu ul#menu-primary-items li ul li ul {
               top: 0;
               left: 100%; }
+
   .entry {
     padding: 1.7em;
     margin-bottom: 1.7em; }
+
   .entry-header,
   .page-header {
     margin-bottom: 1.7em; }
+
   .entry-meta {
     padding: 0.85em 1.7em 0;
     margin: 0 -1.7em; }
     .entry-meta.has-comments {
       padding-bottom: 0.85em; }
+
   .entry-eyecatch {
     margin: 0 -1.7em 1.7em; }
+
   #header #site-description {
     display: block; }
+
   .header-image {
     height: 200px;
     overflow: hidden;
@@ -1196,6 +1189,7 @@ ul.articles {
       -moz-transform: translate3d(-50%, -50%, 0);
       -ms-transform: translate(-50%, -50%);
       transform: translate3d(-50%, -50%, 0); }
+
   #content {
     padding: 1.7em 0; }
     #content .container {
@@ -1210,6 +1204,7 @@ ul.articles {
       flex: 1;
       margin: 0 0 0 4%;
       overflow: hidden; }
+
   .home .entry,
   .blog .entry {
     padding-bottom: 0.85em; }
@@ -1226,6 +1221,7 @@ ul.articles {
   .blog:not(.masonry) .entry-header .postdate {
     padding-top: 1.7em;
     margin-top: -1.7em; }
+
   .archive ul.articles,
   .search ul.articles {
     margin-bottom: 1.7em; }
@@ -1239,13 +1235,13 @@ ul.articles {
     .archive ul.articles li .postdate,
     .search ul.articles li .postdate {
       flex: 1; } }
-
 /* Media queries for responsive design
 --------------------------------------------- */
 /* --- PCs --- */
 @media screen and (min-width: 1000px) {
   .container {
     width: 1000px; }
+
   #footer .site-title {
     padding: 1.7em 0; }
   #footer .widget-wrapper {
@@ -1259,6 +1255,7 @@ ul.articles {
       width: 30%;
       margin: 0 1% 1.7em;
       float: left; }
+
   .home:not(.masonry) .entry-eyecatch,
   .blog:not(.masonry) .entry-eyecatch {
     width: 40%;
