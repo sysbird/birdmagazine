@@ -1,0 +1,186 @@
+/*
+Theme Name: BirdMAGAZINE
+
+Description: Adds support for languages written in a Right To Left (RTL) direction.
+It's easy, just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+See: https://codex.wordpress.org/Right_to_Left_Language_Support
+*/
+
+caption, th, td {
+  text-align: right; }
+
+/* Elements
+--------------------------------------------- */
+body {
+  direction: rtl;
+  unicode-bidi: embed;　}
+
+blockquote {
+border-left: none;
+  border-right: 4px solid #DDDDDD;
+  padding-left: 0;
+  padding-right: 1.263157895em; }
+
+ul,
+ol {
+  margin-left: 0;
+  margin-right: 1em;
+  padding-left: 0;
+  padding-right: 1em; }
+
+/* Search Forms
+-------------------------------------------------------------- */
+#searchform #s {
+  padding-left: 10px;
+  padding-right: 5px;
+  border-radius: 0 4px 4px 0; }
+#searchform #searchsubmit {
+  right: auto;
+  left: 1px;
+  border-radius: 4px 0 0 4px; }
+
+/* Post Navigation at Single page
+-------------------------------------------------------------------- */
+.single .nav-links .nav-next {
+  text-align: right; }
+
+.single .nav-links .nav-next a:before {
+  content: "\f054";
+  padding-left: 0.4em;
+  padding-right: 0; }
+
+.single .nav-links .nav-previous {
+  text-align: left; }
+
+.single .nav-links .nav-previous a:after {
+  content: "\f053";
+  padding-left: 0;
+  padding-right: 0.4em; }
+
+/* Pagination at archive
+-------------------------------------------------------------------- */
+.pagination a.page-numbers.prev:before {
+  content: "\f054";
+  padding-left: 0.4em;
+  padding-right: 0; }
+
+.pagination a.page-numbers.next:after {
+  content: "\f053";
+  padding-left: 0;
+  padding-right: 0.4em; } }
+
+/* Menu
+-------------------------------------------------------------- */
+#menu-wrapper .menu ul#menu-primary-items li ul {
+  padding-left: 0;
+  padding-right: 0.85em; }
+
+/* Widget
+--------------------------------------------- */
+.widget ul {
+  margin-right: 0; }
+
+.widget ul li {
+  padding-left: 0;
+  padding-right: 0.6em; }
+
+.widget ul li:before {
+  content: "\f0d9";
+  padding-left: 0.2em;
+  padding-right: 0; }
+
+.widget ul li ul {
+  padding-left: 0;
+  padding-right: 0.5em; }
+
+.widget #wp-calendar tfoot #next {
+  text-align: left; }
+
+.widget #wp-calendar tfoot #prev {
+  text-align: right;
+}
+
+/* Posts
+--------------------------------------------- */
+.entry-header .postdate,
+.page-header .postdate {
+  border-left: none;
+  border-right: solid 4px #333333;
+  padding-left: 0;
+  padding-right: 0.85em; }
+
+.more-link:after {
+  content: "\f053";
+  padding-left: 0;
+  padding-right: 0.4em; }
+
+.entry-meta .author:before {
+}
+
+/* Comments
+-------------------------------------------------------------- */
+#comments ol.commentlist li.pingback .comment-author img,
+#comments ol.commentlist li.comment .comment-author img {
+  margin-right: 0;
+  margin-left: 10px;
+  float: right; }
+
+#comments ol.commentlist li.pingback .reply a.comment-reply-link:before,
+#comments ol.commentlist li.comment .reply a.comment-reply-link:before {
+  content: '\f0d9';
+  padding-left: 0.2em;
+  padding-right: 0; }
+
+/* Footer
+--------------------------------------------- */
+#footer #back-top {
+  right: auto;
+  left: 10px; }
+#footer #back-top a span {
+  text-indent: 119988px; }
+
+/* Archive
+-------------------------------------------------------------------- */
+.archive ul.articles li .postdate,
+.search ul.articles li .postdate {
+  text-align: left; }
+
+/* Media queries for responsive design
+--------------------------------------------- */
+/* --- iPad Landscape --- */
+@media screen and (min-width: 660px) {
+  #menu-wrapper .menu ul#menu-primary-items li {
+    float: right; }
+
+  #menu-wrapper .menu ul#menu-primary-items li a {
+    padding-right: 0;
+    padding-left: 1.7em; }
+
+  #menu-wrapper .menu ul#menu-primary-items li ul {
+    right: 0;
+    margin: 0;
+    padding: 0; }
+
+  #menu-wrapper .menu ul#menu-primary-items li ul li ul {
+    right: 100%; }
+
+  #menu-wrapper .menu ul#menu-primary-items li ul li.menu-item-has-children > a:after {
+    content: "\f104";
+    padding-left: 0;
+    padding-right: 0.4em; }
+
+  #content #sidebar {
+    margin-left: 0;
+    margin-right: 4%; } }
+
+/* Media queries for responsive design
+--------------------------------------------- */
+/* --- PCs --- */
+@media screen and (min-width: 1000px) {
+  .home:not(.masonry) .entry-eyecatch,
+  .blog:not(.masonry) .entry-eyecatch {
+    float: left;
+    margin-left: 0;
+    margin-right: 0.85em; } }
