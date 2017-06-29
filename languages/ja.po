@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: BirdMAGAZINE 1.03\n"
+"Project-Id-Version: BirdMAGAZINE 1.04\n"
 "Report-Msgid-Bugs-To: http://www.sysbird.jp\n"
 "POT-Creation-Date: 2016-09-15 00:00-0900\n"
-"PO-Revision-Date: 2017-06-22 15:13+0900\n"
+"PO-Revision-Date: 2017-06-29 17:43+0900\n"
 "Last-Translator: TORIYAMA Yuko <sysbird@gmail.com>\n"
 "Language-Team: TORIYAMA Yuko <sysbirdj@gmail.com>\n"
 "Language: ja\n"
@@ -27,11 +27,11 @@ msgid "One Comment"
 msgid_plural "%1$s Comments"
 msgstr[0] "%1$s件のコメント"
 
-#: content.php:12 content-home.php:12 content-home.php:14
+#: content.php:12 content-home.php:12 content-home.php:14 content-search.php:14
 msgid "Permalink to %s"
 msgstr "%sへのリンク"
 
-#: content-home.php:12　functions.php:546
+#: content-home.php:12 content-search.php:14 functions.php:545
 msgid "published in"
 msgstr "投稿日"
 
@@ -79,7 +79,7 @@ msgstr "文字色"
 msgid "Link Color"
 msgstr "リンク色"
 
-#: functions.php:171
+#: functions.php:172
 msgid "Header Background Color"
 msgstr "ヘッダ背景色"
 
@@ -111,15 +111,15 @@ msgstr "コピーライトを表示"
 msgid "Display Credit"
 msgstr "クレジットを表示"
 
-#: functions:550
+#: functions:549
 msgid "wrote by"
 msgstr "投稿者"
 
-#: functions:552
+#: functions:551
 msgid "category in"
 msgstr "カテゴリー"
 
-#: functions:555
+#: functions:554
 msgid "tagged"
 msgstr "タグ"
 
@@ -127,11 +127,11 @@ msgstr "タグ"
 msgid "Menu"
 msgstr "メニュー"
 
-#: image.php:54
+#: image.php:53
 msgid "Next Image"
 msgstr "次の画像へ"
 
-#: image.php:55
+#: image.php:54
 msgid "Previous Image"
 msgstr "前の画像へ"
 
@@ -157,7 +157,7 @@ msgid ""
 "like the Pinterest. You can choose the background color, text color, link "
 "color, header color scheme and frontpage layout on the Theme Customize."
 msgstr ""
-"BirdMAGAZINEは、2カラムレスポンシブWebデザインのブログ向けテーマです。フロ"
-"ントページでピンタレスト風のグリッドレイアウトを備えています。テーマカスタ"
-"マイズでは背景色、テキストの色、リンクの色、ヘッダーの配色、レイアウトを選"
-"択することができます。"
+"BirdMAGAZINEは、2カラムレスポンシブWebデザインのブログ向けテーマです。フロン"
+"トページでピンタレスト風のグリッドレイアウトを備えています。テーマカスタマイ"
+"ズでは背景色、テキストの色、リンクの色、ヘッダーの配色、レイアウトを選択する"
+"ことができます。"

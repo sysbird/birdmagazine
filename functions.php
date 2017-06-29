@@ -335,7 +335,6 @@ function birdmagazine_color_css() {
 			.home .entry-meta a,
 			.blog .entry-meta a,
 			.archive ul.articles li a,
-			.search ul.articles li a,
 			.error404 ul.articles li a,
 			.pagination .a,
 			.pagination span,
@@ -395,7 +394,7 @@ function birdmagazine_color_css() {
 			#menu-wrapper .menu #small-menu,
 			#footer .widget-wrapper .widget #wp-calendar tbody td a,
 			#footer .site-title,
-			#footer .site-title a {
+			#footer .site-title a{
 				color: {$birdmagazine_header_color};
 			}
 		";
@@ -425,7 +424,7 @@ function birdmagazine_color_css() {
 			#footer .widget,
 			#footer .widget a,
 			#footer .widget .wp-caption {
-	 			color: {$birdmagazine_header_text_color};
+				color: {$birdmagazine_header_text_color};
 			}
 
 			#menu-wrapper .menu ul#menu-primary-items li a,

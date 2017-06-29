@@ -143,7 +143,11 @@ ol {
 
 /* Archive
 -------------------------------------------------------------------- */
-.archive ul.articles li .postdate,
+.archive ul.articles li .postdate {
+  text-align: left; }
+
+/* Search
+-------------------------------------------------------------------- */
 .search ul.articles li .postdate {
   text-align: left; }
 

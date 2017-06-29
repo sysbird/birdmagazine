@@ -5,7 +5,7 @@ Theme URI: http://www.sysbird.jp/birdmagazine/theme/
 Description: BirdMAGAZINE is a flexible two-column blog theme. Features the grid layout like the Pinterest. You can choose the background color, text color, link color, header color scheme and frontpage layout on the Theme Customize.
 Author: Sysbird
 Author URI: http://www.sysbird.jp
-Version: 1.03
+Version: 1.04
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog
@@ -916,7 +916,6 @@ ul.articles {
 		margin: 0;
 		line-height: 1.2;
 		padding: 0;
-
 	}
 
 	.postdate {
@@ -1238,11 +1237,8 @@ ul.articles {
 
 /* Archive
 -------------------------------------------------------------------- */
-.archive,
-.search {
+.archive {
 	ul.articles {
-		margin-bottom: #{$line-height /2}em;
-
 		li {
 			margin-bottom: 0;
 			padding: 0;
@@ -1263,6 +1259,28 @@ ul.articles {
 			}
 
 			.postdate {
+				text-align: right;
+			}
+		}
+	}
+}
+
+/* Search
+-------------------------------------------------------------------- */
+.search {
+	ul.articles {
+		li {
+			padding: 0;
+			border-bottom: solid 1px $border-color;
+
+			.entry-title {
+				font-size: 1.6em;
+				margin-bottom: #{$line-height /2}em;
+			}
+
+			.postdate {
+				margin-bottom: #{$line-height /2}em;
+				font-size: 0.9rem;
 				text-align: right;
 			}
 		}
@@ -1501,8 +1519,7 @@ ul.articles {
 		}
 	}
 
-	.archive,
-	.search {
+	.archive {
 		ul.articles {
 			margin-bottom: #{$line-height}em;
 
