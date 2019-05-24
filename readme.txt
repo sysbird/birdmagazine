@@ -36,10 +36,6 @@ The header image is created by theme author and is released under GPL license.
 
 
 == Third-party Resources ==
-html5shiv.js
-License: MIT/GPL2 Licensed
-Source:  https://github.com/aFarkas/html5shiv
-
 Google Fonts
 License: SIL Open Font License, 1.1
 Source:  http://www.google.com/fonts
@@ -51,12 +47,20 @@ Source:  http://fortawesome.github.io/Font-Awesome/
 
 == Author ==
 The theme built by TORIYAMA Yuko at Sysbird.
-http://www.sysbird.jp
+https://sysbird.jp
 You can contact me at inquiry form.
-http://www.sysbird.jp/wptips/contact/
+https://sysbird.jp/wptips/contact/
 
 
 == Changelog ==
+v1.05
+2019-05-24
+* fix WordPress Version 5.2.
+* remove languages files. and theme translation migrated to GlotPress.
+* add support for editor styles on the Block Editor.
+* remove /css/ja.css.
+* remove html5shiv.js.
+
 v1.04
 2017-06-29
 * fix the WordPress 4.8.

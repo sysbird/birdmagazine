@@ -5,10 +5,10 @@ Theme URI: http://www.sysbird.jp/birdmagazine/theme/
 Description: BirdMAGAZINE is a flexible two-column blog theme. Features the grid layout like the Pinterest. You can choose the background color, text color, link color, header color scheme and frontpage layout on the Theme Customize.
 Author: Sysbird
 Author URI: http://www.sysbird.jp
-Version: 1.04
+Version: 1.05
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: two-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog
+Tags: two-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, block-styles
 Text Domain: birdmagazine
 
 This theme, like WordPress, is licensed under the GPL.
@@ -20,14 +20,149 @@ $header-background-color: #AF574D;
 $header-text-color: #F6F6F6;
 $text-color: #333333;
 $link-color: #4C628F;
-$border-color: #DDDDDD;
-$meta-color: #999999;
-$line-height: 1.7;
+$border-color: rgba( $text-color, 0.2 );
+$line-height: 1.8;
 
-/* Normalize
---------------------------------------------- */
-@import "compass";
-@import "compass/reset";
+/*------------------------------
+reset
+-----------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/*------------------------------
+Font Awesome
+-----------------------------*/
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: auto;
+  src: url("fontawesome/fa-solid-900.eot");
+  src: url("fontawesome/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("fontawesome/fa-solid-900.woff2") format("woff2"), url("fontawesome/fa-solid-900.woff") format("woff"), url("fontawesome/fa-solid-900.ttf") format("truetype"), url("fontawesome/fa-solid-900.svg#fontawesome") format("svg");
+}
+
+@mixin font-awesome() {
+  font-family: 'Font Awesome 5 Free';
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+}
+
+@mixin box-sizing() {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}  
+
+@mixin box-shadow( $c: #000000, $h: 0, $v: 0, $b: 0 ) {
+	-webkit-box-shadow: $c $h $v $b;
+	-moz-box-shadow: $c $h $v $b;
+	box-shadow: $c $h $v $b;
+  }
+
+@mixin opacity( $opacity ) {
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity= $opacity *100 );
+	opacity: $opacity;
+}
+
+@mixin clearfix() {
+	overflow: hidden;
+	*zoom: 1;
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+	
+@mixin pie-clearfix() {
+	*zoom: 1;
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin hide-text(){
+	text-indent: -119988px;
+	overflow: hidden;
+	text-align: left;
+}
+
+@mixin display-flex(){
+	display: -webkit-flex;
+	display: flex;
+}
+
+@mixin flex($v) {
+	-webkit-flex: $v;
+	flex: $v;
+}
+
+@mixin line-height-hcrop($h) {
+  &::before {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    margin-top: calc((1 - #{$h}) * 0.5em);
+  }
+}
 
 /* Font Awesome
 --------------------------------------------- */
@@ -114,7 +249,7 @@ blockquote {
 
 	small {
 		display: block;
-		color: $meta-color;
+		color: $border-color;
 	}
 
 	small:before {
@@ -126,7 +261,7 @@ blockquote {
 	}
 
 	cite {
-		color: $meta-color;
+		color: $border-color;
 		display: block;
 	}
 
@@ -154,7 +289,7 @@ table {
 
 pre {
 	padding: #{$line-height /2}em;
-	background: #EEE;
+	background: rgba( $text-color, 0.06 );
 	margin-bottom: #{$line-height}em;
 	line-height: 1.4;
 	max-width: 100%;
@@ -165,7 +300,7 @@ pre {
 }
 
 code {
-	background: #EEE;
+	background: rgba( $text-color, 0.06 );
 }
 
 code,
@@ -178,9 +313,9 @@ pre {
 }
 
 hr {
-	background-color: $text-color;
+	background-color: $border-color;
 	border: 0 none;
-	height: 1px;
+	height: 2px;
 	margin-bottom: #{$line-height}m;
 }
 
@@ -364,6 +499,7 @@ textarea {
 		line-height: 1;
 		border-radius: 4px 0 0 4px;
 		border: solid 1px $border-color;
+		border-right: none;
 	}
 
 	#searchsubmit {
@@ -629,7 +765,7 @@ a:hover img {
 	display: block;
 	font-size: 0.9em;
 	line-height: 1.2;
-	color: $meta-color;
+	color: $border-color;
 	max-width: 100%;
 	text-align: center;
 }
@@ -906,7 +1042,7 @@ ul.articles {
 	margin-bottom: #{$line-height /2}em;
 
 	a {
-		color: $text-color;
+		color: $header-background-color;
 	}
 
 	.entry-title,
@@ -916,10 +1052,11 @@ ul.articles {
 		margin: 0;
 		line-height: 1.2;
 		padding: 0;
+		color: $header-background-color;
 	}
 
 	.postdate {
-		border-left: solid 4px $text-color;
+		border-left: solid 4px $header-background-color;
 		padding: #{$line-height /2}em 0 0 #{$line-height /2}em;
 		margin-top: #{-$line-height /2}em;
 		margin-bottom: #{$line-height /2}em;
@@ -1012,13 +1149,18 @@ ul.articles {
 
 		li.pingback,
 		li.comment {
-			border-top: 1px solid $border-color;
+			border-top: 2px solid $border-color;
 			padding-top: #{$line-height}em;
 			position: relative;
 			list-style: none;
 
 			@include clearfix;
 
+			li.pingback,
+			li.comment{
+				border-top-style: dotted;
+			}
+		
 			.comment-meta {
 				font-size: 0.96em;
 				margin-bottom: #{$line-height}em;
@@ -1038,13 +1180,13 @@ ul.articles {
 
 			.comment-metadata{
 				a {
-					color: $meta-color;
+					color: $border-color;
 				}
 			}
 
 			.comment-awaiting-moderation {
 				font-size: 0.9em;
-				color: $meta-color;
+				color: $border-color;
 			}
 
 			.reply {
@@ -1576,3 +1718,48 @@ ul.articles {
 		}
 	}
 }
+
+/* Used to style the Blockeditor.
+--------------------------------------------- */
+.entry .entry-content .wp-block-archives.aligncenter,
+.entry .entry-content .wp-block-categories.aligncenter {
+    text-align: center;
+}
+
+.wp-block-button__link {
+  background-color: $link-color;
+}
+
+.wp-block-separator {
+  background-color: $border-color;
+  border-bottom: none;
+	clear: both;
+}
+
+.wp-block-table td,
+.wp-block-table th {
+  border-color: $border-color;
+  padding: #{$line-height}em;
+}
+
+.wp-block-pullquote {
+  color: $border-color;
+  padding: #{$line-height}em 0;
+  border-color: $border-color;
+}
+
+.wp-block-pullquote.alignleft,
+.wp-block-pullquote.alignright {
+  text-align: left;
+}
+
+.wp-block-pullquote blockquote {
+  border-left: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.wp-block-image {
+  clear: both;
+}
+

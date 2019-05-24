@@ -17,11 +17,12 @@ if ( ! isset( $content_width ) ){
 if ( ! function_exists( 'birdmagazine_setup' ) ) :
 function birdmagazine_setup() {
 
-	// Set languages
-	load_theme_textdomain( 'birdmagazine', get_template_directory() . '/languages' );
+	// Add support for Block Styles.
+	add_theme_support( 'wp-block-styles' );
 
 	// This theme styles the visual editor with editor-style.css to match the theme style.
-	add_editor_style();
+	add_theme_support( 'editor-styles' );
+	add_editor_style( 'editor-style.css' );
 
 	// Set feed
 	add_theme_support( 'automatic-feed-links' );
@@ -102,8 +103,6 @@ add_action( 'widgets_init', 'birdmagazine_widgets_init' );
 // Enqueue Scripts
 function birdmagazine_scripts() {
 
-	wp_enqueue_script( 'birdmagazine-html5', get_template_directory_uri() . '/js/html5shiv.js', array(), '3.7.2' );
-	wp_script_add_data( 'birdmagazine-html5', 'conditional', 'lt IE 9' );
 
 	if ( is_singular() && comments_open() && get_option('thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -113,12 +112,15 @@ function birdmagazine_scripts() {
 
 	wp_enqueue_style( 'birdmagazine-google-font', '//fonts.googleapis.com/css?family=Open+Sans' );
 	wp_enqueue_style( 'birdmagazine', get_stylesheet_uri() );
-
-	if ( strtoupper( get_locale() ) == 'JA' ) {
-		wp_enqueue_style( 'birdmagazine_ja', get_template_directory_uri().'/css/ja.css' );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'birdmagazine_scripts' );
+
+//////////////////////////////////////////////////////
+// Enqueue Scripts for Dashboard
+function birdmagazine_admin_enqueue_scripts() {
+	wp_enqueue_style( 'birdmagazine-google-font', '//fonts.googleapis.com/css?family=Open+Sans', false, null, 'all' );
+}
+add_action( 'admin_enqueue_scripts', 'birdmagazine_admin_enqueue_scripts' );
 
 //////////////////////////////////////////////////////
 // Excerpt More
@@ -326,6 +328,7 @@ function birdmagazine_color_css() {
 	// Custom Text Color
 	$birdmagazine_text_color = get_theme_mod( 'birdmagazine_text_color', $birdmagazine_default_colors[ 'text_color' ] );
 	if( strcasecmp( $birdmagazine_text_color, $birdmagazine_default_colors[ 'text_color' ] )) {
+		$birdmagazine_text_color_rgb = birdmagazine_hex2rgb( $birdmagazine_text_color );
 
 		$birdmagazine_css = "
 			/* Custom Text Color */
@@ -339,7 +342,9 @@ function birdmagazine_color_css() {
 			.pagination .a,
 			.pagination span,
 			.page-link,
-			.page-link a span {
+			.page-link a span,
+			.wp-block-pullquote,
+			.wp-block-separator.is-style-dots::before {
 				color: {$birdmagazine_text_color};
 			}
 
@@ -347,9 +352,32 @@ function birdmagazine_color_css() {
 				border-color: {$birdmagazine_text_color};
 			}
 
-			hr {
-				background-color: {$birdmagazine_text_color};
+			blockquote cite,
+			.wp-block-quote cite,
+			.wp-block-pullquote cite,
+			.wp-block-pullquote__citation,
+			.wp-block-image figcaption {
+				color: rgba( {$birdmagazine_text_color_rgb}, 0.5 );
 			}
+
+			.wp-block-table td, .wp-block-table th,
+			table th, table td,
+			blockquote,
+			.wp-block-pullquote,
+			.wp-block-quote:not(.is-large):not(.is-style-large) {
+				border-color: rgba( {$birdmagazine_text_color_rgb}, 0.5 );
+			}
+
+			hr,
+			.wp-block-separator {
+				background-color: rgba( {$birdmagazine_text_color_rgb}, 0.5 );
+			}
+
+			pre,
+			code {
+				background-color: rgba( {$birdmagazine_text_color_rgb}, 0.06 );
+			}
+
 		";
 
 		wp_add_inline_style( 'birdmagazine', $birdmagazine_css );
@@ -374,6 +402,10 @@ function birdmagazine_color_css() {
 			.page-link span,
 			.page-link a span:hover {
 				border-color: {$birdmagazine_link_color};
+			}
+
+			.wp-block-button__link {
+				background-color: {$birdmagazine_link_color};
 			}
 		";
 
@@ -564,3 +596,30 @@ function birdmagazine_entry_meta() {
 <?php
 }
 endif;
+
+//////////////////////////////////////////////////////
+// Add hook content begin
+function birdmagazine_content_header() {
+	$birdfield_html = apply_filters( 'birdmagazine_content_header', '' );
+	echo $birdfield_html;
+}
+
+//////////////////////////////////////////////////////
+// Add hook content end
+function birdmagazine_content_footer() {
+	$birdfield_html = apply_filters( 'birdmagazine_content_footer', '' );
+	echo $birdfield_html;
+}
+
+//////////////////////////////////////////////////////
+// hex color to rgb
+function birdmagazine_hex2rgb ( $hex ) {
+
+	$birdmagazine_hex = preg_replace('/#/', '', $hex);
+
+	$birdmagazine_hex_rgba = hexdec(substr($birdmagazine_hex, 0, 2));
+	$birdmagazine_hex_rgba .= ', ' .hexdec(substr($birdmagazine_hex, 2, 2));
+	$birdmagazine_hex_rgba .= ', ' .hexdec(substr($birdmagazine_hex, 4, 2));
+
+	return $birdmagazine_hex_rgba;
+}
