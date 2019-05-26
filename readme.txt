@@ -2,7 +2,7 @@
 BirdMAGAZINE is a flexible two-column blog theme. Features the grid layout like the Pinterest. You can choose the background color, text color, link color, header color scheme and frontpage layout on the Theme Customize.
 
 === Tags ===
-two-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog
+two-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, block-styles
 
 === Features ===
 Responsive Layout, Theme Customize, Page Navigation, Grid Layout

@@ -31,7 +31,7 @@
 		}
 	}
 ?>
-
+</head>
 <body <?php body_class( $birdmagazine_header_text ); ?>>
 
 <div class="wrapper">
