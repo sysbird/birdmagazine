@@ -86,17 +86,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /*------------------------------
 Font Awesome
 -----------------------------*/
-@font-face {
+@font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:900;font-display:auto;src:url(fontawesome/fa-solid-900.eot);src:url(fontawesome/fa-solid-900.eot?#iefix) format("embedded-opentype"),url(fontawesome/fa-solid-900.woff2) format("woff2"),url(fontawesome/fa-solid-900.woff) format("woff"),url(fontawesome/fa-solid-900.ttf) format("truetype"),url(fontawesome/fa-solid-900.svg#fontawesome) format("svg")}.fa,.fas{font-family:"Font Awesome 5 Free";font-weight:900}
+
+
+@font-face{font-family:"Font Awesome 5 Brands";font-style:normal;font-weight:normal;font-display:auto;src:url(fontawesome/fa-brands-400.eot);src:url(fontawesome/fa-brands-400.eot?#iefix) format("embedded-opentype"),url(fontawesome/fa-brands-400.woff2) format("woff2"),url(fontawesome/fa-brands-400.woff) format("woff"),url(fontawesome/fa-brands-400.ttf) format("truetype"),url(fontawesome/fa-brands-400.svg#fontawesome) format("svg")}.fab{font-family:"Font Awesome 5 Brands"}
+
+@mixin font-awesome-solid() {
   font-family: 'Font Awesome 5 Free';
-  font-style: normal;
-  font-weight: 900;
-  font-display: auto;
-  src: url("fontawesome/fa-solid-900.eot");
-  src: url("fontawesome/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("fontawesome/fa-solid-900.woff2") format("woff2"), url("fontawesome/fa-solid-900.woff") format("woff"), url("fontawesome/fa-solid-900.ttf") format("truetype"), url("fontawesome/fa-solid-900.svg#fontawesome") format("svg");
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
 }
 
-@mixin font-awesome() {
-  font-family: 'Font Awesome 5 Free';
+@mixin font-awesome-brands() {
+  font-family: 'Font Awesome 5 Brands';
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -163,24 +166,6 @@ Font Awesome
     margin-top: calc((1 - #{$h}) * 0.5em);
   }
 }
-
-/* Font Awesome
---------------------------------------------- */
-@font-face {
-  font-family: 'FontAwesome';
-  src: url("font-awesome/fontawesome-webfont.eot?v=4.1.0");
-  src: url("font-awesome/fontawesome-webfont.eot?#iefix&v=4.1.0") format("embedded-opentype"), url("font-awesome/fontawesome-webfont.woff?v=4.1.0") format("woff"), url("font-awesome/fontawesome-webfont.ttf?v=4.1.0") format("truetype"), url("font-awesome/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-@mixin font-awesome() {
-	display: inline-block;
-	font-family: FontAwesome;
-	font-style: normal;
-	font-weight: normal;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;}
 
 /* Elements
 --------------------------------------------- */
@@ -299,17 +284,13 @@ pre {
 	word-wrap: break-word;
 }
 
-code {
-	background: rgba( $text-color, 0.06 );
-}
-
 code,
 kbd,
 tt,
 var,
 samp,
 pre {
-	font-family: Inconsolata, monospace;
+	font-family: "Courier 10 Pitch", Courier, monospace;
 }
 
 hr {
@@ -412,43 +393,40 @@ ins {
 /* Forms
 -------------------------------------------------------------- */
 form {
+	button,
+	input,
+	select,
+	textarea {
+		max-width: 100%;
+	}
+
 	input {
 		font-size: 100%;
 	}
-}
-
-button,
-input,
-select,
-textarea {
-	max-width: 100%;
-}
-
-#commentform {
-	padding: 10px 15px 0;
-	max-width: 640px;
 
 	p {
 		margin-bottom: #{$line-height /2}em;
 	}
 
-	label:not([class="subscribe-label"]) {
-		padding: 0 0 5px 0;
+/*	label:not([class="subscribe-label"]) {
+		display: block;
+	} */
+
+	label + :not( [type="checkbox"]) {
 		display: block;
 	}
 
 	input:not([id="submit"]) {
 		width: 100%;
-		max-width: 300px;
-		padding: 5px;
+		max-width: 400px;
+		padding: 10px;
 		background: #FFF;
 		border: solid 1px $border-color;
 	}
 
 	textarea {
 		width: 100%;
-		height: 100px;
-		padding:5px;
+		padding:10px;
 		background: #FFF;
 		border: solid 1px $border-color;
 	}
@@ -456,6 +434,15 @@ textarea {
 	input#submit {
 		padding: 5px 10px;
 	}
+
+}
+
+#respond {
+	border: dotted 1px $border-color;
+	padding: 0  #{$line-height /2}em;
+}
+
+#commentform {
 
 	#email-notes	 {
 		display: block;
@@ -467,14 +454,6 @@ textarea {
 		code {
 			display: block;
 		}
-	}
-}
-
-.post-password-form {
-	input:not([type="submit"]) {
-		padding: 5px;
-		background: #FFF;
-		border: solid 1px $border-color;
 	}
 }
 
@@ -518,7 +497,7 @@ textarea {
 
 		&:before {
 			font-size: 1.4rem;
-			@include font-awesome();
+			@include font-awesome-solid();
 			content: "\f002";
 		}
 	}
@@ -535,7 +514,7 @@ textarea {
 
 			a {
 				&:before {
-					@include font-awesome();
+					@include font-awesome-solid();
 					content: "\f053";
 					padding-right: 0.4em;
 				}
@@ -547,7 +526,7 @@ textarea {
 
 			a {
 				&:after {
-					@include font-awesome();
+					@include font-awesome-solid();
 					content: "\f054";
 					padding-left: 0.4em;
 				}
@@ -597,13 +576,13 @@ textarea {
 	}
 
 	a.page-numbers.prev:before {
-		@include font-awesome();
+		@include font-awesome-solid();
 		content: "\f053";
 		padding-right: 0.4em;
 	}
 
 	a.page-numbers.next:after {
-		@include font-awesome();
+		@include font-awesome-solid();
 		content: "\f054";
 		padding-left: 0.4em;
 	}
@@ -616,7 +595,7 @@ textarea {
 	margin: #{$line-height}em 0;
 	color: $text-color;
 
-	span {
+	span:not(.current) {
 		display: inline-block;
 		color: $link-color;
 		border-bottom: solid 2px $link-color;
@@ -627,14 +606,14 @@ textarea {
 	}
 
 	a {
-		span {
+		span:not(.current) {
 			color: $text-color;
 			background: #FFF;
 			border-color: $border-color;
 
 			&:hover {
 				border-color: $link-color;
-				}
+			}
 		}
 	}
 }
@@ -655,7 +634,7 @@ textarea {
 			font-size: 1.4rem;
 
 			&:before {
-				@include font-awesome();
+				@include font-awesome-solid();
 				content: "\f0c9";
 				padding-left: 0.4em;
 				padding-right: 0.4em;
@@ -890,7 +869,7 @@ video {
 			text-indent: -0.3em;
 
 			&:before {
-				@include font-awesome();
+				@include font-awesome-solid();
 				content: "\f0da";
 				padding-right: 0.2em;
 			}
@@ -940,6 +919,16 @@ video {
 
 				a {
 					font-weight: bold;
+					background: $link-color;
+					color: #FFF;
+					display: block;
+					padding: 2px 0;
+					margin: 0 auto;
+					border-radius: 4px;
+
+					&:hover {
+						text-decoration: none;
+					}
 				}
 			}
 		}
@@ -1041,6 +1030,7 @@ ul.articles {
 .page-header {
 	margin-bottom: #{$line-height /2}em;
 
+	&,
 	a {
 		color: $header-background-color;
 	}
@@ -1052,7 +1042,6 @@ ul.articles {
 		margin: 0;
 		line-height: 1.2;
 		padding: 0;
-		color: $header-background-color;
 	}
 
 	.postdate {
@@ -1084,35 +1073,32 @@ ul.articles {
 		border-bottom: dotted 1px $border-color;
 	}
 
+	.icon:before {
+		color: $border-color;
+		@include font-awesome-solid();
+	}
+
 	.postdate:before {
-		@include font-awesome();
 		content: "\f133";
 	}
 
 	.author:before {
-		@include font-awesome();
-		content: "\f007";
+		content: "\f4ff";
 	}
 
 	.comment:before {
-		@include font-awesome();
-		content: "\f0e5";
+		content: "\f075";
 	}
 
-	.parent-post-link {
-		&:before {
-			@include font-awesome();
-			content: "\f1c5";
-		}
+	.parent-post-link:before {
+		content: "\f1c5";
 	}
 
 	.category:before {
-		@include font-awesome();
 		content: "\f07b";
 	}
 
 	.tag:before {
-		@include font-awesome();
 		content: "\f02b";
 	}
 }
@@ -1126,7 +1112,7 @@ ul.articles {
 
 	&:after {
 		text-decoration: none;
-		@include font-awesome();
+		@include font-awesome-solid();
 		content: "\f054";
 		padding-left: 0.4em;
 	}
@@ -1196,7 +1182,7 @@ ul.articles {
 					font-style: 0.9em;
 
 					&:before {
-						@include font-awesome();
+						@include font-awesome-solid();
 						content: "\f0da";
 						padding-right: 0.2em;
 					}
@@ -1238,7 +1224,7 @@ ul.articles {
 
 		.generator {
 			&:after {
-				@include font-awesome();
+				@include font-awesome-brands();
 				content: "\f19a";
 				padding-left: 0.4em;
 			}
@@ -1270,7 +1256,7 @@ ul.articles {
 			}
 
 			&:before {
-				@include font-awesome();
+				@include font-awesome-solid();
 				content: "\f0aa";
 				font-size: 60px;
 				display: block;
@@ -1314,14 +1300,6 @@ ul.articles {
 					a {
 						background: $header-text-color;
 						color: $header-background-color;
-						display: block;
-						padding: 2px 0;
-						margin: 0 auto;
-						border-radius: 2px;
-
-						&:hover {
-							text-decoration: none;
-						}
 					}
 				}
 			}
@@ -1367,16 +1345,29 @@ ul.articles {
 }
 
 .sticky {
-	.entry-header,
-	.entry-header a {
-		color: $header-background-color;
-	}
+	.featured {
+		em {
+			display: inline-block;
+			@include hide-text;
+		}
 
-	.entry-header .postdate {
-		border-color: $header-background-color;
+		&:before {
+			color: $header-background-color;
+			@include font-awesome-solid();
+			content: "\f005\f005\f005";
+		}
 	}
 }
 
+:not(.masonry) {
+	.entry-header {
+		.postdate {
+			padding-top: #{$line-height}em;
+			margin-top: #{-$line-height}em;
+		}
+	}
+}
+	
 /* Archive
 -------------------------------------------------------------------- */
 .archive {
@@ -1507,7 +1498,7 @@ ul.articles {
 						}
 
 						>a:after {
-							@include font-awesome();
+							@include font-awesome-solid();
 							content: "\f107";
 							display: block;
 							text-align: center;
@@ -1537,7 +1528,7 @@ ul.articles {
 								}
 
 								>a:after {
-									@include font-awesome();
+									@include font-awesome-solid();
 									content: "\f105";
 									padding-left: 0.4em;
 								}
@@ -1650,15 +1641,6 @@ ul.articles {
 				}
 			}
 		}
-
-		&:not(.masonry) {
-			.entry-header {
-				.postdate {
-					padding-top: #{$line-height}em;
-					margin-top: #{-$line-height}em;
-				}
-			}
-		}
 	}
 
 	.archive {
@@ -1739,10 +1721,10 @@ ul.articles {
 .wp-block-table td,
 .wp-block-table th {
   border-color: $border-color;
-  padding: #{$line-height}em;
+  padding: #{$line-height /2}em;
 }
 
-.wp-block-pullquote {
+.wp-block-pullquote cite {
   color: $border-color;
   padding: #{$line-height}em 0;
   border-color: $border-color;

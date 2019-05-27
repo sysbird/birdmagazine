@@ -1,6 +1,6 @@
 /*
 Theme Name: birdMAGAZINE
-Theme URI: http://www.sysbird.jp/birdmagazine/theme/
+Theme URI: https://sysbird.jp/birdmagazine-theme/
 Description: BirdMAGAZINE is a flexible two-column blog theme. Features the grid layout like the Pinterest. You can choose the background color, text color, link color, header color scheme and frontpage layout on the Theme Customize.
 Author: Sysbird
 Author URI: http://www.sysbird.jp
@@ -76,22 +76,30 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 Font Awesome
 -----------------------------*/
 @font-face {
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-style: normal;
   font-weight: 900;
   font-display: auto;
-  src: url("fontawesome/fa-solid-900.eot");
-  src: url("fontawesome/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("fontawesome/fa-solid-900.woff2") format("woff2"), url("fontawesome/fa-solid-900.woff") format("woff"), url("fontawesome/fa-solid-900.ttf") format("truetype"), url("fontawesome/fa-solid-900.svg#fontawesome") format("svg");
+  src: url(fontawesome/fa-solid-900.eot);
+  src: url(fontawesome/fa-solid-900.eot?#iefix) format("embedded-opentype"), url(fontawesome/fa-solid-900.woff2) format("woff2"), url(fontawesome/fa-solid-900.woff) format("woff"), url(fontawesome/fa-solid-900.ttf) format("truetype"), url(fontawesome/fa-solid-900.svg#fontawesome) format("svg");
 }
 
-/* Font Awesome
---------------------------------------------- */
+.fa, .fas {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
 @font-face {
-  font-family: 'FontAwesome';
-  src: url("font-awesome/fontawesome-webfont.eot?v=4.1.0");
-  src: url("font-awesome/fontawesome-webfont.eot?#iefix&v=4.1.0") format("embedded-opentype"), url("font-awesome/fontawesome-webfont.woff?v=4.1.0") format("woff"), url("font-awesome/fontawesome-webfont.ttf?v=4.1.0") format("truetype"), url("font-awesome/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular") format("svg");
-  font-weight: normal;
+  font-family: "Font Awesome 5 Brands";
   font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+  src: url(fontawesome/fa-brands-400.eot);
+  src: url(fontawesome/fa-brands-400.eot?#iefix) format("embedded-opentype"), url(fontawesome/fa-brands-400.woff2) format("woff2"), url(fontawesome/fa-brands-400.woff) format("woff"), url(fontawesome/fa-brands-400.ttf) format("truetype"), url(fontawesome/fa-brands-400.svg#fontawesome) format("svg");
+}
+
+.fab {
+  font-family: "Font Awesome 5 Brands";
 }
 
 /* Elements
@@ -226,17 +234,13 @@ pre {
   word-wrap: break-word;
 }
 
-code {
-  background: rgba(51, 51, 51, 0.06);
-}
-
 code,
 kbd,
 tt,
 var,
 samp,
 pre {
-  font-family: Inconsolata, monospace;
+  font-family: "Courier 10 Pitch", Courier, monospace;
 }
 
 hr {
@@ -346,49 +350,53 @@ ins {
 
 /* Forms
 -------------------------------------------------------------- */
+form {
+  /*	label:not([class="subscribe-label"]) {
+		display: block;
+	} */
+}
+
+form button,
+form input,
+form select,
+form textarea {
+  max-width: 100%;
+}
+
 form input {
   font-size: 100%;
 }
 
-button,
-input,
-select,
-textarea {
-  max-width: 100%;
-}
-
-#commentform {
-  padding: 10px 15px 0;
-  max-width: 640px;
-}
-
-#commentform p {
+form p {
   margin-bottom: 0.9em;
 }
 
-#commentform label:not([class="subscribe-label"]) {
-  padding: 0 0 5px 0;
+form label + :not([type="checkbox"]) {
   display: block;
 }
 
-#commentform input:not([id="submit"]) {
+form input:not([id="submit"]) {
   width: 100%;
-  max-width: 300px;
-  padding: 5px;
+  max-width: 400px;
+  padding: 10px;
   background: #FFF;
   border: solid 1px rgba(51, 51, 51, 0.2);
 }
 
-#commentform textarea {
+form textarea {
   width: 100%;
-  height: 100px;
-  padding: 5px;
+  padding: 10px;
   background: #FFF;
   border: solid 1px rgba(51, 51, 51, 0.2);
 }
 
-#commentform input#submit {
+form input#submit {
   padding: 5px 10px;
+}
+
+#respond {
+  border: dotted 1px rgba(51, 51, 51, 0.2);
+  padding: 0 0.9em;
 }
 
 #commentform #email-notes {
@@ -401,12 +409,6 @@ textarea {
 
 #commentform .form-allowed-tags code {
   display: block;
-}
-
-.post-password-form input:not([type="submit"]) {
-  padding: 5px;
-  background: #FFF;
-  border: solid 1px rgba(51, 51, 51, 0.2);
 }
 
 /* Search Forms
@@ -451,13 +453,10 @@ textarea {
 
 #searchform #searchsubmit:before {
   font-size: 1.4rem;
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Font Awesome 5 Free';
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
   content: "\f002";
 }
 
@@ -472,13 +471,10 @@ textarea {
 }
 
 .single .nav-links .nav-next a:before {
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Font Awesome 5 Free';
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
   content: "\f053";
   padding-right: 0.4em;
 }
@@ -488,13 +484,10 @@ textarea {
 }
 
 .single .nav-links .nav-previous a:after {
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Font Awesome 5 Free';
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
   content: "\f054";
   padding-left: 0.4em;
 }
@@ -550,25 +543,19 @@ textarea {
 }
 
 .pagination a.page-numbers.prev:before {
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Font Awesome 5 Free';
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
   content: "\f053";
   padding-right: 0.4em;
 }
 
 .pagination a.page-numbers.next:after {
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Font Awesome 5 Free';
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
   content: "\f054";
   padding-left: 0.4em;
 }
@@ -581,7 +568,7 @@ textarea {
   color: #333333;
 }
 
-.page-link span {
+.page-link span:not(.current) {
   display: inline-block;
   color: #4C628F;
   border-bottom: solid 2px #4C628F;
@@ -591,13 +578,13 @@ textarea {
   margin-bottom: 5px;
 }
 
-.page-link a span {
+.page-link a span:not(.current) {
   color: #333333;
   background: #FFF;
   border-color: rgba(51, 51, 51, 0.2);
 }
 
-.page-link a span:hover {
+.page-link a span:not(.current):hover {
   border-color: #4C628F;
 }
 
@@ -618,13 +605,10 @@ textarea {
 }
 
 #menu-wrapper .menu #small-menu:before {
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Font Awesome 5 Free';
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
   content: "\f0c9";
   padding-left: 0.4em;
   padding-right: 0.4em;
@@ -867,13 +851,10 @@ video {
 }
 
 .widget ul li:before {
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Font Awesome 5 Free';
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
   content: "\f0da";
   padding-right: 0.2em;
 }
@@ -921,6 +902,17 @@ video {
 .widget #wp-calendar tbody th a,
 .widget #wp-calendar tbody td a {
   font-weight: bold;
+  background: #4C628F;
+  color: #FFF;
+  display: block;
+  padding: 2px 0;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+.widget #wp-calendar tbody th a:hover,
+.widget #wp-calendar tbody td a:hover {
+  text-decoration: none;
 }
 
 .widget #wp-calendar tfoot a {
@@ -1024,7 +1016,9 @@ ul.articles {
   margin-bottom: 0.9em;
 }
 
+.entry-header,
 .entry-header a,
+.page-header,
 .page-header a {
   color: #AF574D;
 }
@@ -1038,7 +1032,6 @@ ul.articles {
   margin: 0;
   line-height: 1.2;
   padding: 0;
-  color: #AF574D;
 }
 
 .entry-header .postdate,
@@ -1077,69 +1070,35 @@ ul.articles {
   border-bottom: dotted 1px rgba(51, 51, 51, 0.2);
 }
 
-.entry-meta .postdate:before {
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
+.entry-meta .icon:before {
+  color: rgba(51, 51, 51, 0.2);
+  font-family: 'Font Awesome 5 Free';
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+}
+
+.entry-meta .postdate:before {
   content: "\f133";
 }
 
 .entry-meta .author:before {
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\f007";
+  content: "\f4ff";
 }
 
 .entry-meta .comment:before {
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\f0e5";
+  content: "\f075";
 }
 
 .entry-meta .parent-post-link:before {
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   content: "\f1c5";
 }
 
 .entry-meta .category:before {
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   content: "\f07b";
 }
 
 .entry-meta .tag:before {
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   content: "\f02b";
 }
 
@@ -1150,13 +1109,10 @@ ul.articles {
 
 .more-link:after {
   text-decoration: none;
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Font Awesome 5 Free';
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
   content: "\f054";
   padding-left: 0.4em;
 }
@@ -1241,13 +1197,10 @@ ul.articles {
 
 #comments ol.commentlist li.pingback .reply a.comment-reply-link:before,
 #comments ol.commentlist li.comment .reply a.comment-reply-link:before {
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Font Awesome 5 Free';
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
   content: "\f0da";
   padding-right: 0.2em;
 }
@@ -1281,13 +1234,10 @@ ul.articles {
 }
 
 #footer .site-title .generator:after {
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Font Awesome 5 Brands';
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
   content: "\f19a";
   padding-left: 0.4em;
 }
@@ -1323,13 +1273,10 @@ ul.articles {
 }
 
 #footer #back-top a:before {
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Font Awesome 5 Free';
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
   content: "\f0aa";
   font-size: 60px;
   display: block;
@@ -1374,15 +1321,6 @@ ul.articles {
 #footer .widget #wp-calendar tbody td a {
   background: #F6F6F6;
   color: #AF574D;
-  display: block;
-  padding: 2px 0;
-  margin: 0 auto;
-  border-radius: 2px;
-}
-
-#footer .widget #wp-calendar tbody th a:hover,
-#footer .widget #wp-calendar tbody td a:hover {
-  text-decoration: none;
 }
 
 /* Home
@@ -1419,13 +1357,25 @@ ul.articles {
   margin: 0 -0.9em 0.9em;
 }
 
-.sticky .entry-header,
-.sticky .entry-header a {
-  color: #AF574D;
+.sticky .featured em {
+  display: inline-block;
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
 }
 
-.sticky .entry-header .postdate {
-  border-color: #AF574D;
+.sticky .featured:before {
+  color: #AF574D;
+  font-family: 'Font Awesome 5 Free';
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  content: "\f005\f005\f005";
+}
+
+:not(.masonry) .entry-header .postdate {
+  padding-top: 1.8em;
+  margin-top: -1.8em;
 }
 
 /* Archive
@@ -1539,13 +1489,10 @@ ul.articles {
     padding-bottom: 0;
   }
   #menu-wrapper .menu ul#menu-primary-items li.menu-item-has-children > a:after {
-    display: inline-block;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
+    font-family: 'Font Awesome 5 Free';
     -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
     content: "\f107";
     display: block;
     text-align: center;
@@ -1572,13 +1519,10 @@ ul.articles {
     padding-bottom: 0.9em;
   }
   #menu-wrapper .menu ul#menu-primary-items li ul li.menu-item-has-children > a:after {
-    display: inline-block;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
+    font-family: 'Font Awesome 5 Free';
     -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
     content: "\f105";
     padding-left: 0.4em;
   }
@@ -1672,11 +1616,6 @@ ul.articles {
     width: 48%;
     margin-left: 2%;
   }
-  .home:not(.masonry) .entry-header .postdate,
-  .blog:not(.masonry) .entry-header .postdate {
-    padding-top: 1.8em;
-    margin-top: -1.8em;
-  }
   .archive ul.articles {
     margin-bottom: 1.8em;
   }
@@ -1744,10 +1683,10 @@ ul.articles {
 .wp-block-table td,
 .wp-block-table th {
   border-color: rgba(51, 51, 51, 0.2);
-  padding: 1.8em;
+  padding: 0.9em;
 }
 
-.wp-block-pullquote {
+.wp-block-pullquote cite {
   color: rgba(51, 51, 51, 0.2);
   padding: 1.8em 0;
   border-color: rgba(51, 51, 51, 0.2);

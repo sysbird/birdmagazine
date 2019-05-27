@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>HTML5 2Column</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+<style>
+body {
+	margin: 0;
+	background-color: #aaaaaa;
+	}
+.container {
+	background-color: #FFF;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 2%;
+	}
+h1,
+h2,
+p {
+	padding: 0;
+	margin: 0;
+}
+.header-image {
+	text-align: center;
+	}
+.header-image img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+@media screen and (min-width: 660px) {
+	.header-image {
+		height: 200px;
+		overflow: hidden;
+		position: relative;
+	}
+	.header-image img {
+		position: absolute;
+		min-width: 100%;
+		min-height: 100%;
+		left: 50%;
+		top: 50%;
+		-webkit-transform: translate3d(-50%, -50%, 0);
+		-moz-transform: translate3d(-50%, -50%, 0);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate3d(-50%, -50%, 0);
+	}
+}
+</style>
+</head>
+<body>
+<div id="wrapper">
+	<div class="header-image">
+		<img src="images/image-1200x300.jpg" alt="">
+	</div>
+
+	<div class="header-image">
+		<img src="images/image-1000x600.jpg" alt="">
+	</div>
+	<div class="header-image">
+		<img src="images/image-600x400.jpg" alt="">
+	</div>
+
+	<header class="site-header">
+		<div class="container">
+			<h1>画像ヘッダーの調節</h1>
+		</div>
+	</header><!-- /header -->
+
+	<div id="content" class="site-content">
+		<div class="container">
+					<h2>サンプル</h2>
+					<p>彼らも一生むしろその相違院という方のためを掘りうです。つい前に吟味めはもうある附着たたじゃをあるのでいならには周旋打ちたなから、全くともいたないたで。絵を評しん方は依然として場合がひょろひょろずなた。まあ岡田さんを発展試どう周旋に尽すます自分その時分それかお話しのというお話ですなけれないでで、この先刻は何か個人性質で取次いけれども、大森さんの方を腹のそれが単にご演説と考えてみんな他人にご留学に描いようにかくお周旋をしたないで、もうどうしても排斥で進んたてみん事を尽すないん。ところがまたはお否ができる方ももともと駄目とありなけれて、その師範がは流行るですてとかいう自分をありているませです。</p>
+
+		</div>
+	</div><!-- /content -->
+</div><!-- /wrapper-->
+</body>
+</html>

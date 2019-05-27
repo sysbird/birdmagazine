@@ -573,7 +573,7 @@ add_filter( 'use_default_gallery_style', '__return_false' );
 if ( ! function_exists( 'birdmagazine_entry_meta' ) ) :
 function birdmagazine_entry_meta() {
 ?>
-	<?php if( is_single() || is_archive() ) : ?>
+	<?php if( is_archive() ) : ?>
 		<div class="icon postdate"><span class="screen-reader-text"><?php _e( 'published in', 'birdmagazine' ); ?></span><time datetime="<?php echo get_the_time('Y-m-d') ?>"><?php echo get_post_time(get_option('date_format')); ?></time></div>
 	<?php endif; ?>
 
