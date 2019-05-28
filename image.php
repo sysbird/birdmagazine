@@ -38,8 +38,8 @@ get_header(); ?>
 			?>
 
 			<footer class="entry-meta <?php echo $birdmagazine_enable_comments; ?>">
-				<div class="postdate"><time datetime="<?php echo get_the_time('Y-m-d') ?>"><?php echo get_post_time(get_option('date_format')); ?></time></div>
-				<div class="parent-post-link"><a href="<?php echo get_permalink( $post->post_parent ); ?>"><?php echo get_the_title( $post->post_parent ); ?></a></div>
+				<div class="icon postdate"><time datetime="<?php echo get_the_time('Y-m-d') ?>"><?php echo get_post_time(get_option('date_format')); ?></time></div>
+				<div class="icon parent-post-link"><a href="<?php echo get_permalink( $post->post_parent ); ?>"><?php echo get_the_title( $post->post_parent ); ?></a></div>
 			</footer><!-- .entry-footer -->
 
 			<?php if ( $birdmagazine_enable_comments === 'enable-comments' ): ?>

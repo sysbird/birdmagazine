@@ -38,8 +38,14 @@
 
 	<header id="header">
 
-		<div class="container">
+		<?php $birdmagazine_header_image = get_header_image(); ?>
+		<?php if( is_home() && ! is_paged() && ! empty( $birdmagazine_header_image ) ): ?>
+			<div class="header-image">
+			<img src="<?php echo esc_url( $birdmagazine_header_image ); ?>" alt="<?php bloginfo( 'name' ); ?>" >
+			</div>
+		<?php endif; ?>
 
+		<div class="container">
 			<div id="branding">
 				<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
 				<<?php echo $heading_tag; ?> id="site-title">
@@ -57,13 +63,6 @@
 								'fallback_cb'		=> '' ) ); ?>
 			</nav>
 		</div>
-
-		<?php $birdmagazine_header_image = get_header_image(); ?>
-		<?php if( is_home() && ! is_paged() && ! empty( $birdmagazine_header_image ) ): ?>
-			<div class="header-image">
-			<img src="<?php echo esc_url( $birdmagazine_header_image ); ?>" alt="<?php bloginfo( 'name' ); ?>" >
-			</div>
-		<?php endif; ?>
 	</header>
 
 	<div id="content">

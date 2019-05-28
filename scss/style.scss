@@ -21,7 +21,7 @@ $header-text-color: #F6F6F6;
 $text-color: #333333;
 $link-color: #4C628F;
 $border-color: rgba( $text-color, 0.2 );
-$line-height: 1.8;
+$line-height: 2;
 
 /*------------------------------
 reset
@@ -87,7 +87,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 Font Awesome
 -----------------------------*/
 @font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:900;font-display:auto;src:url(fontawesome/fa-solid-900.eot);src:url(fontawesome/fa-solid-900.eot?#iefix) format("embedded-opentype"),url(fontawesome/fa-solid-900.woff2) format("woff2"),url(fontawesome/fa-solid-900.woff) format("woff"),url(fontawesome/fa-solid-900.ttf) format("truetype"),url(fontawesome/fa-solid-900.svg#fontawesome) format("svg")}.fa,.fas{font-family:"Font Awesome 5 Free";font-weight:900}
-
 
 @font-face{font-family:"Font Awesome 5 Brands";font-style:normal;font-weight:normal;font-display:auto;src:url(fontawesome/fa-brands-400.eot);src:url(fontawesome/fa-brands-400.eot?#iefix) format("embedded-opentype"),url(fontawesome/fa-brands-400.woff2) format("woff2"),url(fontawesome/fa-brands-400.woff) format("woff"),url(fontawesome/fa-brands-400.ttf) format("truetype"),url(fontawesome/fa-brands-400.svg#fontawesome) format("svg")}.fab{font-family:"Font Awesome 5 Brands"}
 
@@ -208,17 +207,31 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	margin: 0.7em 0;
+	margin: #{$line-height /2}em 0;
 	line-height: 1.2;
-	font-weight: normal;
 }
 
-h1 {font-size:2.4rem;}
-h2 {font-size:2rem;}
-h3 {font-size:1.8rem;}
-h4 {font-size:1.6rem;}
-h5 {font-size:1.4rem;}
-h6 {font-size:1.2rem;}
+h1 {font-size: 2rem;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.8rem;
+}
+
+h4 {
+	font-size: 1.6rem;
+}
+
+h5 {
+	font-size: 1.4rem;
+}
+
+h6 {font-size: 1.2rem;}
 
 p {
 	margin: 0 0 #{$line-height}em;
@@ -227,9 +240,8 @@ p {
 blockquote {
 	border-left: 4px solid $border-color;
 	font-style: italic;
-	line-height: 1.4736842105;
-	margin: 0 0 1.4736842105em;
-	padding: 0 0 0 1.263157895em;
+	//line-height: 1.4736842105;
+	padding-left: #{$line-height /2}em;
 
 
 	small {
@@ -400,23 +412,16 @@ form {
 		max-width: 100%;
 	}
 
-	input {
+	input:not( [type="checkbox"])  {
 		font-size: 100%;
+		display: block;
 	}
 
 	p {
 		margin-bottom: #{$line-height /2}em;
 	}
 
-/*	label:not([class="subscribe-label"]) {
-		display: block;
-	} */
-
-	label + :not( [type="checkbox"]) {
-		display: block;
-	}
-
-	input:not([id="submit"]) {
+	input:not([type="submit"]) {
 		width: 100%;
 		max-width: 400px;
 		padding: 10px;
@@ -431,15 +436,10 @@ form {
 		border: solid 1px $border-color;
 	}
 
-	input#submit {
+	input[type="submit"] {
 		padding: 5px 10px;
 	}
 
-}
-
-#respond {
-	border: dotted 1px $border-color;
-	padding: 0  #{$line-height /2}em;
 }
 
 #commentform {
@@ -564,14 +564,13 @@ form {
 	}
 
 	a:hover {
-		color: $link-color;
-		border-color: $link-color;
+		border-color: $text-color;
 		text-decoration: none;
 	}
 
 	span.current {
-		color: $link-color;
-		border-color: $link-color;
+		border-color: $text-color;
+		border-bottom-width: 3px;
 		font-weight: bold;
 	}
 
@@ -597,22 +596,26 @@ form {
 
 	span:not(.current) {
 		display: inline-block;
-		color: $link-color;
-		border-bottom: solid 2px $link-color;
+		border-bottom: solid 3px $text-color;
 		text-decoration:none;
 		text-align: center;
 		padding: #{$line-height /4}em #{$line-height /2}em;
 		margin-bottom: 5px;
 	}
 
+	.current span {
+		font-weight: bold;
+	}
+
 	a {
+		color: $text-color;
+
 		span:not(.current) {
-			color: $text-color;
-			background: #FFF;
 			border-color: $border-color;
+			border-bottom-width: 2px;
 
 			&:hover {
-				border-color: $link-color;
+				border-color: $text-color;
 			}
 		}
 	}
@@ -1065,6 +1068,7 @@ ul.articles {
 
 	a,
 	time {
+		color: $text-color;
 		padding: 0 #{$line-height /4}em;
 	}
 
@@ -1074,7 +1078,6 @@ ul.articles {
 	}
 
 	.icon:before {
-		color: $border-color;
 		@include font-awesome-solid();
 	}
 
@@ -1279,7 +1282,7 @@ ul.articles {
 		}
 
 		h3 {
-			border-bottom: solid 2px $header-text-color;
+			border-bottom-color: $header-text-color;
 		}
 
 		ul {
@@ -1298,8 +1301,8 @@ ul.articles {
 				th,
 				td {
 					a {
-						background: $header-text-color;
-						color: $header-background-color;
+						background: $border-color;
+						color: $header-text-color;
 					}
 				}
 			}
@@ -1318,10 +1321,6 @@ ul.articles {
 	.entry-meta {
 		div.icon {
 			display: inline;
-		}
-
-		a {
-			color: $text-color;
 		}
 	}
 
@@ -1382,7 +1381,7 @@ ul.articles {
 				padding: 0.4em 0;
 
 				&:hover {
-					background: $background-color;
+					background: rgba( $text-color, 0.06 );
 					text-decoration: none;
 				}
 			}
