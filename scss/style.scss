@@ -437,7 +437,8 @@ form {
 	}
 
 	input[type="submit"] {
-		padding: 5px 10px;
+		padding: 5px #{$line-height}em;
+		margin: #{$line-height /2}em 0;
 	}
 
 }
@@ -922,8 +923,7 @@ video {
 
 				a {
 					font-weight: bold;
-					background: $link-color;
-					color: #FFF;
+					background: $border-color;
 					display: block;
 					padding: 2px 0;
 					margin: 0 auto;
@@ -950,6 +950,22 @@ video {
 			}
 		}
 	}
+}
+
+
+#sidebar {
+	.widget {
+		#wp-calendar {
+			tbody {
+				a {
+					background: $link-color;
+					color: #FFF;
+				}
+			}
+		}
+
+	}
+
 }
 
 /* Header
@@ -1295,18 +1311,6 @@ ul.articles {
 		.gallery-caption {
 			color: $header-text-color;
 		}
-
-		#wp-calendar  {
-			tbody {
-				th,
-				td {
-					a {
-						background: $border-color;
-						color: $header-text-color;
-					}
-				}
-			}
-		}
 	}
 }
 
@@ -1351,7 +1355,6 @@ ul.articles {
 		}
 
 		&:before {
-			color: $header-background-color;
 			@include font-awesome-solid();
 			content: "\f005\f005\f005";
 		}

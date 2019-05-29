@@ -380,7 +380,8 @@ form textarea {
 }
 
 form input[type="submit"] {
-  padding: 5px 10px;
+  padding: 5px 2em;
+  margin: 1em 0;
 }
 
 #commentform #email-notes {
@@ -891,8 +892,7 @@ video {
 .widget #wp-calendar tbody th a,
 .widget #wp-calendar tbody td a {
   font-weight: bold;
-  background: #4C628F;
-  color: #FFF;
+  background: rgba(51, 51, 51, 0.2);
   display: block;
   padding: 2px 0;
   margin: 0 auto;
@@ -914,6 +914,11 @@ video {
 
 .widget #wp-calendar tfoot td {
   padding: 5px 0;
+}
+
+#sidebar .widget #wp-calendar tbody a {
+  background: #4C628F;
+  color: #FFF;
 }
 
 /* Header
@@ -1306,12 +1311,6 @@ ul.articles {
   color: #F6F6F6;
 }
 
-#footer .widget #wp-calendar tbody th a,
-#footer .widget #wp-calendar tbody td a {
-  background: rgba(51, 51, 51, 0.2);
-  color: #F6F6F6;
-}
-
 /* Home
 -------------------------------------------------------------------- */
 .home ul.articles,
@@ -1349,7 +1348,6 @@ ul.articles {
 }
 
 .sticky .featured:before {
-  color: #AF574D;
   font-family: 'Font Awesome 5 Free';
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
