@@ -21,7 +21,8 @@ $header-text-color: #F6F6F6;
 $text-color: #333333;
 $link-color: #4C628F;
 $border-color: rgba( $text-color, 0.2 );
-$line-height: 2;
+$header-text-color: #F6F6F6;
+$line-height:1.8;
 
 /*------------------------------
 reset
@@ -184,6 +185,7 @@ html {
 body {
 	font-family: 'Open Sans', "Hiragino Maru Gothic W4 JIS2004", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, Open Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	line-height: $line-height;
+	font-size: 1.06rem;
 	color: $text-color;
 	background: $background-color;
 	-ms-text-size-adjust: 100%;
@@ -286,7 +288,7 @@ table {
 
 pre {
 	padding: #{$line-height /2}em;
-	background: rgba( $text-color, 0.06 );
+	background: #f7f9f9;
 	margin-bottom: #{$line-height}em;
 	line-height: 1.4;
 	max-width: 100%;
@@ -294,6 +296,10 @@ pre {
 	white-space: pre;
 	white-space: pre-wrap;
 	word-wrap: break-word;
+}
+
+code {
+	background: #f7f9f9;
 }
 
 code,
@@ -405,6 +411,13 @@ ins {
 /* Forms
 -------------------------------------------------------------- */
 form {
+
+	&:not( [id="searchform"]){
+		background: #f7f9f9;
+		padding: 0.75rem;
+		margin-bottom: 0.75rem; 
+	}
+
 	button,
 	input,
 	select,
@@ -463,6 +476,7 @@ form {
 #searchform {
 	width: 100%;
 	height: 30px;
+	max-width: 300px;
 	position: relative;
 
 	label {
@@ -625,26 +639,80 @@ form {
 /* Menu
 -------------------------------------------------------------- */
 #menu-wrapper {
-	padding-bottom: #{$line-height /2}em;
+	#small-menu {
+		position: absolute;
+		top: 1.5em;
+		right: 0;
+		display: block;
+		box-sizing: content-box;
+		width: 2rem;
+		padding: 0;
+		padding: 1.5rem .25rem;
+		-webkit-transition: all .6s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+		transition: all .6s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+		-webkit-transform: translate3d(0, 0, 0);
+				transform: translate3d(0, 0, 0);
+		border: 0;
+		outline: 0;
+		background-color: transparent;
+		cursor: pointer;
 
-	.menu {
-		#small-menu {
-			cursor: pointer;
+		.icon {
+			position: relative;
 			display: block;
-			font-size: 1rem;
-			background: $header-text-color;
-			color: $header-background-color;
-			border-radius: 4px;
-			font-size: 1.4rem;
+			margin-top: 10px;
 
-			&:before {
-				@include font-awesome-solid();
-				content: "\f0c9";
-				padding-left: 0.4em;
-				padding-right: 0.4em;
+			&,
+			&:before,
+			&:after {
+				width: 100%;
+				height: 2px;
+				-webkit-transition: all .6s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+				transition: all .6s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+				background-color: $header-text-color;
+
+			}
+
+			&:before,
+			&:after {
+				position: absolute;
+				top: -10px;
+				left: 0;
+				content: ' ';
+			}
+			
+			&:after {
+				top: 10px;
 			}
 		}
+	}
 
+	&.open {
+		#small-menu {
+			background-color: transparent;
+
+			.icon {
+				background-color: transparent;
+
+				&:before,
+				&:after {
+					top: 0;
+				}
+
+				&:before {
+					-webkit-transform: rotate(45deg);
+					transform: rotate(45deg);
+				}
+				
+				&:after {
+				-webkit-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+				}
+			}
+		}
+	}
+
+	.menu {
 		ul#menu-primary-items {
 			margin: 0;
 			padding: 0;
@@ -652,9 +720,10 @@ form {
 
 			li {
 				list-style: none;
+				padding: 0;
 
 				a {
-					padding: 0.4em 0;
+					padding: #{$line-height /4}em 0;
 					display: block;
 					color: $header-text-color;
 					text-decoration: none;
@@ -979,7 +1048,8 @@ video {
 	}
 
 	#branding {
-		padding: #{$line-height}em 0;
+		padding: #{$line-height}em 2.8rem  #{$line-height}em 0;
+		word-wrap: break-word;
 	}
 
 	#site-title {
@@ -1384,7 +1454,7 @@ ul.articles {
 				padding: 0.4em 0;
 
 				&:hover {
-					background: rgba( $text-color, 0.06 );
+					background: #f7f9f9;
 					text-decoration: none;
 				}
 			}
@@ -1515,7 +1585,7 @@ ul.articles {
 						width: 200px;
 						position: absolute;
 						top: 2.05em;
-						border: solid 1px $header-background-color;
+						border: solid 1px $header-text-color;
 						border-top: none;
 						z-index: 9999;
 
@@ -1537,9 +1607,8 @@ ul.articles {
 							}
 
 							a {
-								background-color: #FFF;
-								color: $header-background-color;
-								border-top: solid 1px $header-background-color;
+								background-color: $header-background-color;
+								border-top: solid 1px $header-text-color;
 								height: auto;
 								padding: #{$line-height /2}em;
 								white-space: normal;
@@ -1672,6 +1741,10 @@ ul.articles {
 --------------------------------------------- */
 /* --- PCs --- */
 @media screen and (min-width: 1000px) {
+	body {
+		font-size: inherit;
+	}
+
 	.container {
 		width: 1000px;
 	}
