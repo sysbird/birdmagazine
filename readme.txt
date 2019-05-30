@@ -31,18 +31,18 @@ Display Credit: display credit on footer.
 BirdMAGAZINE WordPress theme, Copyright (C) 2013 Sysbird
 The theme is licensed under the GPL.
 License: GNU General Public License v2.0
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 The header image is created by theme author and is released under GPL license.
 
 
 == Third-party Resources ==
 Google Fonts
 License: SIL Open Font License, 1.1
-Source:  http://www.google.com/fonts
+Source:  https://fonts.google.com/
 
 Font Awesome
 License: SIL Open Font License, 1.1/MIT License
-Source:  http://fortawesome.github.io/Font-Awesome/
+Source:  https://fontawesome.com/
 
 
 == Author ==
@@ -54,10 +54,10 @@ https://sysbird.jp/wptips/contact/
 
 == Changelog ==
 v1.05
-2019-05-24
+2019-05-31
 * fix WordPress Version 5.2.
-* remove languages files. and theme translation migrated to GlotPress.
 * add support for editor styles on the Block Editor.
+* remove languages files. and theme translation migrated to GlotPress.
 * remove /css/ja.css.
 * remove html5shiv.js.
 
