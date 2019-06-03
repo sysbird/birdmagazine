@@ -617,15 +617,15 @@ endif;
 //////////////////////////////////////////////////////
 // Add hook content begin
 function birdmagazine_content_header() {
-	$birdfield_html = apply_filters( 'birdmagazine_content_header', '' );
-	echo $birdfield_html;
+	$birdmagazine_html = apply_filters( 'birdmagazine_content_header', '' );
+	echo $birdmagazine_html;
 }
 
 //////////////////////////////////////////////////////
 // Add hook content end
 function birdmagazine_content_footer() {
-	$birdfield_html = apply_filters( 'birdmagazine_content_footer', '' );
-	echo $birdfield_html;
+	$birdmagazine_html = apply_filters( 'birdmagazine_content_footer', '' );
+	echo $birdmagazine_html;
 }
 
 //////////////////////////////////////////////////////

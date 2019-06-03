@@ -120,7 +120,7 @@ html * {
 body {
   font-family: 'Open Sans', "Hiragino Maru Gothic W4 JIS2004", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, Open Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.8;
-  font-size: 1.06rem;
+  font-size: 1.1rem;
   color: #333333;
   background: #F6F6F6;
   -ms-text-size-adjust: 100%;
@@ -1345,7 +1345,7 @@ ul.articles {
 #footer .widget-wrapper {
   background: #AF574D;
   color: #F6F6F6;
-  padding-top: 0.9em;
+  padding-top: 1.8em;
   overflow: hidden;
   *zoom: 1;
 }
@@ -1696,7 +1696,6 @@ ul.articles {
     padding: 1.8em 0;
   }
   #footer .widget-wrapper {
-    padding-top: 1.8em;
     *zoom: 1;
   }
   #footer .widget-wrapper:after {

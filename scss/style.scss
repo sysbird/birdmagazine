@@ -185,7 +185,7 @@ html {
 body {
 	font-family: 'Open Sans', "Hiragino Maru Gothic W4 JIS2004", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, Open Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	line-height: $line-height;
-	font-size: 1.06rem;
+	font-size: 1.1rem;
 	color: $text-color;
 	background: $background-color;
 	-ms-text-size-adjust: 100%;
@@ -1369,7 +1369,7 @@ ul.articles {
 	.widget-wrapper {
 		background: $header-background-color;
 		color: $header-text-color;
-		padding-top: #{$line-height /2}em;
+		padding-top: #{$line-height}em;
 		@include clearfix;
 	}
 
@@ -1772,7 +1772,6 @@ ul.articles {
 		}
 
 		.widget-wrapper {
-			padding-top: #{$line-height}em;
 			@include pie-clearfix;
 
 			.widget {

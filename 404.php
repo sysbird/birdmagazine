@@ -14,7 +14,7 @@ get_header(); ?>
 			<h1 class="page-title"><?php _e('Error 404 - Not Found', 'birdmagazine'); ?></h1>
 		</header>
 		<div class="entry-content">
-			<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'birdfield' ); ?></p>
+			<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'birdmagazine' ); ?></p>
 			<?php get_search_form(); ?>
 		</div>
 	</div>

@@ -8,6 +8,7 @@
  */
 ?>
 		</div>
+		<?php birdmagazine_content_footer(); ?>
 	</div><!-- .site-content -->
 
 	<footer id="footer">

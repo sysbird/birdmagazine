@@ -4,6 +4,7 @@ BirdMAGAZINE is a flexible two-column blog theme. Features the grid layout like 
 === Tags ===
 two-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, block-styles
 
+
 === Features ===
 Responsive Layout, Theme Customize, Page Navigation, Grid Layout
 
@@ -25,6 +26,11 @@ Layout section
 Front page Layout: normal or masonry like a Piterest on frontpage.
 Display Copyright: display copyright on footer.
 Display Credit: display credit on footer.
+
+Hook
+'birdfield_content_header' recommend use for example bread crumb.
+'birdfield_content_footer'  recommend use for example ad.
+
 
 
 == License ==
@@ -57,6 +63,8 @@ v1.05
 2019-05-31
 * fix WordPress Version 5.2.
 * add support for editor styles on the Block Editor.
+* add hook 'birdmagazine_content_header' for example bread crumb.
+* add hook 'birdmagazine_content_footer' for example ad.
 * remove languages files. and theme translation migrated to GlotPress.
 * remove /css/ja.css.
 * remove html5shiv.js.

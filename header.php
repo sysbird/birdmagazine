@@ -66,4 +66,5 @@
 	</header>
 
 	<div id="content">
+		<?php birdmagazine_content_header(); ?>
 		<div class="container">
