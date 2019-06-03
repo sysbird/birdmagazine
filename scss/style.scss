@@ -2,7 +2,8 @@
 /*
 Theme Name: birdMAGAZINE
 Theme URI: https://sysbird.jp/birdmagazine-theme/
-Description: BirdMAGAZINE is a flexible two-column blog theme. Features the grid layout like the Pinterest. You can choose the background color, text color, link color, header color scheme and frontpage layout on the Theme Customize.
+Description:
+ BirdMAGAZINE is a flexible two-column blog theme. Features the grid layout like the Pinterest. You can choose the background color, text color, link color, header color scheme and frontpage layout on the Theme Customize.
 Author: Sysbird
 Author URI: http://www.sysbird.jp
 Version: 1.05
@@ -411,22 +412,16 @@ ins {
 /* Forms
 -------------------------------------------------------------- */
 form {
-
-	&:not( [id="searchform"]){
-		background: #f7f9f9;
-		padding: 0.75rem;
-		margin-bottom: 0.75rem; 
-	}
-
 	button,
 	input,
 	select,
 	textarea {
 		max-width: 100%;
+		font-size: 1.2rem;
 	}
 
-	input:not( [type="checkbox"])  {
-		font-size: 100%;
+	input:not( [type="checkbox"]),
+	select {
 		display: block;
 	}
 
@@ -434,9 +429,8 @@ form {
 		margin-bottom: #{$line-height /2}em;
 	}
 
-	input:not([type="submit"]) {
-		width: 100%;
-		max-width: 400px;
+	input:not([type="submit"]),
+	select {
 		padding: 10px;
 		background: #FFF;
 		border: solid 1px $border-color;
@@ -450,14 +444,15 @@ form {
 	}
 
 	input[type="submit"] {
-		padding: 5px #{$line-height}em;
+		padding: #{$line-height /3}em #{$line-height *3 /2}em;
 		margin: #{$line-height /2}em 0;
+		border-radius: 0;
+		border: 2px solid $border-color;
+		-webkit-appearance: button;
 	}
-
 }
 
 #commentform {
-
 	#email-notes	 {
 		display: block;
 	}
@@ -471,11 +466,19 @@ form {
 	}
 }
 
+#main form {
+	&:not( #searchform ){
+		background: #f7f9f9;
+		padding: 0.75rem;
+		margin-bottom: 0.75rem; 
+	}
+}
+
 /* Search Forms
 -------------------------------------------------------------- */
 #searchform {
 	width: 100%;
-	height: 30px;
+	height: 40px;
 	max-width: 300px;
 	position: relative;
 
@@ -488,8 +491,8 @@ form {
 
 	#s {
 		width: 80%;
-		padding: 5px 10px 5px 5px;
-		height: 30px;
+		padding: 10px ;
+		height: 40px;
 		line-height: 1;
 		border-radius: 4px 0 0 4px;
 		border: solid 1px $border-color;
@@ -503,12 +506,11 @@ form {
 		border: 0 none;
 		cursor: pointer;
 		width: 20%;
-		height: 30px;
+		height: 40px;
 		border-radius: 0 4px 4px 0;
 		margin: 0;
 		background: $border-color;
 		color: #FFF;
-		-webkit-appearance: button;
 
 		&:before {
 			font-size: 1.4rem;
@@ -526,8 +528,10 @@ form {
 
 		.nav-next {
 			padding-top: #{$line-height /2}em;
+			word-wrap: break-word;
 
 			a {
+
 				&:before {
 					@include font-awesome-solid();
 					content: "\f053";
@@ -537,9 +541,11 @@ form {
 		}
 
 		.nav-previous {
+			word-wrap: break-word;
 			text-align: right;
 
 			a {
+
 				&:after {
 					@include font-awesome-solid();
 					content: "\f054";
@@ -959,6 +965,12 @@ video {
 		padding-bottom: 0;
 	}
 
+	.textwidget {
+		a {
+			text-decoration: underline;
+		}
+	}
+
 	.tagcloud {
 		line-height: 1.2;
 	}
@@ -1134,7 +1146,9 @@ ul.articles {
 	}
 
 	.postdate {
-		border-left: solid 4px $header-background-color;
+		border-style: solid;
+		border-left-width: 4px;
+		border-color: $header-background-color;
 		padding: #{$line-height /2}em 0 0 #{$line-height /2}em;
 		margin-top: #{-$line-height /2}em;
 		margin-bottom: #{$line-height /2}em;
@@ -1172,7 +1186,7 @@ ul.articles {
 	}
 
 	.author:before {
-		content: "\f4ff";
+		content: "\f007";
 	}
 
 	.comment:before {
@@ -1461,6 +1475,7 @@ ul.articles {
 
 			.entry-title {
 				margin-bottom: 0;
+				word-wrap: break-word;
 			}
 
 			.postdate {
@@ -1523,11 +1538,13 @@ ul.articles {
 				flex: 1;
 				order: 1;
 				padding-top: 0;
+				max-width: 50%;
 			}
 
 			.nav-previous {
 				flex: 1;
 				order: 2;
+				max-width: 50%;
 			}
 		}
 	}
@@ -1727,6 +1744,7 @@ ul.articles {
 
 				.entry-title {
 					flex: 2;
+					max-width: 75%;
 				}
 
 				.postdate {
@@ -1819,4 +1837,3 @@ ul.articles {
 .wp-block-image {
   clear: both;
 }
-

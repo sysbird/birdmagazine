@@ -107,7 +107,7 @@ ol {
 .entry-header .postdate,
 .page-header .postdate {
   border-left: none;
-  border-right: solid 4px #AF574D;
+  border-right-width: 4px;
   padding-left: 0;
   padding-right: 0.85em; }
 
@@ -188,3 +188,9 @@ ol {
     float: left;
     margin-left: 0;
     margin-right: 0.85em; } }
+
+/* Used to style the Blockeditor.
+--------------------------------------------- */    
+.wp-block-pullquote.alignleft, .wp-block-pullquote.alignright {
+      text-align: right;
+}   
