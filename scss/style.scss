@@ -968,6 +968,10 @@ video {
 		a {
 			text-decoration: underline;
 		}
+
+		ul a {
+			text-decoration: none;
+		}
 	}
 
 	.tagcloud {
@@ -1132,7 +1136,7 @@ ul.articles {
 
 	&,
 	a {
-		color: $header-background-color;
+		color: $text-color;
 	}
 
 	.entry-title,
@@ -1145,6 +1149,7 @@ ul.articles {
 	}
 
 	.postdate {
+		color: $header-background-color;
 		border-style: solid;
 		border-left-width: 4px;
 		border-color: $header-background-color;
@@ -1167,7 +1172,6 @@ ul.articles {
 
 	a,
 	time {
-		color: $text-color;
 		padding: 0 #{$line-height /4}em;
 	}
 
@@ -1431,16 +1435,9 @@ ul.articles {
 }
 
 .sticky {
-	.featured {
-		em {
-			display: inline-block;
-			@include hide-text;
-		}
-
-		&:before {
-			@include font-awesome-solid();
-			content: "\f005\f005\f005";
-		}
+	.entry-header,
+	.entry-header a {
+		color: $header-background-color;
 	}
 }
 

@@ -922,6 +922,10 @@ video {
   text-decoration: underline;
 }
 
+.widget .textwidget ul a {
+  text-decoration: none;
+}
+
 .widget .tagcloud {
   line-height: 1.2;
 }
@@ -1078,7 +1082,7 @@ ul.articles {
 .entry-header a,
 .page-header,
 .page-header a {
-  color: #AF574D;
+  color: #333333;
 }
 
 .entry-header .entry-title,
@@ -1094,6 +1098,7 @@ ul.articles {
 
 .entry-header .postdate,
 .page-header .postdate {
+  color: #AF574D;
   border-style: solid;
   border-left-width: 4px;
   border-color: #AF574D;
@@ -1122,7 +1127,6 @@ ul.articles {
 
 .entry-meta a,
 .entry-meta time {
-  color: #333333;
   padding: 0 0.45em;
 }
 
@@ -1406,19 +1410,9 @@ ul.articles {
   margin: 0 -0.9em 0.9em;
 }
 
-.sticky .featured em {
-  display: inline-block;
-  text-indent: -119988px;
-  overflow: hidden;
-  text-align: left;
-}
-
-.sticky .featured:before {
-  font-family: 'Font Awesome 5 Free';
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  content: "\f005\f005\f005";
+.sticky .entry-header,
+.sticky .entry-header a {
+  color: #AF574D;
 }
 
 :not(.masonry) .entry-header .postdate {
